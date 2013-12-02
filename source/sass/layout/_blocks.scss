@@ -1,11 +1,15 @@
-.book, .container {
+#title, .book, .container {
   max-width: $max-width;
   padding: $page-margin;
 
   @if $center-layout {
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
   }
+}
+
+.book {
+  padding-top: $page-margin * 2;
 }
 
 @if $baseline-grid {

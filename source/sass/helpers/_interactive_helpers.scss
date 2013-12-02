@@ -2,11 +2,11 @@
   @include appearance(none);
   @include box-sizing(border-box);
   @include border-radius($radius);
-  
+
   position: relative;
   display: $display;
-  line-height: $line-height; 
-  font-size: $font-size; 
+  line-height: $line-height;
+  font-size: $font-size;
   text-align: center;
   outline: 0;
   padding: $line-height / 4 $line-height / 2;

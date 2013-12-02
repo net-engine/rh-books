@@ -2,9 +2,9 @@
 
 // ## Typography
 
-$font-family:                           'Open Sans', 'Helvetica Neue', sans-serif !default;
+$font-family:                           'Open Sans', 'Helvetica Neue', sans-serif;
 $font-family-body:                      $font-family !default;
-$font-family-headings:                  'Overpass';
+$font-family-headings:                  'Overpass', $font-family;
 $font-family-input:                     $font-family !default;
 $font-family-icons:                     'redhat-books-icons' !default;
 $font-family-mono:                      'Menlo', 'Monaco', 'Courier New', monospace !default;
@@ -87,13 +87,17 @@ $color-warning                          : $color-rh-orange;
 $color-unsure                           : $color-rh-yellow;
 $color-danger                           : $color-rh-red2;
 
+// Code
+
+$code-bg-color                          : $color-grey-dark;
+$code-color                             : $color-grey-light;
 
 // Links
 
-$link-color:                              $color-primary; 
-$link-color-hover:                        $color-primary; 
-$link-color-active:                       $color-primary; 
-$link-color-visited:                      $color-primary; 
+$link-color:                              $color-primary;
+$link-color-hover:                        $color-primary;
+$link-color-active:                       $color-primary;
+$link-color-visited:                      $color-primary;
 
 $main-link-color:                         $link-color;
 $main-link-color-hover:                   darken($link-color, 15%);

@@ -11,14 +11,17 @@
 @import 'decorative/borders';
 
 @import 'typography/body',
+        'typography/code',
         'typography/headings',
         'typography/icons',
         'typography/lists';
 
-@import 'interactive/anchors', 
+@import 'interactive/anchors',
         'interactive/buttons';
 
 @import 'media/images';
 
 @import 'layout/blocks',
-        'layout/grid';
+        'layout/grid',
+        'layout/navigation',
+        'layout/title_page';

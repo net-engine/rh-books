@@ -1,0 +1,31 @@
+
+pre,
+code,
+var,
+samp,
+kbd,
+.keycap,
+.command,
+.filename,
+.classname,
+.literal {
+  font-family: $font-family-mono;
+}
+
+
+pre {
+  padding: ($line-height / 2) $line-height;
+  white-space: pre-wrap;
+  background: $code-bg-color;
+  color: $code-color;
+  border-radius: .25em;
+  margin-bottom: 1.7em;
+}
+
+
+kbd, .keycap {
+  @include rounded-box(inline-block, true);
+  background: whitesmoke;
+  padding: 0 .5em;
+  border-color: lightgrey;
+}

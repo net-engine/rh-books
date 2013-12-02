@@ -1,15 +1,22 @@
 html {
   font-family: $font-family-body;
   line-height: $line-height;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 p, .para {
   margin-bottom: $line-height;
 }
 
-em, 
-cite, 
-i { font-style: italic; }
+%em { font-style: italic; }
+
+em,
+i,
+cite,
+.package,
+.citetitle { @extend %em; }
 
 b,
 strong { font-weight: $font-weight-bold; }
@@ -34,17 +41,12 @@ abbr {
 
 time {}
 
-pre,
-code,
-var,
-samp, 
-kbd { font-family: $font-family-mono; }
-
 sub {
   font-size: 0.8em;
   position: relative;
   bottom: - $line-height / 6;
 }
+
 sup {
   font-size: 0.8em;
   position: relative;
@@ -54,9 +56,11 @@ sup {
 mark {
   background-color: $color-highlight;
 }
+
 ins {
   background-color: $color-success;
 }
+
 del {
   background-color: $color-danger;
 }

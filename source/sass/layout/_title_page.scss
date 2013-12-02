@@ -1,0 +1,34 @@
+
+.producttitle {
+  position: relative;
+  padding-top: .75em;
+  font-family: $font-family-headings;
+  font-size: $font-size-level-two;
+  margin-top: #{ $margin-level-two * 2 }em;
+  margin-bottom: #{ $margin-level-two }em;
+  line-height: 1;
+  text-transform: uppercase;
+
+  &:before {
+    content: 'Red Hat';
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: .7em;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+}
+
+.productname {
+  display: block;
+  width: 0;
+  white-space: normal;
+  font-weight: 300;
+}
+
+.productnumber {
+  display: block;
+  font-weight: 700;
+  color: $color-rh-red1;
+}

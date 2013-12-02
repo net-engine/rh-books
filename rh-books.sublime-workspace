@@ -1,0 +1,1538 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"margin-",
+				"margin-right"
+			],
+			[
+				"data",
+				"data_layer"
+			],
+			[
+				"paddin",
+				"padding-bottom"
+			],
+			[
+				"margin",
+				"margin-right"
+			],
+			[
+				"padding-",
+				"padding-right"
+			],
+			[
+				"b",
+				"background"
+			],
+			[
+				"toggle",
+				"toggleClass"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"hash",
+				"hashTag"
+			],
+			[
+				"cla",
+				"className"
+			],
+			[
+				"mo",
+				"modal-height"
+			],
+			[
+				"style",
+				"styleguide"
+			],
+			[
+				"h",
+				"href	Attr"
+			],
+			[
+				"font-",
+				"font-family"
+			],
+			[
+				"init",
+				"initializeAccordion"
+			],
+			[
+				"is",
+				"is_playing"
+			],
+			[
+				"cur",
+				"current_month"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"border-l",
+				"border-left-width"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"le",
+				"letter-spacing"
+			],
+			[
+				"high",
+				"highlight-color"
+			],
+			[
+				"border-top-",
+				"border-top-color"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"max-",
+				"max-width"
+			],
+			[
+				"attac",
+				"attachment"
+			],
+			[
+				"backgrou",
+				"background-image"
+			],
+			[
+				"task",
+				"task-card-bg-color"
+			],
+			[
+				"date",
+				"datepicker_options"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"ma-",
+				"max-width"
+			],
+			[
+				"Au",
+				"authorize"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"scroll",
+				"scrollTop"
+			],
+			[
+				"paddin-",
+				"padding-top"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"pre",
+				"preventDefault"
+			],
+			[
+				"sele",
+				"selectize"
+			],
+			[
+				"sel",
+				"selectize"
+			],
+			[
+				"jq",
+				"jquery"
+			],
+			[
+				"scro",
+				"scrollTop"
+			],
+			[
+				"sc",
+				"scrollTop"
+			],
+			[
+				"map-s",
+				"map-sidebar-width"
+			],
+			[
+				"list",
+				"list_class"
+			],
+			[
+				"min-",
+				"min-height"
+			],
+			[
+				"p",
+				"padding"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"map-",
+				"map-sidebar-width"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
+				"icon",
+				"icon-only"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"line",
+				"line-height"
+			],
+			[
+				"gen",
+				"generated"
+			],
+			[
+				"cor",
+				"corporate_logo"
+			],
+			[
+				"background-",
+				"background-image"
+			],
+			[
+				"hea",
+				"header-height"
+			],
+			[
+				"lac",
+				"locale"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"esl",
+				"else"
+			],
+			[
+				"P",
+				"PackageLayout"
+			],
+			[
+				"deli",
+				"delivery"
+			],
+			[
+				"cu",
+				"current_account"
+			],
+			[
+				"invoi",
+				"invoices"
+			],
+			[
+				"table",
+				"tablesorter"
+			],
+			[
+				"last",
+				"last_month"
+			],
+			[
+				"border-le",
+				"border-left-color"
+			],
+			[
+				"sub",
+				"subscription_invoices"
+			],
+			[
+				"gra",
+				"graph2"
+			],
+			[
+				"grap",
+				"graph1_options"
+			],
+			[
+				"de",
+				"decade"
+			],
+			[
+				"red",
+				"redraw"
+			],
+			[
+				"deca",
+				"decades"
+			],
+			[
+				"re",
+				"restart"
+			],
+			[
+				"dev",
+				"developer"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"se",
+				"secondary-active"
+			],
+			[
+				"secon",
+				"secondary-color"
+			],
+			[
+				"act",
+				"active-color"
+			],
+			[
+				"tool",
+				"app-toolbar-size"
+			],
+			[
+				"bar",
+				"bar_dates"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "source/sass/typography/_body.scss",
+			"settings":
+			{
+				"buffer_size": 865,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "source/sass/typography/_code.scss",
+			"settings":
+			{
+				"buffer_size": 312,
+				"line_ending": "Unix",
+				"name": ".keycap {"
+			}
+		},
+		{
+			"file": "source/sass/helpers/_interactive_helpers.scss",
+			"settings":
+			{
+				"buffer_size": 558,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 159.0,
+		"selected_items":
+		[
+			[
+				"user",
+				"Preferences: Settings - User"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"syn coff",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"syn scs",
+				"Set Syntax: SCSS"
+			],
+			[
+				"syn sa",
+				"Set Syntax: Sass"
+			],
+			[
+				"syn js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"use",
+				"Preferences: Settings - User"
+			],
+			[
+				"set us",
+				"Preferences: Settings - User"
+			],
+			[
+				"settings u",
+				"Preferences: Settings - User"
+			],
+			[
+				"haml",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"settings ",
+				"Preferences: Settings - User"
+			],
+			[
+				"scs",
+				"Set Syntax: SCSS"
+			],
+			[
+				"syn jas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syn haml",
+				"Set Syntax: Ruby Haml"
+			],
+			[
+				"syn html",
+				"Set Syntax: HTML"
+			],
+			[
+				"pack",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"sas",
+				"Set Syntax: Sass"
+			],
+			[
+				"y",
+				"Set Syntax: YAML"
+			],
+			[
+				"syn coffee",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"syn sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"setttings",
+				"Preferences: Package Control Settings – Default"
+			],
+			[
+				"us",
+				"Preferences: Settings - User"
+			],
+			[
+				"scss",
+				"Set Syntax: CSS"
+			],
+			[
+				"syn json",
+				"Set Syntax: JSON"
+			],
+			[
+				"syn cof",
+				"Set Syntax: CoffeeScript"
+			],
+			[
+				"pla",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"syn ja",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"syn j",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"pref us",
+				"Preferences: Settings - User"
+			],
+			[
+				"syn co",
+				"Set Syntax: CoffeeScript"
+			]
+		],
+		"width": 435.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/Rowan/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/Rowan/NetEngine/Redhat/books/rh-books.sublime-project",
+		"/Users/Rowan/NetEngine/Redhat/books/source/sass/print.scss",
+		"/Users/Rowan/NetEngine/Redhat/books/.gitignore",
+		"/Users/Rowan/NetEngine/Redhat/books/index.html",
+		"/Users/Rowan/NetEngine/Redhat/books/Gruntfile.js",
+		"/Users/Rowan/NetEngine/Redhat/books/source/sass/_settings.scss",
+		"/Users/Rowan/NetEngine/Redhat/books/source/sass/media/_images.scss",
+		"/Users/Rowan/Dropbox/.dotfiles/bash/aliases.sh",
+		"/Users/Rowan/Desktop/publish/en-US/Red_Hat_Enterprise_Linux/6/html/Power_Management_Guide/Common_Content/css/default.css",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/assets/stylesheets/structure/_application.scss",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/sections/_exposition.html.haml",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/sections/_problem.html.haml",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/index.html.haml",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/sections/_the_event.html.haml",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/assets/stylesheets/modules/_grid.css.scss",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/sections/_welcome.html.haml",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/layouts/_header.haml",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/intro_sections/_welcome.html.haml",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/intro_sections/_the_event.html.haml",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/_sponsors.html.haml",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/assets/stylesheets/_settings.scss",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/assets/stylesheets/helpers/_layout.scss",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/intro_sections/_exposition.html.haml",
+		"/Users/Rowan/NetEngine/Middleman/rhok_brisbane_2013/source/volunteer/index.html.haml",
+		"/Users/Rowan/NetEngine/Rails/fctravelacademy/app/views/layouts/application.html.haml",
+		"/Users/Rowan/NetEngine/Rails/fctravelacademy/.git/MERGE_MSG",
+		"/Users/Rowan/NetEngine/Rails/fctravelacademy/app/views/shared/_header.html.haml",
+		"/Users/Rowan/NetEngine/Rails/fctravelacademy/app/views/courses/show.html.haml",
+		"/Users/Rowan/NetEngine/Rails/fctravelacademy/app/views/pages/_course_boxes.html.haml",
+		"/Users/Rowan/NetEngine/Rails/fctravelacademy/app/views/pages/_boxes.html.haml",
+		"/Users/Rowan/NetEngine/Rails/fctravelacademy/app/views/shared/_header_buttons.html.haml",
+		"/Users/Rowan/NetEngine/Rails/fctravelacademy/config/database.yml",
+		"/Users/Rowan/NetEngine/Rails/fctravelacademy/script/collectd/role/postgresql_slave/replication_status.rb",
+		"/Users/Rowan/NetEngine/Redhat/piston/client/package.json",
+		"/Users/Rowan/NetEngine/Redhat/piston/config/database.yml",
+		"/Users/Rowan/NetEngine/Redhat/piston/client/app/styles/icons/svg/leaf.svg",
+		"/Users/Rowan/NetEngine/Redhat/piston/.git/COMMIT_EDITMSG",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/controllers/maps_controller.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/maps/show/twitter/ui/tweets_map_displayer.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/maps/_map_form.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_button.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/vendor/_jquery_ui.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/_settings.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/maps/show/layers/tooltip_map_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_map_form.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/maps/show/settings/public_action_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/.git/MERGE_MSG",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_icons.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/maps/show/settings/map_data_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/maps/show/utils/map_utils.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/maps/show.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/layouts/ui_initializer.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/index/index.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/maps/index.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/controllers/index_controller.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/layouts/application.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/vendor/assets/javascripts/leaflet.js",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/homepage.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_columns.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_public.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/config/initializers/contstants.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/models/map.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/db/migrate/20131127034708_add_featured_to_maps.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/db/migrate/20130618045913_add_hashtag_to_maps.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_map.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/layouts/_footer.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/db/schema.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/devise/confirmations/new.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/devise/passwords/edit.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/devise/passwords/new.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/devise/sessions/new.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/devise/unlocks/new.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/users/registrations/new.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/config/initializers/devise.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/models/point_example.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/db/seeds.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/config/deploy/production.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/config/environment.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/layers/map_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/layers/tooltip_map_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/application.js",
+		"/Users/Rowan/NetEngine/Rails/bigsky/vendor/assets/javascripts/leaflet.providers.js",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/application.css.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/layers/init.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/settings/dynamic/map_settings_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/settings/static_settings_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_layout.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_map_boxes.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/tmp/cache/assets/development/sass/550c969ee097e1700cba31093abb14d9a60c610d/modules.scssc",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_list_item.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/ui_initializer.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_modal.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/map_ui_initializer.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/twitter/ui/tweets_map_displayer.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/layers/layered_map_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_twitter_map.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_leaflet.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/layouts/_header.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_header.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_twitter_feed.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/config/initializers/secret_token.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/helpers/application_helper.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_markers.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/settings/map_data_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_menu.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/layers/heatmap_map_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/vendor/assets/javascripts/heatmap-leaflet.js",
+		"/Users/Rowan/NetEngine/Rails/bigsky/vendor/assets/javascripts/heatmap.js",
+		"/Users/Rowan/NetEngine/Rails/bigsky/vendor/assets/javascripts/leaflet.markercluster.js",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/layouts/_head.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/Gemfile",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_map_sidebar.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_map_controls.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/vendor/_handsontable.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/vendor/assets/javascripts/jquery.handsontable.js",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/settings/map_settings_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/settings/twitter_setting_handler.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/events.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/views/maps/_share.html.haml",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/stylesheets/modules/_form.scss",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/assets/javascripts/map/init.js.coffee",
+		"/Users/Rowan/NetEngine/Rails/bigsky/vendor/assets/javascripts/jquery.dotdotdot.js",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/models/point.rb",
+		"/Users/Rowan/NetEngine/Rails/bigsky/app/models/map_data.rb",
+		"/Users/Rowan/NetEngine/Rails/scout/app/controllers/admin_controller.rb",
+		"/Users/Rowan/NetEngine/Rails/scout/app/controllers/admin/entities_controller.rb",
+		"/Users/Rowan/NetEngine/Rails/scout/app/views/layouts/admin.html.haml"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"",
+			"/Users/Rowan/NetEngine/Trove/node_modules/grunt-styleguide/node_modules/styledocco/share",
+			"",
+			"*.scss",
+			"",
+			"/Users/Rowan/NetEngine/Rails/triggerapp/app/models",
+			"",
+			"*.haml",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"dist/stylesheets",
+			"Common_Content/css",
+			"stylesheet",
+			".css",
+			"<",
+			".one-half",
+			".one_half",
+			".second",
+			"intro_sections",
+			"target: \"_blank\"",
+			"device-pixel-ratio",
+			"white",
+			"ui.handle",
+			"p( ",
+			"ui.handle",
+			"step",
+			"4px",
+			"radius",
+			"$line-height",
+			"17px",
+			"handsontable(",
+			".map-data-modal",
+			"handsontable(",
+			"@public_maps",
+			"= link_to image_tag",
+			";",
+			"margin",
+			"     ",
+			"       ",
+			"      ",
+			"     ",
+			"color: ",
+			"facebook",
+			"= content_for :map_background, 'map-bg'",
+			"= content_for :map_background, true",
+			"map_background",
+			"rails.env",
+			"rails-env",
+			"MapBox",
+			"TooltipMapHandler",
+			"$breakpoint-low-height",
+			".share-links",
+			".map-box",
+			".public-maps-list",
+			"map-bg",
+			"white",
+			"$twitter-color",
+			"32px",
+			"def login",
+			"overlay",
+			"popup",
+			"$leaflet-popup-tip-size",
+			"$leaflet-popup-background-color",
+			"leaflet-popup",
+			"17px",
+			"leaflet-popup-tip",
+			"}\n}",
+			"layerMarkers",
+			"quadtr",
+			"quadtree",
+			"QuadTree",
+			"addData",
+			"-1em",
+			",",
+			"map-data-modal",
+			"handsontable",
+			".avatar",
+			"avatar",
+			".handsontable",
+			"dotdotdot",
+			"latlng",
+			"def smart_path",
+			".box= will_paginate",
+			".box=will_paginate",
+			".details ",
+			"icon-help",
+			".icon-help",
+			".page-tabs",
+			"page-tabs",
+			".toggle-filter",
+			"filter",
+			"img",
+			".page-tabs",
+			"mail",
+			"user",
+			":title",
+			"- if permit?",
+			".semantic-menu",
+			".page-actions-dropdown",
+			".actions-toggle",
+			".flash",
+			"32x32",
+			"handsontable",
+			"edit-map-toggle",
+			"map-header",
+			".edit-map-toggle",
+			"#api_map_url",
+			"edit-data",
+			"current_user_map",
+			"map-list",
+			"public maps",
+			"public",
+			"map-bo",
+			"map-title",
+			".avatar",
+			"avatar",
+			"keyup",
+			"url(",
+			"2em",
+			"-2em",
+			"2em",
+			"36px",
+			"map-share",
+			"Edit",
+			"MapSettingsHandler",
+			"@$toggle",
+			"image_picker",
+			"image-picker",
+			"map-tweets",
+			".map-share",
+			"TweetsStripDisplayer",
+			"twitterField",
+			".share-link",
+			".map-",
+			"container",
+			".close-link",
+			"gravatar_image_tag",
+			"tweetsStrip"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"= content_for :global_class, 'map-bg'",
+			"= content_for :map_background, 'map-bg'",
+			"paddingTopLeft: [0, 130]",
+			"close-button",
+			".close-button",
+			"http://shopperschoice.applyfirst.net/",
+			"---\ntitle: '",
+			"title: '",
+			"$radius",
+			".global-",
+			"@include box-sizing(border-box);",
+			"m/wp-",
+			".corp-logo",
+			"Map::LAYER_STYLES",
+			"Map::STYLE_IDS",
+			"= partial('case-studies/case-study'",
+			" | Case Studies",
+			".icon-location",
+			".footer",
+			"1300 304 731",
+			"console?.",
+			"/69,35,1/256x256.png",
+			"-154.31,-6.68,5",
+			"-154.31,-6.68,8",
+			"-154.31,-6.68,12",
+			",11/256x",
+			"Cardinia Shire Council",
+			"Cardinia",
+			"http://cardinia.applynow.net.au/",
+			".app-header",
+			"gettrigger",
+			"@trigger",
+			"/trigger",
+			"triggerapp.com",
+			"Trigger"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "source/sass/typography/_body.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 865,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								560,
+								560
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 160.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "source/sass/typography/_code.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 312,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								312,
+								312
+							]
+						],
+						"settings":
+						{
+							"auto_name": ".keycap {",
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "source/sass/helpers/_interactive_helpers.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 558,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								389,
+								392
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 114.0
+	},
+	"project": "rh-books.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"image",
+				"source/sass/media/_images.scss"
+			],
+			[
+				"settin",
+				"source/sass/_settings.scss"
+			],
+			[
+				"gur",
+				"Gruntfile.js"
+			],
+			[
+				"grid",
+				"source/assets/stylesheets/modules/_grid.css.scss"
+			],
+			[
+				"wel",
+				"source/sections/_welcome.html.haml"
+			],
+			[
+				"head",
+				"source/layouts/_header.haml"
+			],
+			[
+				"sett",
+				"source/assets/stylesheets/_settings.scss"
+			],
+			[
+				"layout",
+				"source/assets/stylesheets/helpers/_layout.scss"
+			],
+			[
+				"header",
+				"source/layouts/_header.haml"
+			],
+			[
+				"courbo",
+				"app/views/pages/_course_boxes.html.haml"
+			],
+			[
+				"boxes",
+				"app/views/pages/_boxes.html.haml"
+			],
+			[
+				"coursesshow",
+				"app/views/courses/show.html.haml"
+			],
+			[
+				"heade",
+				"app/views/shared/_header_buttons.html.haml"
+			],
+			[
+				"postgres",
+				"script/collectd/role/postgresql_slave/replication_status.rb"
+			],
+			[
+				"dat",
+				"config/database.yml"
+			],
+			[
+				"data",
+				"config/database.yml"
+			],
+			[
+				"da",
+				"config/database.yml"
+			],
+			[
+				"directive",
+				"client/app/scripts/directives/preview.js"
+			],
+			[
+				"mapcon",
+				"app/controllers/maps_controller.rb"
+			],
+			[
+				"tool",
+				"app/assets/javascripts/maps/show/layers/tooltip_map_handler.js.coffee"
+			],
+			[
+				"tw",
+				"app/assets/stylesheets/modules/_twitter_feed.scss"
+			],
+			[
+				"tweetma",
+				"app/assets/javascripts/maps/show/twitter/ui/tweets_map_displayer.js.coffee"
+			],
+			[
+				"jqueryui",
+				"app/assets/stylesheets/vendor/_jquery_ui.scss"
+			],
+			[
+				"mapfor",
+				"app/views/maps/_map_form.html.haml"
+			],
+			[
+				"icons",
+				"app/assets/stylesheets/modules/_icons.scss"
+			],
+			[
+				"pub",
+				"app/assets/javascripts/maps/show/settings/public_action_handler.js.coffee"
+			],
+			[
+				"mapform",
+				"app/assets/stylesheets/modules/_map_form.scss"
+			],
+			[
+				"settings",
+				"app/assets/stylesheets/_settings.scss"
+			],
+			[
+				"button",
+				"app/assets/stylesheets/modules/_button.scss"
+			],
+			[
+				"jqueui",
+				"app/assets/stylesheets/vendor/_jquery_ui.scss"
+			],
+			[
+				"mapjscoffee",
+				"app/assets/javascripts/maps/map_ui_initializer.js.coffee"
+			],
+			[
+				"majscoff",
+				"app/assets/javascripts/maps/show/utils/map_utils.js.coffee"
+			],
+			[
+				"mapshow",
+				"app/views/maps/show.html.haml"
+			],
+			[
+				"inde",
+				"app/views/index/index.html.haml"
+			],
+			[
+				"uiin",
+				"app/assets/javascripts/layouts/ui_initializer.js.coffee"
+			],
+			[
+				"mapsinde",
+				"app/views/maps/index.html.haml"
+			],
+			[
+				"indecon",
+				"app/controllers/index_controller.rb"
+			],
+			[
+				"index",
+				"app/views/index/index.html.haml"
+			],
+			[
+				"cons",
+				"config/initializers/contstants.rb"
+			],
+			[
+				"mapscon",
+				"app/controllers/maps_controller.rb"
+			],
+			[
+				"map.rb",
+				"app/models/map.rb"
+			],
+			[
+				"indexo",
+				"app/controllers/index_controller.rb"
+			],
+			[
+				"adtoma",
+				"db/migrate/20130618045913_add_hashtag_to_maps.rb"
+			],
+			[
+				"featured",
+				"db/migrate/20131127034708_add_featured_to_maps.rb"
+			],
+			[
+				"con",
+				"config/initializers/contstants.rb"
+			],
+			[
+				"setting",
+				"app/assets/stylesheets/_settings.scss"
+			],
+			[
+				"cont",
+				"config/initializers/contstants.rb"
+			],
+			[
+				"lea",
+				"vendor/assets/javascripts/leaflet.js"
+			],
+			[
+				"map.sc",
+				"app/assets/stylesheets/modules/_map.scss"
+			],
+			[
+				"public",
+				"app/assets/stylesheets/modules/_public.scss"
+			],
+			[
+				"layoutfoot",
+				"app/views/layouts/_footer.html.haml"
+			],
+			[
+				"home",
+				"app/assets/javascripts/homepage.js.coffee"
+			],
+			[
+				"schema",
+				"db/schema.rb"
+			],
+			[
+				"pbu",
+				"app/assets/stylesheets/modules/_public.scss"
+			],
+			[
+				"indei",
+				"app/views/index/index.html.haml"
+			],
+			[
+				"leaf",
+				"vendor/assets/javascripts/leaflet.js"
+			],
+			[
+				"indon",
+				"app/controllers/index_controller.rb"
+			],
+			[
+				"seeds",
+				"db/seeds.rb"
+			],
+			[
+				"exa",
+				"app/assets/javascripts/map/models/point_example.js.coffee"
+			],
+			[
+				"produ",
+				"config/deploy/production.rb"
+			],
+			[
+				"env",
+				"config/environment.rb"
+			],
+			[
+				"constat",
+				"config/initializers/contstants.rb"
+			],
+			[
+				"map.r",
+				"app/models/map.rb"
+			],
+			[
+				"incon",
+				"app/controllers/index_controller.rb"
+			],
+			[
+				"pubscs",
+				"app/assets/stylesheets/modules/_public.scss"
+			],
+			[
+				"leaflet",
+				"vendor/assets/javascripts/leaflet.js"
+			],
+			[
+				"maphan",
+				"app/assets/javascripts/map/layers/map_handler.js.coffee"
+			],
+			[
+				"app",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"maptolhan",
+				"app/assets/javascripts/map/layers/tooltip_map_handler.js.coffee"
+			],
+			[
+				"maph",
+				"app/assets/javascripts/map/layers/map_handler.js.coffee"
+			],
+			[
+				"maphand",
+				"app/assets/javascripts/map/layers/map_handler.js.coffee"
+			],
+			[
+				"toolmap",
+				"app/assets/javascripts/map/layers/tooltip_map_handler.js.coffee"
+			],
+			[
+				"setingsha",
+				"app/assets/javascripts/map/settings/dynamic/map_settings_handler.js.coffee"
+			],
+			[
+				"settingsha",
+				"app/assets/javascripts/map/settings/static_settings_handler.js.coffee"
+			],
+			[
+				"homepag",
+				"app/assets/javascripts/homepage.js.coffee"
+			],
+			[
+				"apscs",
+				"app/assets/stylesheets/application.css.scss"
+			],
+			[
+				"mapboxes",
+				"app/assets/stylesheets/modules/_map_boxes.scss"
+			],
+			[
+				"mod",
+				"app/assets/stylesheets/modules/_modal.scss"
+			],
+			[
+				"buttons",
+				"app/assets/stylesheets/modules/_button.scss"
+			],
+			[
+				"mapindex",
+				"app/views/maps/index.html.haml"
+			],
+			[
+				"list",
+				"app/assets/stylesheets/modules/_list_item.scss"
+			],
+			[
+				"lay",
+				"app/assets/javascripts/map/layers/layered_map_handler.js.coffee"
+			],
+			[
+				"twe",
+				"app/assets/javascripts/twitter/ui/tweets_map_displayer.js.coffee"
+			],
+			[
+				"js",
+				"app/assets/javascripts/homepage.js.coffee"
+			],
+			[
+				"map.scs",
+				"app/assets/stylesheets/modules/_map.scss"
+			],
+			[
+				"maps.html",
+				"app/views/maps/index.html.haml"
+			],
+			[
+				"buto",
+				"app/assets/stylesheets/modules/_button.scss"
+			],
+			[
+				"layoutap",
+				"app/views/layouts/application.html.haml"
+			],
+			[
+				"to",
+				"app/assets/javascripts/map/layers/tooltip_map_handler.js.coffee"
+			],
+			[
+				"twittfee",
+				"app/assets/stylesheets/modules/_twitter_feed.scss"
+			],
+			[
+				"twit",
+				"app/assets/stylesheets/modules/_twitter_feed.scss"
+			],
+			[
+				"jscof",
+				"app/assets/javascripts/homepage.js.coffee"
+			],
+			[
+				"twittma",
+				"app/assets/stylesheets/modules/_twitter_map.scss"
+			],
+			[
+				"twma",
+				"app/assets/javascripts/twitter/ui/tweets_map_displayer.js.coffee"
+			],
+			[
+				"layma",
+				"app/assets/javascripts/map/layers/layered_map_handler.js.coffee"
+			],
+			[
+				"mapexam",
+				"app/assets/javascripts/map/models/point_example.js.coffee"
+			],
+			[
+				"twmaps",
+				"app/assets/javascripts/twitter/ui/tweets_map_displayer.js.coffee"
+			],
+			[
+				"mapdata",
+				"app/assets/javascripts/map/settings/map_data_handler.js.coffee"
+			],
+			[
+				"mark",
+				"app/assets/stylesheets/modules/_markers.scss"
+			],
+			[
+				"appjs",
+				"app/assets/javascripts/application.js"
+			],
+			[
+				"menu",
+				"app/assets/stylesheets/modules/_menu.scss"
+			],
+			[
+				"init",
+				"app/assets/javascripts/map/layers/init.js.coffee"
+			],
+			[
+				"marker",
+				"vendor/assets/javascripts/leaflet.markercluster.js"
+			],
+			[
+				"modal",
+				"app/assets/stylesheets/modules/_modal.scss"
+			],
+			[
+				"ampdatahan",
+				"app/assets/javascripts/map/settings/map_data_handler.js.coffee"
+			],
+			[
+				"mapside",
+				"app/assets/stylesheets/modules/_map_sidebar.scss"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"layouthead",
+				"app/views/layouts/_head.html.haml"
+			],
+			[
+				"layhea",
+				"app/assets/javascripts/map/layers/layered_map_handler.js.coffee"
+			],
+			[
+				"handsonjs",
+				"vendor/assets/javascripts/jquery.handsontable.js"
+			],
+			[
+				"hand",
+				"app/assets/stylesheets/vendor/_handsontable.scss"
+			],
+			[
+				"map.s",
+				"app/assets/stylesheets/modules/_map.scss"
+			],
+			[
+				"sideba",
+				"app/assets/stylesheets/modules/_map_sidebar.scss"
+			],
+			[
+				"sidebar",
+				"app/assets/stylesheets/modules/_map_sidebar.scss"
+			],
+			[
+				"twitt",
+				"app/assets/stylesheets/modules/_twitter_feed.scss"
+			],
+			[
+				"mapscs",
+				"app/assets/stylesheets/modules/_map.scss"
+			],
+			[
+				"mapsho",
+				"app/views/maps/show.html.haml"
+			],
+			[
+				"event",
+				"app/assets/javascripts/events.js.coffee"
+			],
+			[
+				"sha",
+				"app/views/maps/_share.html.haml"
+			],
+			[
+				"han",
+				"app/assets/stylesheets/vendor/_handsontable.scss"
+			],
+			[
+				"mapsett",
+				"app/assets/javascripts/map/settings/map_settings_handler.js.coffee"
+			],
+			[
+				"dotdot",
+				"vendor/assets/javascripts/jquery.dotdotdot.js"
+			],
+			[
+				"maptool",
+				"app/assets/javascripts/map/layers/tooltip_map_handler.js.coffee"
+			],
+			[
+				"mapdat",
+				"app/assets/javascripts/map/settings/map_data_handler.js.coffee"
+			],
+			[
+				"point",
+				"app/models/point.rb"
+			],
+			[
+				"pont",
+				"app/assets/javascripts/map/models/point_example.js.coffee"
+			],
+			[
+				"enover",
+				"app/views/admin/entities/_overview.haml"
+			],
+			[
+				"adminentcon",
+				"app/controllers/admin/entities_controller.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 218.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
