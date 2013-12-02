@@ -15,11 +15,11 @@ kbd,
 
 kbd, .keycap {
   @include rounded-box(inline-block, true);
-  background: whitesmoke;
+  background: $color-grey-lightest;
+  border-color: $color-grey-lighter;
   font-size: 90%;
   padding: 0 .5em;
   margin: 0 .25em;
-  border-color: lightgrey;
 }
 
 .para code {
@@ -29,7 +29,6 @@ kbd, .keycap {
   margin: 0 .125em;
   color: $color-black;
 }
-
 
 pre {
   padding: ($line-height / 2) $line-height;

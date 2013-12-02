@@ -30,3 +30,8 @@
     background-size: 100% $line-height;
   }
 }
+
+blockquote.blockquote {
+  padding-left: $line-height;
+  border-left: $line-height / 3 solid $color-grey-lighter;
+}
