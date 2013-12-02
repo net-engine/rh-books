@@ -40,7 +40,7 @@ module.exports = function(grunt) {
         dest: 'dist/icons',
         destCss: 'source/sass/icons',
         options: {
-          font: 'redhat-icons',
+          font: 'redhat-books-icons',
           stylesheet: 'scss',
           syntax: 'bootstrap',
           relativeFontPath: '/dist/icons'

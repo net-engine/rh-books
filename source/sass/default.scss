@@ -8,16 +8,15 @@
 @import 'helpers/layout_helpers',
         'helpers/interactive_helpers';
 
-@import 'color/base_palette',
-        'color/extended_palette',
-        'color/tints_and_shades';
-
 @import 'decorative/borders';
 
 @import 'typography/body',
         'typography/headings',
         'typography/icons',
         'typography/lists';
+
+@import 'interactive/anchors', 
+        'interactive/buttons';
 
 @import 'media/images';
 

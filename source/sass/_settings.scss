@@ -2,156 +2,192 @@
 
 // ## Typography
 
-$font-family:             'Open Sans', 'Helvetica Neue', sans-serif !default;
-$font-family-body:        $font-family !default;
-$font-family-headings:    $font-family !default;
-$font-family-input:       $font-family !default;
-$font-family-icons:       'trove-icons' !default;
-$font-family-mono:        'Menlo', 'Monaco', 'Courier New', monospace !default;
+$font-family:                           'Open Sans', 'Helvetica Neue', sans-serif !default;
+$font-family-body:                      $font-family !default;
+$font-family-headings:                  $font-family !default;
+$font-family-input:                     $font-family !default;
+$font-family-icons:                     'redhat-books-icons' !default;
+$font-family-mono:                      'Menlo', 'Monaco', 'Courier New', monospace !default;
 
-$font-size:               100% !default;
-$font-size-level-one:     3em !default;
-$font-size-level-two:     1.75em !default;
-$font-size-level-three:   1.5em !default;
-$font-size-level-four:    1.25em !default;
-$font-size-level-five:    1em !default;
-$font-size-level-six:     0.8em !default;
+$font-size:                             100% !default;
+$font-size-level-one:                   3em !default;
+$font-size-level-two:                   1.75em !default;
+$font-size-level-three:                 1.5em !default;
+$font-size-level-four:                  1.25em !default;
+$font-size-level-five:                  1em !default;
+$font-size-level-six:                   0.8em !default;
 
-$line-height:             1.7em !default;
+$line-height:                           1.7em !default;
 
-$font-weight-normal:      400;
-$font-weight-medium:      600;
-$font-weight-bold:        700;
-
-
-// ## Colours
-
-$color-primary:           hsl(204,44%,54%);
-$color-primary-light:     lighten($color-primary, 30%);
-$color-primary-dark:      darken($color-primary, 30%);
-
-$black:                   hsl(0,0%,9%);
-$white:                   lighten($black, 93.5%);
-$gray-darker:             lighten($black, 13.5%);
-$gray-dark:               lighten($black, 20%);
-$gray:                    lighten($black, 33.5%);
-$gray-light:              lighten($black, 60%);
-$gray-lighter:            lighten($black, 87.5%);
+$font-weight-normal:                    400;
+$font-weight-medium:                    600;
+$font-weight-bold:                      700;
 
 
-// Indicators
+//
+// Colors
+// ------
 
-$color-success:           hsl(85, 60%, 52%);
-$color-success-light:     lighten($color-success, 35%);
-$color-warning:           hsl(45, 83%, 73%);
-$color-warning-light:     lighten($color-warning, 35%);
-$color-danger:            hsl(357, 88%, 63%);
-$color-danger-light:      lighten($color-danger, 35%);
-$color-info:              red;
-$color-info-light:        lighten($color-info, 35%);
+// Set some default color variables to keep things consistent
+
+$color-white                            : #fff;
+$color-black                            : #000;
+$color-grey-lightest                    : lighten($color-black, 95);
+$color-grey-lighter                     : lighten($color-black, 90);
+$color-grey-light                       : lighten($color-black, 80);
+$color-grey-lightish                    : lighten($color-black, 70);
+$color-grey                             : lighten($color-black, 50);
+$color-grey-darkish                     : lighten($color-black, 30);
+$color-grey-dark                        : lighten($color-black, 20);
+$color-grey-darker                      : lighten($color-black, 10);
+$color-grey-darkest                     : lighten($color-black, 5);
+
+// Themed color variables
+
+$color-rh-red1                          : #cc0000;
+$color-rh-red2                          : #a30000;
+$color-rh-red3                          : #820000;
+$color-rh-blue                          : #5bc6e8;
+$color-rh-lightblue                     : #a3dbe8;
+$color-rh-teal                          : #007a87;
+$color-rh-darkblue                      : #0093d9;
+$color-rh-navy                          : #004153;
+$color-rh-green                         : #7ab800;
+$color-rh-purple                        : #3b0083;
+$color-rh-orange                        : #ec7a08;
+$color-rh-yellow                        : #fecb00;
+
+// Semantic color variables
+
+$color-primary                          : $color-rh-red1;
+$color-secondary                        : $color-rh-red3;
+$color-tertiary                         : $color-rh-navy;
+$color-base-font                        : #252525;
+$color-heading                          : $color-secondary;
+$color-link                             : #4e9fdd;
+$color-link-hover                       : shade($color-link, 20%);
+$color-link-active                      : shade($color-link, 30%);;
+
+// Background color
+// Provide consistent hierarchy
+
+$color-bg                               : #f4f4f4;
+$color-bg-lightest                      : tint($color-bg, 80%);
+$color-bg-lighter                       : tint($color-bg, 60%);
+$color-bg-light                         : tint($color-bg, 40%);
+$color-bg-dark                          : shade($color-bg, 3%);
+$color-bg-darker                        : shade($color-bg, 6%);
+$color-bg-darkest                       : shade($color-bg, 9%);
+
+// Status color variables
+
+$color-highlight                        : $color-link;
+$color-success                          : $color-rh-green;
+$color-warning                          : $color-rh-orange;
+$color-unsure                           : $color-rh-yellow;
+$color-danger                           : $color-rh-red2;
 
 
 // Links
 
-$link-color:                    $color-primary; 
-$link-color-hover:              $color-primary; 
-$link-color-active:             $color-primary; 
-$link-color-visited:            $color-primary; 
+$link-color:                              $color-primary; 
+$link-color-hover:                        $color-primary; 
+$link-color-active:                       $color-primary; 
+$link-color-visited:                      $color-primary; 
 
-$main-link-color:               $link-color;
-$main-link-color-hover:         darken($link-color, 15%);
-$main-link-color-active:        darken($link-color, 25%);
-$main-link-color-visited:       lighten($link-color, 15%);
+$main-link-color:                         $link-color;
+$main-link-color-hover:                   darken($link-color, 15%);
+$main-link-color-active:                  darken($link-color, 25%);
+$main-link-color-visited:                 lighten($link-color, 15%);
 
-$footer-link-color:             $link-color;
-$footer-link-color-hover:       darken($link-color, 15%);
-$footer-link-color-active:      darken($link-color, 25%);
-$footer-link-color-visited:     lighten($link-color, 15%);
+$footer-link-color:                       $link-color;
+$footer-link-color-hover:                 darken($link-color, 15%);
+$footer-link-color-active:                darken($link-color, 25%);
+$footer-link-color-visited:               lighten($link-color, 15%);
 
 
 // Buttons
 
-$button-default-foreground-color:        $white;
-$button-default-background-color:        $gray-dark;
-$button-default-border-color:            $gray-darker;
+$button-default-foreground-color:         $color-white;
+$button-default-background-color:         $color-grey-dark;
+$button-default-border-color:             $color-grey-darker;
 
-$button-default-hover-foreground-color:  $white;
-$button-default-hover-background-color:  $gray-dark;
-$button-default-hover-border-color:      $gray-darker;
+$button-default-hover-foreground-color:   $color-white;
+$button-default-hover-background-color:   $color-grey-darker;
+$button-default-hover-border-color:       $color-grey-darkest;
 
-$button-default-active-foreground-color: $white;
-$button-default-active-background-color: $gray-dark;
-$button-default-active-border-color:     $gray-darker;
+$button-default-active-foreground-color:  $color-white;
+$button-default-active-background-color:  $color-grey-darkish;
+$button-default-active-border-color:      $color-grey-dark;
 
-$button-submit-foreground-color:         $white;
-$button-submit-background-color:         $color-primary;
-$button-submit-border-color:             $color-primary-dark;
+$button-submit-foreground-color:          $color-white;
+$button-submit-background-color:          $color-primary;
+$button-submit-border-color:              $color-primary;
 
-$button-danger-foreground-color:          $white;
-$button-danger-background-color:          $gray-dark;
-$button-danger-border-color:              $gray-darker;
-
+$button-danger-foreground-color:          $color-white;
+$button-danger-background-color:          $color-grey-dark;
+$button-danger-border-color:              $color-grey-darker;
 
 $button-submit-color:                     $color-primary;
 
 
 // Inputs
 
-$input-foreground-color:        $black;
-$input-background-color:        $white;
-$input-border-color:            $gray-light;
+$input-foreground-color:                  $color-black;
+$input-background-color:                  $color-white;
+$input-border-color:                      $color-grey-light;
 
-$input-hover-foreground-color:  $color-info;
-$input-hover-background-color:  $color-info-light;
-$input-hover-border-color:      $color-info;
+$input-hover-foreground-color:            $color-highlight;
+$input-hover-background-color:            $color-highlight;
+$input-hover-border-color:                $color-highlight;
 
-$input-focus-foreground-color:  $black;
-$input-focus-background-color:  $white;
-$input-focus-border-color:      $color-success;
+$input-focus-foreground-color:            $color-black;
+$input-focus-background-color:            $color-white;
+$input-focus-border-color:                $color-success;
 
 
 // Selects
 
-$select-foreground-color:       $black;
-$select-background-color:       $gray-lighter;
-$select-border-color:           $gray-light;
+$select-foreground-color:                 $color-black;
+$select-background-color:                 $color-grey-lighter;
+$select-border-color:                     $color-grey-light;
 
-$select-hover-foreground-color: $color-info;
-$select-hover-background-color: $color-info-light;
-$select-hover-border-color:     $color-info;
+$select-hover-foreground-color:           $color-highlight;
+$select-hover-background-color:           $color-highlight;
+$select-hover-border-color:               $color-highlight;
 
-$select-focus-foreground-color: $color-success;
-$select-focus-background-color: $color-success-light;
-$select-focus-border-color:     $color-success;
+$select-focus-foreground-color:           $color-success;
+$select-focus-background-color:           $color-success;
+$select-focus-border-color:               $color-success;
 
 
 // Breakpoints
 
-$breakpoint-small:        32em;
-$breakpoint-medium:       50em;
-$breakpoint-large:        75em;
+$breakpoint-small:                        32em;
+$breakpoint-medium:                       50em;
+$breakpoint-large:                        75em;
 
 
 // Layout
 
-$gutter:                  $line-height * 1.5 !default;
-$page-margin:             $line-height * 2 !default;
-$max-width:               $breakpoint-medium !default;
-$center-layout:           true;
+$gutter:                                  $line-height * 1.5 !default;
+$page-margin:                             $line-height * 2 !default;
+$max-width:                               $breakpoint-medium !default;
+$center-layout:                           true;
 
 
 // Borders
 
-$border-heavy-width:      $line-height / 4;
-$border-medium-width:     $line-height / 8;
-$border-light-width:      thin;
+$border-heavy-width:                      $line-height / 4;
+$border-medium-width:                     $line-height / 8;
+$border-light-width:                      thin;
 
 
 // Debugging
 
-$baseline-grid: false;
+$baseline-grid:                           true;
 
 
 // Misc
 
-$radius: .15em;
+$radius:                                  .15em;
