@@ -57,6 +57,6 @@ module.exports = function(grunt) {
   // Making grunt default to force in order not to break the project.
   grunt.option('force', true);
 
-  grunt.registerTask('default', ['connect', 'compass', 'watch']);
-  grunt.registerTask('build', ['compass']);
+  grunt.registerTask('default', ['connect', 'compass:dev', 'watch']);
+  grunt.registerTask('build', ['compass:dist', 'webfont']);
 }
