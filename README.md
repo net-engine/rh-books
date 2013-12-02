@@ -25,7 +25,7 @@ sooo, visit:
 to view an example document
 
 
-## To make addtions
+## To make additions
 
 All sass is compiled by running `grunt`
 
