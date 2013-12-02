@@ -10,7 +10,6 @@ table {
   thead tr { 
     border-bottom-width: 1px;
     border-bottom-style: solid;
-    @extend %black_transparent_primary;
     &.no_wrap {
       th { 
         vertical-align: center; 
@@ -23,7 +22,6 @@ table {
   tbody tr {
     border-top-width: 1px;
     border-top-style: solid;
-    @extend %black_transparent_light-grey;
     &:first-child { border-top: none; }
 
     &.no_wrap {

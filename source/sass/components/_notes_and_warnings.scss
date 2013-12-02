@@ -1,0 +1,44 @@
+.admonition_header {
+  text-transform: uppercase;
+  position: relative;
+  top: - $line-height / 6;
+
+  code { text-transform: none; }
+
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.admonition {
+  margin-bottom: $line-height;
+}
+
+.note, .important, .warning {
+  border-left: $line-height / 3 solid;
+  padding-left: $line-height;
+}
+
+.note {
+  border-color: $color-highlight;
+
+  .admonition_header {
+    color: $color-highlight;
+  }
+}
+
+.important {
+  border-color: $color-unsure;
+
+  .admonition_header {
+    color: $color-unsure;
+  }
+}
+
+.warning {
+  border-color: $color-warning;
+
+  .admonition_header {
+    color: $color-warning;
+  }
+}
