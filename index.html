@@ -333,15 +333,37 @@
            Output sent to a terminal is set in <code class="computeroutput">mono-spaced roman</code> and presented thus:
         </div>
         <pre class="screen">
-          books Desktop documentation drafts mss photos stuff svn books_tests Desktop1 downloads images notes scripts svgs
+          books        Desktop   documentation  drafts  mss    photos   stuff  svn
+          books_tests  Desktop1  downloads      images  notes  scripts  svgs
         </pre>
         <div class="para">
-           Source-code listings are also set in <code class="computeroutput">mono-spaced roman</code> but add syntax highlighting as follows:
+          Source-code listings are also set in <code class="computeroutput">mono-spaced roman</code> but add syntax highlighting as follows:
         </div>
-        <pre xml:lang="en-US" class="programlisting" lang="en-US">
-          <span class="perl_DataType">static</span><span class="perl_DataType">int</span> kvm_vm_ioctl_deassign_device(<span class="perl_Keyword">struct</span> kvm *kvm, <span class="perl_Keyword">struct</span> kvm_assigned_pci_dev *assigned_dev) { <span class="perl_DataType">int</span> r = 0; <span class="perl_Keyword">struct</span> kvm_assigned_dev_kernel *match; mutex_lock(&amp;kvm-&gt;lock); match = kvm_find_assigned_dev(&amp;kvm-&gt;arch.assigned_dev_head, assigned_dev-&gt;assigned_dev_id); <span class="perl_Keyword">if</span> (!match) { printk(KERN_INFO <span class="perl_String">"%s: device hasn't been assigned before, "</span>
-          <span class="perl_String">"so cannot be deassigned</span><span class="perl_Char">\n</span><span class="perl_String">"</span>, __func__); r = -EINVAL; <span class="perl_Keyword">goto</span> out; } kvm_deassign_device(kvm, match); kvm_free_assigned_device(kvm, match); out: mutex_unlock(&amp;kvm-&gt;lock); <span class="perl_Keyword">return</span> r; }
-        </pre>
+        <pre xml:lang="en-US" class="programlisting" lang="en-US"><span class="perl_DataType">static</span> <span class="perl_DataType">int</span> kvm_vm_ioctl_deassign_device(<span class="perl_Keyword">struct</span> kvm *kvm,
+                 <span class="perl_Keyword">struct</span> kvm_assigned_pci_dev *assigned_dev)
+{
+         <span class="perl_DataType">int</span> r = 0;
+         <span class="perl_Keyword">struct</span> kvm_assigned_dev_kernel *match;
+
+         mutex_lock(&amp;kvm-&gt;lock);
+
+         match = kvm_find_assigned_dev(&amp;kvm-&gt;arch.assigned_dev_head,
+                                       assigned_dev-&gt;assigned_dev_id);
+         <span class="perl_Keyword">if</span> (!match) {
+                 printk(KERN_INFO <span class="perl_String">"%s: device hasn't been assigned before, "</span>
+                   <span class="perl_String">"so cannot be deassigned</span><span class="perl_Char">\n</span><span class="perl_String">"</span>, __func__);
+                 r = -EINVAL;
+                 <span class="perl_Keyword">goto</span> out;
+         }
+
+         kvm_deassign_device(kvm, match);
+
+         kvm_free_assigned_device(kvm, match);
+
+out:
+         mutex_unlock(&amp;kvm-&gt;lock);
+         <span class="perl_Keyword">return</span> r;
+}</pre>
       </div>
       <div class="section">
         <div class="titlepage">
@@ -950,8 +972,11 @@
       <div class="para">
          The output resembles that of <span class="application"><strong>PowerTOP</strong></span>. Here is sample output from a longer <span class="application"><strong>diskdevstat</strong></span> run on a Fedora10 system running KDE4.2:
       </div>
-      <pre class="screen">
-         PID UID DEV WRITE_CNT WRITE_MIN WRITE_MAX WRITE_AVG READ_CNT READ_MIN READ_MAX READ_AVG COMMAND 2789 2903 sda1 854 0.000 120.000 39.836 0 0.000 0.000 0.000 plasma 15494 0 sda1 0 0.000 0.000 0.000 758 0.000 0.012 0.000 0logwatch 15520 0 sda1 0 0.000 0.000 0.000 140 0.000 0.009 0.000 perl 15549 0 sda1 0 0.000 0.000 0.000 140 0.000 0.009 0.000 perl 15585 0 sda1 0 0.000 0.000 0.000 108 0.001 0.002 0.000 perl 2573 0 sda1 63 0.033 3600.015 515.226 0 0.000 0.000 0.000 auditd 15429 0 sda1 0 0.000 0.000 0.000 62 0.009 0.009 0.000 crond 15379 0 sda1 0 0.000 0.000 0.000 62 0.008 0.008 0.000 crond 15473 0 sda1 0 0.000 0.000 0.000 62 0.008 0.008 0.000 crond 15415 0 sda1 0 0.000 0.000 0.000 62 0.008 0.008 0.000 crond 15433 0 sda1 0 0.000 0.000 0.000 62 0.008 0.008 0.000 crond 15425 0 sda1 0 0.000 0.000 0.000 62 0.007 0.007 0.000 crond 15375 0 sda1 0 0.000 0.000 0.000 62 0.008 0.008 0.000 crond 15477 0 sda1 0 0.000 0.000 0.000 62 0.007 0.007 0.000 crond 15469 0 sda1 0 0.000 0.000 0.000 62 0.007 0.007 0.000 crond 15419 0 sda1 0 0.000 0.000 0.000 62 0.008 0.008 0.000 crond 15481 0 sda1 0 0.000 0.000 0.000 61 0.000 0.001 0.000 crond 15355 0 sda1 0 0.000 0.000 0.000 37 0.000 0.014 0.001 laptop_mode 2153 0 sda1 26 0.003 3600.029 1290.730 0 0.000 0.000 0.000 rsyslogd 15575 0 sda1 0 0.000 0.000 0.000 16 0.000 0.000 0.000 cat 15581 0 sda1 0 0.000 0.000 0.000 12 0.001 0.002 0.000 perl 15582 0 sda1 0 0.000 0.000 0.000 12 0.001 0.002 0.000 perl 15579 0 sda1 0 0.000 0.000 0.000 12 0.000 0.001 0.000 perl 15580 0 sda1 0 0.000 0.000 0.000 12 0.001 0.001 0.000 perl 15354 0 sda1 0 0.000 0.000 0.000 12 0.000 0.170 0.014 sh 15584 0 sda1 0 0.000 0.000 0.000 12 0.001 0.002 0.000 perl 15548 0 sda1 0 0.000 0.000 0.000 12 0.001 0.014 0.001 perl 15577 0 sda1 0 0.000 0.000 0.000 12 0.001 0.003 0.000 perl 15519 0 sda1 0 0.000 0.000 0.000 12 0.001 0.005 0.000 perl 15578 0 sda1 0 0.000 0.000 0.000 12 0.001 0.001 0.000 perl 15583 0 sda1 0 0.000 0.000 0.000 12 0.001 0.001 0.000 perl 15547 0 sda1 0 0.000 0.000 0.000 11 0.000 0.002 0.000 perl 15576 0 sda1 0 0.000 0.000 0.000 11 0.001 0.001 0.000 perl 15518 0 sda1 0 0.000 0.000 0.000 11 0.000 0.001 0.000 perl 15354 0 sda1 0 0.000 0.000 0.000 10 0.053 0.053 0.005 lm_lid.sh
+      <pre class="screen">  
+        PID    UID DEV     WRITE_CNT WRITE_MIN WRITE_MAX WRITE_AVG    READ_CNT  READ_MIN  READ_MAX  READ_AVG COMMAND
+        2789  2903 sda1          854     0.000   120.000    39.836           0     0.000     0.000     0.000 plasma
+        2573     0 sda1           63     0.033  3600.015   515.226           0     0.000     0.000     0.000 auditd
+        2153     0 sda1           26     0.003  3600.029  1290.730           0     0.000     0.000     0.000 rsyslogd
       </pre>
       <div class="para">
          The columns are:

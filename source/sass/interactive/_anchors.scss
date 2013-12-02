@@ -6,7 +6,9 @@ a {
   &:visited { color: $link-color-visited; }
 }
 
-main a {
+.book a, main a {
+  text-decoration: none;
+
   color: $main-link-color;
 
   &:hover { color: $main-link-color-hover; }

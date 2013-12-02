@@ -1,83 +1,11 @@
-// <ul>
-//   <li>first item</li>
-//   <li>second item</li>
-//   <li>third item</li>
-// </ul>
-
-// <ul>
-//   <li>first item</li>
-//   <li>second item 
-//     <ul>
-//       <li>second item first subitem</li>
-//       <li>second item second subitem
-//         <ul>
-//           <li>second item second subitem first sub-subitem</li>
-//           <li>second item second subitem second sub-subitem</li>
-//           <li>second item second subitem third sub-subitem</li>
-//         </ul>
-//       </li>  
-//       <li>second item third subitem</li>
-//     </ul>
-//   </li> 
-//   <li>third item</li>
-// </ul>
-
-// <ul>
-//   <li>first item</li>
-//   <li>second item
-//     <ol>
-//       <li>second item first subitem</li>
-//       <li>second item second subitem</li>
-//       <li>second item third subitem</li>
-//     </ol>
-//   </li>
-//   <li>third item</li>
-// </ul>
-
-// <ol>
-//   <li>first item</li>
-//   <li>second item</li>
-//   <li>third item</li>
-// </ol>
-
-// <ol start="7">
-//   <li>first item</li>
-//   <li>second item</li>
-//   <li>third item</li>
-// </ol>
-
-// <ol>
-//   <li>first item</li>
-//   <li>second item
-//     <ol>
-//       <li>second item first subitem</li>
-//       <li>second item second subitem</li>
-//       <li>second item third subitem</li>
-//     </ol>
-//   </li>
-//   <li>third item</li>
-// </ol>
-
-// <ol>
-//   <li>first item</li>
-//   <li>second item
-//     <ul>
-//       <li>second item first subitem</li>
-//       <li>second item second subitem</li>
-//       <li>second item third subitem</li>
-//     </ul>
-//   </li> 
-//   <li>third item</li>
-// </ol>
-
-
+// General list styling
 
 ul, ol {
   padding: 0;
   margin-top: 0;
 }
 
-main {
+.book {
   ol, ul:not(.no-dot) {
     margin-bottom: $line-height;
     li {
@@ -112,24 +40,15 @@ main {
   }
 }
 
-.circle-list li {
-  @extend .icon-position-right;
+dl {
+  margin-bottom: $line-height;
 
-  &:before {
-    @include circle;
+  dt { 
+    font-weight: $font-weight-medium; 
+    font-family: $font-family-headings;
   }
-}
 
-.ruled-list, .meta-list {
-  li {
-    @extend .border-top-light-solid;
-    margin-bottom: $line-height / 4;
-    padding-top: $line-height / 4;
+  dd { 
+    padding-left: $gutter / 2;
   }
-}
-
-.meta-list {
-  @extend .circle-list;
-
-  li:before { font-size: 1.333em; }
 }

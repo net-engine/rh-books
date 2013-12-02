@@ -23,6 +23,25 @@
   }
 }
 
-iframe {
-  width: 100%;
+// Table of Contents
+
+.toc {
+  a { text-decoration: none; }
+
+  dt { 
+    font-weight: normal; 
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    font-family: $font-family-body;
+  }
+
+  & > dt { font-weight: $font-weight-medium; }
+  & > dd {
+    padding-left: $gutter / 2;
+
+    & > dl > dd {
+      padding-left: $gutter;      
+    }
+  }
 }

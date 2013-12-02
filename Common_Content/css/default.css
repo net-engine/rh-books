@@ -6490,7 +6490,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 24, ../../source/sass/decorative/_borders.scss */
-.border-top-light-solid, .ruled-list li, .meta-list li {
+.border-top-light-solid {
   border-top-width: thin;
   border-top-style: solid;
 }
@@ -6614,12 +6614,12 @@ hr {
   border-top: thin solid;
 }
 
-/* line 39, ../../source/sass/typography/_headings.scss */
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+/* line 15, ../../source/sass/typography/_headings.scss */
+h1, h2, h3, h4, h5, h6, .title {
+  font-family: "Overpass";
 }
 
-/* line 41, ../../source/sass/typography/_headings.scss */
+/* line 17, ../../source/sass/typography/_headings.scss */
 h1 {
   font-size: 3em;
   margin-top: 1.7em;
@@ -6627,7 +6627,7 @@ h1 {
   line-height: 1.13333em;
 }
 
-/* line 47, ../../source/sass/typography/_headings.scss */
+/* line 23, ../../source/sass/typography/_headings.scss */
 h2 {
   font-size: 1.75em;
   margin-top: 1.94286em;
@@ -6635,7 +6635,7 @@ h2 {
   line-height: 1.94286em;
 }
 
-/* line 53, ../../source/sass/typography/_headings.scss */
+/* line 29, ../../source/sass/typography/_headings.scss */
 h3 {
   font-size: 1.5em;
   margin-top: 2.26667em;
@@ -6643,15 +6643,15 @@ h3 {
   line-height: 2.26667em;
 }
 
-/* line 59, ../../source/sass/typography/_headings.scss */
-h4 {
+/* line 35, ../../source/sass/typography/_headings.scss */
+h4, .formalpara > .title, .para > .title {
   font-size: 1.25em;
   margin-top: 2.72em;
   margin-bottom: 1.36em;
   line-height: 2.72em;
 }
 
-/* line 65, ../../source/sass/typography/_headings.scss */
+/* line 41, ../../source/sass/typography/_headings.scss */
 h5 {
   font-size: 1em;
   margin-top: 3.4em;
@@ -6659,7 +6659,7 @@ h5 {
   line-height: 3.4em;
 }
 
-/* line 71, ../../source/sass/typography/_headings.scss */
+/* line 47, ../../source/sass/typography/_headings.scss */
 h6 {
   font-size: 0.8em;
   margin-top: 4.25em;
@@ -6667,13 +6667,7 @@ h6 {
   line-height: 4.25em;
 }
 
-/* line 78, ../../source/sass/typography/_headings.scss */
-h1:first-child,
-h2:first-child,
-h3:first-child,
-h4:first-child,
-h5:first-child,
-h6:first-child,
+/* line 54, ../../source/sass/typography/_headings.scss */
 h1 + h1,
 h1 + h2,
 h1 + h3,
@@ -6713,7 +6707,7 @@ h6 + h6 {
   margin-top: 0;
 }
 
-/* line 122, ../../source/sass/typography/_headings.scss */
+/* line 92, ../../source/sass/typography/_headings.scss */
 header h1:last-child,
 header h2:last-child,
 header h3:last-child,
@@ -6780,12 +6774,12 @@ header h6:last-child {
 }
 
 /* line 62, ../../source/sass/typography/_icons.scss */
-.icon-position-right, .circle-list li, .meta-list li {
+.icon-position-right {
   padding-right: 2.55em;
   position: relative;
 }
 /* line 66, ../../source/sass/typography/_icons.scss */
-.icon-position-right:before, .circle-list li:before, .meta-list li:before {
+.icon-position-right:before {
   display: block;
   position: absolute;
   right: 0;
@@ -6793,25 +6787,25 @@ header h6:last-child {
   width: 1.7em;
 }
 
-/* line 75, ../../source/sass/typography/_lists.scss */
+/* line 3, ../../source/sass/typography/_lists.scss */
 ul, ol {
   padding: 0;
   margin-top: 0;
 }
 
-/* line 81, ../../source/sass/typography/_lists.scss */
-main ol, main ul:not(.no-dot) {
+/* line 9, ../../source/sass/typography/_lists.scss */
+.book ol, .book ul:not(.no-dot) {
   margin-bottom: 1.7em;
 }
-/* line 83, ../../source/sass/typography/_lists.scss */
-main ol li, main ul:not(.no-dot) li {
+/* line 11, ../../source/sass/typography/_lists.scss */
+.book ol li, .book ul:not(.no-dot) li {
   list-style: none;
   display: block;
   position: relative;
   padding-left: 1.5em;
 }
-/* line 89, ../../source/sass/typography/_lists.scss */
-main ol li:before, main ul:not(.no-dot) li:before {
+/* line 17, ../../source/sass/typography/_lists.scss */
+.book ol li:before, .book ul:not(.no-dot) li:before {
   position: absolute;
   left: 0;
   line-height: 1.7em;
@@ -6819,45 +6813,37 @@ main ol li:before, main ul:not(.no-dot) li:before {
   width: 1em;
   font-weight: bold;
 }
-/* line 98, ../../source/sass/typography/_lists.scss */
-main ol li ul li:before, main ul:not(.no-dot) li ul li:before {
+/* line 26, ../../source/sass/typography/_lists.scss */
+.book ol li ul li:before, .book ul:not(.no-dot) li ul li:before {
   content: "-";
 }
-/* line 102, ../../source/sass/typography/_lists.scss */
-main ul:not(.no-dot) li:before {
+/* line 30, ../../source/sass/typography/_lists.scss */
+.book ul:not(.no-dot) li:before {
   content: "•";
 }
-/* line 104, ../../source/sass/typography/_lists.scss */
-main ol {
+/* line 32, ../../source/sass/typography/_lists.scss */
+.book ol {
   list-style: decimal;
   counter-reset: item;
 }
-/* line 108, ../../source/sass/typography/_lists.scss */
-main ol li:before {
+/* line 36, ../../source/sass/typography/_lists.scss */
+.book ol li:before {
   content: counter(item) ". ";
   counter-increment: item;
 }
 
-/* line 118, ../../source/sass/typography/_lists.scss */
-.circle-list li:before, .meta-list li:before {
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  width: 1.7em;
-  line-height: 1.7em;
-  height: 1.7em;
-  text-align: center;
+/* line 43, ../../source/sass/typography/_lists.scss */
+dl {
+  margin-bottom: 1.7em;
 }
-
-/* line 124, ../../source/sass/typography/_lists.scss */
-.ruled-list li, .meta-list li {
-  margin-bottom: 0.425em;
-  padding-top: 0.425em;
+/* line 46, ../../source/sass/typography/_lists.scss */
+dl dt {
+  font-weight: 600;
+  font-family: "Overpass";
 }
-
-/* line 134, ../../source/sass/typography/_lists.scss */
-.meta-list li:before {
-  font-size: 1.333em;
+/* line 51, ../../source/sass/typography/_lists.scss */
+dl dd {
+  padding-left: 1.275em;
 }
 
 /* line 1, ../../source/sass/interactive/_anchors.scss */
@@ -6878,35 +6864,36 @@ a:visited {
 }
 
 /* line 9, ../../source/sass/interactive/_anchors.scss */
-main a {
+.book a, main a {
+  text-decoration: none;
   color: #cc0000;
 }
-/* line 12, ../../source/sass/interactive/_anchors.scss */
-main a:hover {
+/* line 14, ../../source/sass/interactive/_anchors.scss */
+.book a:hover, main a:hover {
   color: maroon;
 }
-/* line 13, ../../source/sass/interactive/_anchors.scss */
-main a:active {
+/* line 15, ../../source/sass/interactive/_anchors.scss */
+.book a:active, main a:active {
   color: #4d0000;
 }
-/* line 14, ../../source/sass/interactive/_anchors.scss */
-main a:visited {
+/* line 16, ../../source/sass/interactive/_anchors.scss */
+.book a:visited, main a:visited {
   color: #ff1a1a;
 }
 
-/* line 17, ../../source/sass/interactive/_anchors.scss */
+/* line 19, ../../source/sass/interactive/_anchors.scss */
 footer a {
   color: #cc0000;
 }
-/* line 20, ../../source/sass/interactive/_anchors.scss */
+/* line 22, ../../source/sass/interactive/_anchors.scss */
 footer a:hover {
   color: maroon;
 }
-/* line 21, ../../source/sass/interactive/_anchors.scss */
+/* line 23, ../../source/sass/interactive/_anchors.scss */
 footer a:active {
   color: #4d0000;
 }
-/* line 22, ../../source/sass/interactive/_anchors.scss */
+/* line 24, ../../source/sass/interactive/_anchors.scss */
 footer a:visited {
   color: #ff1a1a;
 }
@@ -7061,23 +7048,29 @@ img {
   margin-right: auto;
 }
 
-/* line 12, ../../source/sass/layout/_blocks.scss */
-.book > .titlepage,
-.book > .toc,
-.preface > .titlepage,
-.preface > .section,
-.preface > .para,
-.preface > .toc,
-.chapter > .section,
-.chapter > .para,
-.chapter > .toc {
-  background-image: -webkit-linear-gradient(lightblue 0.05em, transparent 0.05em);
-  background-size: 100% 1.7em;
+/* line 29, ../../source/sass/layout/_blocks.scss */
+.toc a {
+  text-decoration: none;
 }
-
-/* line 26, ../../source/sass/layout/_blocks.scss */
-iframe {
-  width: 100%;
+/* line 31, ../../source/sass/layout/_blocks.scss */
+.toc dt {
+  font-weight: normal;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+/* line 39, ../../source/sass/layout/_blocks.scss */
+.toc > dt {
+  font-weight: 600;
+}
+/* line 40, ../../source/sass/layout/_blocks.scss */
+.toc > dd {
+  padding-left: 1.275em;
+}
+/* line 43, ../../source/sass/layout/_blocks.scss */
+.toc > dd > dl > dd {
+  padding-left: 2.55em;
 }
 
 /* line 9, ../../source/sass/layout/_grid.scss */

@@ -4,7 +4,7 @@
 
 $font-family:                           'Open Sans', 'Helvetica Neue', sans-serif !default;
 $font-family-body:                      $font-family !default;
-$font-family-headings:                  $font-family !default;
+$font-family-headings:                  'Overpass';
 $font-family-input:                     $font-family !default;
 $font-family-icons:                     'redhat-books-icons' !default;
 $font-family-mono:                      'Menlo', 'Monaco', 'Courier New', monospace !default;
@@ -185,7 +185,7 @@ $border-light-width:                      thin;
 
 // Debugging
 
-$baseline-grid:                           true;
+$baseline-grid:                           false;
 
 
 // Misc
