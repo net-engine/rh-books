@@ -23,14 +23,14 @@ module.exports = function(grunt) {
       dist: {
         options: {
           sassDir: 'source/sass',
-          cssDir: 'dist/stylesheets',
+          cssDir: 'Common_Content/css/',
           environment: 'production'
         }
       },
       dev: {
         options: {
           sassDir: 'source/sass',
-          cssDir: 'dist/stylesheets'
+          cssDir: 'Common_Content/css/'
         }
       }
     },
