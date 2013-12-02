@@ -1,10 +1,25 @@
-.container {
+.book, .container {
   max-width: $max-width;
   padding: $page-margin;
 
   @if $center-layout {
     margin-left: auto;
     margin-right: auto; 
+  }
+}
+
+@if $baseline-grid {
+  .book > .titlepage,
+  .book > .toc,
+  .preface > .titlepage,
+  .preface > .section,
+  .preface > .para,
+  .preface > .toc,
+  .chapter > .section,
+  .chapter > .para,
+  .chapter > .toc {
+    background-image: -webkit-linear-gradient(lightblue .05em, transparent .05em);
+    background-size: 100% $line-height;
   }
 }
 

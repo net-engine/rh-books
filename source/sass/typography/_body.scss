@@ -3,11 +3,8 @@ html {
   line-height: $line-height;
 }
 
-@if $baseline-grid {
-  body {
-    background-image: -webkit-linear-gradient(lightblue .05em, transparent .05em);
-    background-size: 100% $line-height;
-  }
+p, .para {
+  margin-bottom: $line-height;
 }
 
 em, 
