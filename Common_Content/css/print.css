@@ -259,7 +259,7 @@ sup {
 
 /* line 57, ../../source/sass/typography/_body.scss */
 mark {
-  background-color: #cc0000;
+  background-color: #5bc6e8;
 }
 
 /* line 61, ../../source/sass/typography/_body.scss */
@@ -842,20 +842,6 @@ img {
 /* line 15, ../../source/sass/layout/_blocks.scss */
 .book {
   padding-top: 8em;
-}
-
-/* line 20, ../../source/sass/layout/_blocks.scss */
-.book > .titlepage,
-.book > .toc,
-.preface > .titlepage,
-.preface > .section,
-.preface > .para,
-.preface > .toc,
-.chapter > .section,
-.chapter > .para,
-.chapter > .toc {
-  background-image: -webkit-linear-gradient(lightblue 0.05em, transparent 0.05em);
-  background-size: 100% 2em;
 }
 
 /* line 34, ../../source/sass/layout/_blocks.scss */

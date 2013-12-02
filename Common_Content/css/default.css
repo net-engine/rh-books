@@ -259,7 +259,7 @@ sup {
 
 /* line 57, ../../source/sass/typography/_body.scss */
 mark {
-  background-color: #cc0000;
+  background-color: #5bc6e8;
 }
 
 /* line 61, ../../source/sass/typography/_body.scss */
@@ -844,20 +844,6 @@ img {
   padding-top: 8em;
 }
 
-/* line 20, ../../source/sass/layout/_blocks.scss */
-.book > .titlepage,
-.book > .toc,
-.preface > .titlepage,
-.preface > .section,
-.preface > .para,
-.preface > .toc,
-.chapter > .section,
-.chapter > .para,
-.chapter > .toc {
-  background-image: -webkit-linear-gradient(lightblue 0.05em, transparent 0.05em);
-  background-size: 100% 2em;
-}
-
 /* line 34, ../../source/sass/layout/_blocks.scss */
 blockquote.blockquote {
   padding-left: 2em;
@@ -1291,11 +1277,11 @@ table.fixed * {
 
 /* line 22, ../../source/sass/components/_notes_and_warnings.scss */
 .note {
-  border-color: #cc0000;
+  border-color: #5bc6e8;
 }
 /* line 25, ../../source/sass/components/_notes_and_warnings.scss */
 .note .admonition_header {
-  color: #cc0000;
+  color: #5bc6e8;
 }
 
 /* line 30, ../../source/sass/components/_notes_and_warnings.scss */

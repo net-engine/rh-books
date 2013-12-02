@@ -81,7 +81,7 @@ $color-bg-darkest                       : shade($color-bg, 9%);
 
 // Status color variables
 
-$color-highlight                        : $color-link;
+$color-highlight                        : $color-rh-blue;
 $color-success                          : $color-rh-green;
 $color-warning                          : $color-rh-orange;
 $color-unsure                           : shade($color-rh-yellow, 5%);
@@ -189,7 +189,7 @@ $border-light-width:                      thin;
 
 // Debugging
 
-$baseline-grid:                           true;
+$baseline-grid:                           false;
 
 
 // Misc
