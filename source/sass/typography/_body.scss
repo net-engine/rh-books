@@ -1,5 +1,6 @@
 html {
   font-family: $font-family-body;
+  color: $color-base-font;
   line-height: $line-height;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -66,9 +67,12 @@ del {
 }
 
 hr {
+  width: 3em;
   height: 0;
-  padding-top: $line-height;
-  padding-bottom: $line-height;
+  margin-top: $line-height;
+  margin-bottom: $line-height;
   border: none;
   border-top: thin solid;
+  border-top: .125em solid #555;
 }
+

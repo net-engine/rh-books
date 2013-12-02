@@ -10,6 +10,24 @@ kbd,
 .classname,
 .literal {
   font-family: $font-family-mono;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+kbd, .keycap {
+  @include rounded-box(inline-block, true);
+  background: whitesmoke;
+  font-size: 90%;
+  padding: 0 .5em;
+  margin: 0 .25em;
+  border-color: lightgrey;
+}
+
+.para code {
+  display: inline-block;
+  padding: 0 .25em;
+  border-radius: 2px;
+  margin: 0 .125em;
+  color: $color-black;
 }
 
 
@@ -20,12 +38,29 @@ pre {
   color: $code-color;
   border-radius: .25em;
   margin-bottom: 1.7em;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
+// Syntax Highlighting
 
-kbd, .keycap {
-  @include rounded-box(inline-block, true);
-  background: whitesmoke;
-  padding: 0 .5em;
-  border-color: lightgrey;
-}
+// .perl_Alert                { color: $color-danger; }
+// .perl_BaseN                { color: #007f00; }
+// .perl_BString              { color: #5C3566; }
+// .perl_Function             { color: #007f00; }
+// .perl_IString              { color: #5C3566; }
+// .perl_Operator             { color: #ffa500; }
+// .perl_Others               { color: #b03060; }
+// .perl_RegionMarker         { color: #96b9ff; }
+// .perl_Reserved             { color: #9b30ff; }
+
+
+.perl_Char                  { color: orange; }
+.perl_Comment               { color: $color-grey-darkish; }
+.perl_DataType              { color: lightcoral; }
+.perl_DecVal                { color: sienna; }
+.perl_Error                 { color: $color-danger; }
+.perl_Float                 { color: lightskyblue; font-weight: 600; }
+.perl_Keyword               { color: lightsalmon; }
+.perl_String                { color: lightgoldenrodyellow; }
+.perl_Variable              { color: $color-unsure; }
+.perl_Warning               { color: $color-warning; }

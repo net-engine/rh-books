@@ -3,7 +3,7 @@
 
 @import 'settings';
 
-@import 'icons/trove-icons';
+// @import 'icons/trove-icons';
 
 @import 'helpers/layout_helpers',
         'helpers/interactive_helpers';
@@ -43,3 +43,30 @@
     }
   }
 }
+
+
+html {
+  height: 240mm;
+}
+
+body.cover {
+  height: 100%;
+  background-color: white;
+  padding: 0px;
+  font-family: "liberation sans", "Myriad ", "Bitstream Vera Sans", "Lucida Grande", "Luxi Sans", "Trebuchet MS", helvetica, verdana, arial, sans-serif;
+  font-size: 14px;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+
+.titlepage1 {
+  height: 100%;
+  padding-top: 15mm;
+}
+
+// div.draft {
+//   background-image: url(../images/watermark-draft.png);
+//   background-repeat: repeat-y;
+//   background-position: center;
+// }

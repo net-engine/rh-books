@@ -62,9 +62,9 @@ $color-rh-yellow                        : #fecb00;
 $color-primary                          : $color-rh-red1;
 $color-secondary                        : $color-rh-red3;
 $color-tertiary                         : $color-rh-navy;
-$color-base-font                        : #252525;
+$color-base-font                        : $color-grey-darker;
 $color-heading                          : $color-secondary;
-$color-link                             : #4e9fdd;
+$color-link                             : $color-primary;
 $color-link-hover                       : shade($color-link, 20%);
 $color-link-active                      : shade($color-link, 30%);;
 
