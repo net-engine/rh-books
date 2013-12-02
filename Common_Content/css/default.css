@@ -502,6 +502,11 @@ header h6:last-child {
   margin-bottom: 0;
 }
 
+/* line 110, ../../source/sass/typography/_headings.scss */
+.formalpara > .title, .para > .title {
+  line-height: 1.6;
+}
+
 /* line 1, ../../source/sass/typography/_icons.scss */
 [data-icon], [class*="icon-"] {
   font-family: inherit;

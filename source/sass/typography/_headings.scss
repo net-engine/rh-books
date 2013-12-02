@@ -106,3 +106,7 @@ header {
   h5:last-child,
   h6:last-child { margin-bottom: 0; }
 }
+
+.formalpara > .title, .para > .title {
+  line-height: $margin-level-four;
+}
