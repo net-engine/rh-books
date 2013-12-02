@@ -1,0 +1,17 @@
+{
+  "name": "redhat-books",
+  "version": "0.0.1",
+  "authors": [
+    "Rowan Hogan",
+    "Brad Parker"
+  ],
+  "description": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

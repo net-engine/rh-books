@@ -1,0 +1,157 @@
+// # Settings
+
+// ## Typography
+
+$font-family:             'Open Sans', 'Helvetica Neue', sans-serif !default;
+$font-family-body:        $font-family !default;
+$font-family-headings:    $font-family !default;
+$font-family-input:       $font-family !default;
+$font-family-icons:       'trove-icons' !default;
+$font-family-mono:        'Menlo', 'Monaco', 'Courier New', monospace !default;
+
+$font-size:               100% !default;
+$font-size-level-one:     3em !default;
+$font-size-level-two:     1.75em !default;
+$font-size-level-three:   1.5em !default;
+$font-size-level-four:    1.25em !default;
+$font-size-level-five:    1em !default;
+$font-size-level-six:     0.8em !default;
+
+$line-height:             1.7em !default;
+
+$font-weight-normal:      400;
+$font-weight-medium:      600;
+$font-weight-bold:        700;
+
+
+// ## Colours
+
+$color-primary:           hsl(204,44%,54%);
+$color-primary-light:     lighten($color-primary, 30%);
+$color-primary-dark:      darken($color-primary, 30%);
+
+$black:                   hsl(0,0%,9%);
+$white:                   lighten($black, 93.5%);
+$gray-darker:             lighten($black, 13.5%);
+$gray-dark:               lighten($black, 20%);
+$gray:                    lighten($black, 33.5%);
+$gray-light:              lighten($black, 60%);
+$gray-lighter:            lighten($black, 87.5%);
+
+
+// Indicators
+
+$color-success:           hsl(85, 60%, 52%);
+$color-success-light:     lighten($color-success, 35%);
+$color-warning:           hsl(45, 83%, 73%);
+$color-warning-light:     lighten($color-warning, 35%);
+$color-danger:            hsl(357, 88%, 63%);
+$color-danger-light:      lighten($color-danger, 35%);
+$color-info:              red;
+$color-info-light:        lighten($color-info, 35%);
+
+
+// Links
+
+$link-color:                    $color-primary; 
+$link-color-hover:              $color-primary; 
+$link-color-active:             $color-primary; 
+$link-color-visited:            $color-primary; 
+
+$main-link-color:               $link-color;
+$main-link-color-hover:         darken($link-color, 15%);
+$main-link-color-active:        darken($link-color, 25%);
+$main-link-color-visited:       lighten($link-color, 15%);
+
+$footer-link-color:             $link-color;
+$footer-link-color-hover:       darken($link-color, 15%);
+$footer-link-color-active:      darken($link-color, 25%);
+$footer-link-color-visited:     lighten($link-color, 15%);
+
+
+// Buttons
+
+$button-default-foreground-color:        $white;
+$button-default-background-color:        $gray-dark;
+$button-default-border-color:            $gray-darker;
+
+$button-default-hover-foreground-color:  $white;
+$button-default-hover-background-color:  $gray-dark;
+$button-default-hover-border-color:      $gray-darker;
+
+$button-default-active-foreground-color: $white;
+$button-default-active-background-color: $gray-dark;
+$button-default-active-border-color:     $gray-darker;
+
+$button-submit-foreground-color:         $white;
+$button-submit-background-color:         $color-primary;
+$button-submit-border-color:             $color-primary-dark;
+
+$button-danger-foreground-color:          $white;
+$button-danger-background-color:          $gray-dark;
+$button-danger-border-color:              $gray-darker;
+
+
+$button-submit-color:                     $color-primary;
+
+
+// Inputs
+
+$input-foreground-color:        $black;
+$input-background-color:        $white;
+$input-border-color:            $gray-light;
+
+$input-hover-foreground-color:  $color-info;
+$input-hover-background-color:  $color-info-light;
+$input-hover-border-color:      $color-info;
+
+$input-focus-foreground-color:  $black;
+$input-focus-background-color:  $white;
+$input-focus-border-color:      $color-success;
+
+
+// Selects
+
+$select-foreground-color:       $black;
+$select-background-color:       $gray-lighter;
+$select-border-color:           $gray-light;
+
+$select-hover-foreground-color: $color-info;
+$select-hover-background-color: $color-info-light;
+$select-hover-border-color:     $color-info;
+
+$select-focus-foreground-color: $color-success;
+$select-focus-background-color: $color-success-light;
+$select-focus-border-color:     $color-success;
+
+
+// Breakpoints
+
+$breakpoint-small:        32em;
+$breakpoint-medium:       50em;
+$breakpoint-large:        75em;
+
+
+// Layout
+
+$gutter:                  $line-height * 1.5 !default;
+$page-margin:             $line-height * 2 !default;
+$max-width:               $breakpoint-medium !default;
+$center-layout:           true;
+
+
+// Borders
+
+$border-heavy-width:      $line-height / 4;
+$border-medium-width:     $line-height / 8;
+$border-light-width:      thin;
+
+
+// Debugging
+
+$baseline-grid: false;
+
+
+// Misc
+
+$radius: .15em;
