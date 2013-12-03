@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">3.10. RFKill</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Core_Infrastructure.html" title="Chapter 3. Core Infrastructure and Mechanics" /><link rel="prev" href="Enhanced_Graphics_Power_Management.html" title="3.9. Enhanced Graphics Power Management" /><link rel="next" href="Optimizations_in_User_Space.html" title="3.11. Optimizations in User Space" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="Enhanced_Graphics_Power_Management.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="Optimizations_in_User_Space.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="RFKill"></a>3.10. RFKill</h2></div></div></div>
+	 <a id="idm236077440544" class="indexterm"></a>
+	 <a id="idm236077439776" class="indexterm"></a>
+	 <a id="idm236077439008" class="indexterm"></a>
+	 <a id="idm236077437248" class="indexterm"></a>
+	 <div class="para">
+		Many computer systems contain radio transmitters, including Wi-Fi, Bluetooth, and 3G devices. These devices consume power, which is wasted when the device is not in use.
+	</div>
+	 <div class="para">
+		<em class="firstterm">RFKill</em> is a subsystem in the Linux kernel that provides an interface through which radio transmitters in a computer system can be queried, activated, and deactivated. When transmitters are deactivated, they can be placed in a state where software can reactive them (a <em class="firstterm">soft block</em>) or where software cannot reactive them (a <em class="firstterm">hard block</em>).
+	</div>
+	 <div class="para">
+		The RFKill core provides the application programming interface (API) for the subsystem. Kernel drivers that have been designed to support RFkill use this API to register with the kernel, and include methods for enabling and disabling the device. Additionally, the RFKill core provides notifications that user applications can interpret and ways for user applications to query transmitter states.
+	</div>
+	 <div class="para">
+		The RFKill interface is located at <code class="filename">/dev/rfkill</code>, which contains the current state of all radio transmitters on the system. Each device has its current RFKill state registered in <code class="filename">sysfs</code>. Additionally, RFKill issues <em class="firstterm">uevents</em> for each change of state in an RFKill-enabled device.
+	</div>
+	 <div class="para">
+		<span class="application"><strong>Rfkill</strong></span> is a command-line tool with which you can query and change RFKill-enabled devices on the system. To obtain the tool, install the <span class="package">rfkill</span> package.
+	</div>
+	 <div class="para">
+		Use the command <code class="command">rfkill list</code> to obtain a list of devices, each of which has an <em class="firstterm">index number</em> associated with it, starting at <code class="literal">0</code>. You can use this index number to tell <span class="application"><strong>rfkill</strong></span> to block or unblock a device, for example:
+	</div>
+	
+<pre class="screen"><code class="command">rfkill block 0</code></pre>
+	 <div class="para">
+		blocks the first RFKill-enabled device on the system.
+	</div>
+	 <div class="para">
+		You can also use <span class="application"><strong>rfkill</strong></span> to block certain categories of devices, or all RFKill-enabled devices. For example:
+	</div>
+	
+<pre class="screen"><code class="command">rfkill block wifi</code></pre>
+	 <div class="para">
+		blocks all Wi-Fi devices on the system. To block all RFKill-enabled devices, run:
+	</div>
+	
+<pre class="screen"><code class="command">rfkill block all</code></pre>
+	 <div class="para">
+		To unblock devices, run <code class="command">rfkill unblock</code> instead of <code class="command">rfkill block</code>. To obtain a full list of device categories that <span class="application"><strong>rfkill</strong></span> can block, run <code class="command">rfkill help</code>
+	</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="Enhanced_Graphics_Power_Management.html"><strong>Prev</strong>3.9. Enhanced Graphics Power Management</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="Optimizations_in_User_Space.html"><strong>Next</strong>3.11. Optimizations in User Space</a></li></ul></body></html>

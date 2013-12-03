@@ -1,72 +1,20 @@
-@import 'compass',
-        'compass/reset';
+@import 'compass';
 
 @import 'settings';
-
-@import 'icons/redhat-books-icons';
 
 @import 'helpers/layout_helpers',
         'helpers/interactive_helpers';
 
-@import 'decorative/borders';
 
-@import 'typography/body',
-        'typography/code',
-        'typography/headings',
-        'typography/icons',
-        'typography/lists';
-
-@import 'interactive/anchors',
-        'interactive/buttons';
-
-@import 'media/images';
-
-@import 'layout/blocks',
-        'layout/grid',
-        'layout/navigation';
-
-
-
-#tocframe {
-  display: none;
+#tocframe, .docnav {
+  display: none !important;
 }
-
-
-#title {
-  position: relative;
-  overflow: hidden;
-
-  a {
-    &:after {
-      content: attr(href);
-      display: block;
-    }
-  }
-}
-
 
 html {
   height: 240mm;
 }
 
-body.cover {
-  height: 100%;
-  background-color: white;
-  padding: 0px;
-  font-family: "liberation sans", "Myriad ", "Bitstream Vera Sans", "Lucida Grande", "Luxi Sans", "Trebuchet MS", helvetica, verdana, arial, sans-serif;
-  font-size: 14px;
-  margin: 0 auto;
-  max-width: 100%;
-}
-
-
 .titlepage1 {
   height: 100%;
   padding-top: 15mm;
 }
-
-// div.draft {
-//   background-image: url(../images/watermark-draft.png);
-//   background-repeat: repeat-y;
-//   background-position: center;
-// }

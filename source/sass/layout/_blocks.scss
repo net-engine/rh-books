@@ -1,6 +1,8 @@
-#title, .book, .container {
+
+%container {
   max-width: $max-width;
-  padding: $page-margin;
+  padding-left: $page-margin;
+  padding-right: $page-margin;
 
   @if $center-layout {
     margin-left: auto;
@@ -8,13 +10,25 @@
   }
 
   @media screen and (max-width: $max-width) {
-    padding: $page-margin ($page-margin * .5);
+    padding-left: ($page-margin * .5);
+    padding-right: ($page-margin * .5);
   }
 }
 
-.book {
-  padding-top: $page-margin * 2;
+
+#title, .book, .docnav {
+  @extend %container;
 }
+
+body {
+  > .preface,
+  > .section,
+  > .chapter,
+  > .appendix {
+    @extend %container;
+  }
+}
+
 
 @if $baseline-grid {
   .book > .titlepage,

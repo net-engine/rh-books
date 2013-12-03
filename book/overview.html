@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">Chapter 1. Overview</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="index.html" title="Power Management Guide" /><link rel="prev" href="sect-RedHat-We_Need_Feedback.html" title="2.2. We Need Feedback!" /><link rel="next" href="basics.html" title="1.2. Power Management Basics" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="sect-RedHat-We_Need_Feedback.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="basics.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="chapter" lang="en-US"><div class="titlepage"><div><div><h1 class="title"><a id="overview"></a>Chapter 1. Overview</h1></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="overview.html#intro_importance">1.1. Importance of Power Management</a></span></dt><dt><span class="section"><a href="basics.html">1.2. Power Management Basics</a></span></dt></dl></div>
+	 <div class="para">
+		Power management has been one of our focus points for improvements for Red Hat Enterprise Linux 6. Limiting the power used by computer systems is one of the most important aspects of <em class="firstterm">green IT</em> (environmentally friendly computing), a set of considerations that also encompasses the use of recyclable materials, the environmental impact of hardware production, and environmental awareness in the design and deployment of systems. In this document, we provide guidance and information regarding power management of your systems running Red Hat Enterprise Linux 6.
+	</div>
+	 <div class="section"><div class="titlepage"><div><div><h2 class="title"><a id="intro_importance"></a>1.1. Importance of Power Management</h2></div></div></div>
+		 <a id="idm236078228224" class="indexterm"></a>
+		 <a id="idm236078227200" class="indexterm"></a>
+		 <div class="para">
+			At the core of power management is an understanding of how to effectively optimize energy consumption of each system component. This entails studying the different tasks that your system performs, and configuring each component to ensure that its performance is just right for the job.
+		</div>
+		 <div class="para">
+			The main motivator for power management is:
+		</div>
+		 <div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+				<div class="para">
+					reducing overall power consumption to save cost
+				</div>
+			</li></ul></div>
+		 <div class="para">
+			The proper use of power management results in:
+		</div>
+		 <div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+				<div class="para">
+					heat reduction for servers and computing centers
+				</div>
+			</li><li class="listitem">
+				<div class="para">
+					reduced secondary costs, including cooling, space, cables, generators, and <em class="firstterm">uninterruptible power supplies</em> (UPS)
+				</div>
+			</li><li class="listitem">
+				<div class="para">
+					extended battery life for laptops
+				</div>
+			</li><li class="listitem">
+				<div class="para">
+					lower carbon dioxide output
+				</div>
+			</li><li class="listitem">
+				<div class="para">
+					meeting government regulations or legal requirements regarding Green IT, for example Energy Star
+				</div>
+			</li><li class="listitem">
+				<div class="para">
+					meeting company guidelines for new systems
+				</div>
+			</li></ul></div>
+		 <div class="para">
+			As a rule, lowering the power consumption of a specific component (or of the system as a whole) will lead to lower heat and naturally, performance. As such, you should thoroughly study and test the decrease in performance afforded by any configurations you make, especially for mission-critical systems.
+		</div>
+		 <div class="para">
+			By studying the different tasks that your system performs, and configuring each component to ensure that its performance is just sufficient for the job, you can save energy, generate less heat, and optimize battery life for laptops. Many of the principles for analysis and tuning of a system in regard to power consumption are similar to those for performance tuning. To some degree, power management and performance tuning are opposite approaches to system configuration, because systems are usually optimized either towards performance or power. This manual describes the tools that Red Hat provides and the techniques we have developed to help you in this process.
+		</div>
+		 <div class="para">
+			Red Hat Enterprise Linux 6 already comes with a lot of new power management features that are enabled by default. They were all selectively chosen to not impact the performance of a typical server or desktop use case. However, for very specific use cases where maximum throughput, lowest latency, or highest CPU performance is absolutely required, a review of those defaults might be necessary.
+		</div>
+		 <div class="para">
+			To decide whether you should optimize your machines using the techniques described in this document, ask yourself a few questions:
+		</div>
+		 <div class="qandaset"><a id="idm236078213104"></a><dl><dt>Q: <a href="overview.html#idm236078212848">
+						Must I optimize?
+					</a></dt><dt>Q: <a href="overview.html#idm236078210352">
+						How much do I need to optimize?
+					</a></dt><dt>Q: <a href="overview.html#idm236078207712">
+						Will optimization reduce system performance to an unacceptable level?
+					</a></dt><dt>Q: <a href="overview.html#idm236078206272">
+						Will the time and resources spent to optimize the system outweigh the gains achieved?
+					</a></dt></dl><div xmlns:d="http://docbook.org/ns/docbook" class="qandaset">
+			<div class="qandaentry">
+				<div class="question"><a id="idm236078212848"></a><div class="label">Q:</div><div class="data">
+					<div class="para">
+						Must I optimize?
+					</div>
+
+				</div></div>
+				 <div class="answer"><div class="label">A:</div><div class="data">
+					<div class="para">
+						The importance of power optimization depends on whether your company has guidelines that need to be followed or if there are any regulations that you have to fulfill.
+					</div>
+
+				</div></div>
+
+			</div>
+			 <div class="qandaentry">
+				<div class="question"><a id="idm236078210352"></a><div class="label">Q:</div><div class="data">
+					<div class="para">
+						How much do I need to optimize?
+					</div>
+
+				</div></div>
+				 <div class="answer"><div class="label">A:</div><div class="data">
+					<div class="para">
+						Several of the techniques we present do not require you to go through the whole process of auditing and analyzing your machine in detail but instead offer a set of general optimizations that typically improve power usage. Those will of course typically not be as good as a manually audited and optimized system, but provide a good compromise.
+					</div>
+
+				</div></div>
+
+			</div>
+			 <div class="qandaentry">
+				<div class="question"><a id="idm236078207712"></a><div class="label">Q:</div><div class="data">
+					<div class="para">
+						Will optimization reduce system performance to an unacceptable level?
+					</div>
+
+				</div></div>
+				 <div class="answer"><div class="label">A:</div><div class="data">
+					<div class="para">
+						Most of the techniques described in this document impact the performance of your system noticeably. If you choose to implement power management beyond the defaults already in place in Red Hat Enterprise Linux 6, you should monitor the performance of the system after power optimization and decide if the performance loss is acceptable.
+					</div>
+
+				</div></div>
+
+			</div>
+			 <div class="qandaentry">
+				<div class="question"><a id="idm236078206272"></a><div class="label">Q:</div><div class="data">
+					<div class="para">
+						Will the time and resources spent to optimize the system outweigh the gains achieved?
+					</div>
+
+				</div></div>
+				 <div class="answer"><div class="label">A:</div><div class="data">
+					<div class="para">
+						Optimizing a single system manually following the whole process is typically not worth it as the time and cost spent doing so is far higher than the typical benefit you would get over the lifetime of a single machine. On the other hand if you for example roll out 10000 desktop systems to your offices all using the same configuration and setup then creating one optimized setup and applying that to all 10000 machines is most likely a good idea.
+					</div>
+
+				</div></div>
+
+			</div>
+
+		</div></div>
+		 <div class="para">
+			The following sections will explain how optimal hardware performance benefits your system in terms of energy consumption.
+		</div>
+
+	</div>
+	
+	 
+	 
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="sect-RedHat-We_Need_Feedback.html"><strong>Prev</strong>2.2. We Need Feedback!</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="basics.html"><strong>Next</strong>1.2. Power Management Basics</a></li></ul></body></html>

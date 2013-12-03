@@ -23,27 +23,27 @@ module.exports = function(grunt) {
       dist: {
         options: {
           sassDir: 'source/sass',
-          cssDir: 'Common_Content/css/',
+          cssDir: 'book/Common_Content/css/',
           environment: 'production'
         }
       },
       dev: {
         options: {
           sassDir: 'source/sass',
-          cssDir: 'Common_Content/css/'
+          cssDir: 'book/Common_Content/css/'
         }
       }
     },
     webfont: {
       icons: {
         src: 'source/icons/svg/*',
-        dest: 'dist/icons',
+        dest: 'book/Common_Content/icons',
         destCss: 'source/sass/icons',
         options: {
           font: 'redhat-books-icons',
           stylesheet: 'scss',
           syntax: 'bootstrap',
-          relativeFontPath: '/dist/icons'
+          relativeFontPath: '/book/Common_Content/icons'
         }
       }
     }

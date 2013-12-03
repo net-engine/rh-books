@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* line 5, ../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -21,57 +21,58 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../.rbenv/versions/2.0.0-p0/lib/ruby/gems/2.0.0/gems/compass-0.13.alpha.12/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../.rvm/gems/ruby-2.0.0-p0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
 @font-face {
   font-family: "redhat-books-icons";
-  src: url("/dist/icons/redhat-books-icons-c55a104606debf0fdcdb84d3b5f33bed.eot");
-  src: url("/dist/icons/redhat-books-icons-c55a104606debf0fdcdb84d3b5f33bed.eot?#iefix") format("embedded-opentype"), url("/dist/icons/redhat-books-icons-c55a104606debf0fdcdb84d3b5f33bed.woff") format("woff"), url("/dist/icons/redhat-books-icons-c55a104606debf0fdcdb84d3b5f33bed.ttf") format("truetype"), url("/dist/icons/redhat-books-icons-c55a104606debf0fdcdb84d3b5f33bed.svg?#redhat-books-icons") format("svg");
+  src: url("/dist/icons/redhat-books-icons-f0300dd9be5ec1439cc648fa0e361814.eot");
+  src: url("/dist/icons/redhat-books-icons-f0300dd9be5ec1439cc648fa0e361814.eot?#iefix") format("embedded-opentype"), url("/dist/icons/redhat-books-icons-f0300dd9be5ec1439cc648fa0e361814.woff") format("woff"), url("/dist/icons/redhat-books-icons-f0300dd9be5ec1439cc648fa0e361814.ttf") format("truetype"), url("/dist/icons/redhat-books-icons-f0300dd9be5ec1439cc648fa0e361814.svg?#redhat-books-icons") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-/* line 17, ../../source/sass/icons/_redhat-books-icons.scss */
+
+/* line 18, ../../source/sass/icons/_redhat-books-icons.scss */
 [class^="icon-"]:before,
 [class*=" icon-"]:before {
   font-family: "redhat-books-icons";
@@ -91,13 +92,18 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   content: "\f100";
 }
 
+/* line 40, ../../source/sass/icons/_redhat-books-icons.scss */
+.icon-book:before, #title .right:before {
+  content: "\f101";
+}
+
 /* line 1, ../../source/sass/helpers/_layout_helpers.scss */
 .buttons {
   zoom: 1;
   display: block;
   clear: both;
 }
-/* line 6, ../../source/sass/helpers/_layout_helpers.scss */
+/* line 7, ../../source/sass/helpers/_layout_helpers.scss */
 .buttons:before, .buttons:after {
   content: "";
   display: table;
@@ -109,13 +115,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 
 /* line 23, ../../source/sass/helpers/_interactive_helpers.scss */
 .pill {
-  -moz-appearance: none;
   -webkit-appearance: none;
-  -moz-box-sizing: border-box;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-border-radius: 0.15em;
   -webkit-border-radius: 0.15em;
+  -moz-border-radius: 0.15em;
+  -ms-border-radius: 0.15em;
+  -o-border-radius: 0.15em;
   border-radius: 0.15em;
   position: relative;
   display: inline-block;
@@ -207,7 +216,7 @@ cite,
   font-style: italic;
 }
 
-/* line 22, ../../source/sass/typography/_body.scss */
+/* line 23, ../../source/sass/typography/_body.scss */
 b,
 strong {
   font-weight: 700;
@@ -283,7 +292,7 @@ hr {
   border-top: .125em solid #555;
 }
 
-/* line 2, ../../source/sass/typography/_code.scss */
+/* line 11, ../../source/sass/typography/_code.scss */
 pre,
 code,
 var,
@@ -300,13 +309,16 @@ kbd,
 
 /* line 16, ../../source/sass/typography/_code.scss */
 kbd, .keycap {
-  -moz-appearance: none;
   -webkit-appearance: none;
-  -moz-box-sizing: border-box;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-border-radius: 0.15em;
   -webkit-border-radius: 0.15em;
+  -moz-border-radius: 0.15em;
+  -ms-border-radius: 0.15em;
+  -o-border-radius: 0.15em;
   border-radius: 0.15em;
   position: relative;
   display: inline-block;
@@ -452,7 +464,7 @@ h6 {
   line-height: 5em;
 }
 
-/* line 64, ../../source/sass/typography/_headings.scss */
+/* line 99, ../../source/sass/typography/_headings.scss */
 h1 + h1,
 h1 + h2,
 h1 + h3,
@@ -492,7 +504,7 @@ h6 + h6 {
   margin-top: 0;
 }
 
-/* line 102, ../../source/sass/typography/_headings.scss */
+/* line 107, ../../source/sass/typography/_headings.scss */
 header h1:last-child,
 header h2:last-child,
 header h3:last-child,
@@ -508,11 +520,11 @@ header h6:last-child {
 }
 
 /* line 1, ../../source/sass/typography/_icons.scss */
-[data-icon], [class*="icon-"] {
+[data-icon], [class*="icon-"], #title .right {
   font-family: inherit;
 }
 /* line 4, ../../source/sass/typography/_icons.scss */
-[data-icon]:before, [class*="icon-"]:before {
+[data-icon]:before, [class*="icon-"]:before, #title .right:before {
   font-family: "redhat-books-icons";
   speak: none;
   font-style: normal;
@@ -525,7 +537,7 @@ header h6:last-child {
 }
 
 /* line 22, ../../source/sass/typography/_icons.scss */
-.icon-only {
+.icon-only, #title .right {
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -537,7 +549,7 @@ header h6:last-child {
   overflow: hidden;
 }
 /* line 32, ../../source/sass/typography/_icons.scss */
-.icon-only:before {
+.icon-only:before, #title .right:before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -693,13 +705,16 @@ footer a:visited {
 button,
 input[type="submit"],
 input[type="button"] {
-  -moz-appearance: none;
   -webkit-appearance: none;
-  -moz-box-sizing: border-box;
+  -moz-appearance: none;
+  appearance: none;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  -moz-border-radius: 0.15em;
   -webkit-border-radius: 0.15em;
+  -moz-border-radius: 0.15em;
+  -ms-border-radius: 0.15em;
+  -o-border-radius: 0.15em;
   border-radius: 0.15em;
   position: relative;
   display: inline-block;
@@ -744,7 +759,7 @@ input[type="button"]:active {
   background-color: #4d4d4d;
   border-color: #333333;
 }
-/* line 34, ../../source/sass/interactive/_buttons.scss */
+/* line 36, ../../source/sass/interactive/_buttons.scss */
 [disabled="disabled"].button,
 button[disabled="disabled"],
 input[disabled="disabled"][type="submit"],
@@ -768,7 +783,7 @@ input.icon-only[type="button"] {
   padding: 0;
 }
 
-/* line 56, ../../source/sass/interactive/_buttons.scss */
+/* line 57, ../../source/sass/interactive/_buttons.scss */
 input[type="submit"],
 button[type='submit'] {
   background: #cc0000;
@@ -830,26 +845,27 @@ img {
   max-width: 100%;
 }
 
-/* line 1, ../../source/sass/layout/_blocks.scss */
-#title, .book, .container {
+/* line 2, ../../source/sass/layout/_blocks.scss */
+.book, .docnav, body > .section,
+body > .chapter,
+body > .appendix {
   max-width: 50em;
-  padding: 4em;
+  padding-left: 4em;
+  padding-right: 4em;
   margin-left: auto;
   margin-right: auto;
 }
 @media screen and (max-width: 50em) {
-  /* line 1, ../../source/sass/layout/_blocks.scss */
-  #title, .book, .container {
-    padding: 4em 2em;
+  /* line 2, ../../source/sass/layout/_blocks.scss */
+  .book, .docnav, body > .section,
+  body > .chapter,
+  body > .appendix {
+    padding-left: 2em;
+    padding-right: 2em;
   }
 }
 
-/* line 15, ../../source/sass/layout/_blocks.scss */
-.book {
-  padding-top: 8em;
-}
-
-/* line 34, ../../source/sass/layout/_blocks.scss */
+/* line 47, ../../source/sass/layout/_blocks.scss */
 blockquote.blockquote {
   padding-left: 2em;
   border-left: 0.66667em solid #e6e6e6;
@@ -857,8 +873,8 @@ blockquote.blockquote {
 
 /* line 9, ../../source/sass/layout/_grid.scss */
 .one-half {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
@@ -898,8 +914,8 @@ blockquote.blockquote {
 
 /* line 42, ../../source/sass/layout/_grid.scss */
 .one-third {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
@@ -936,8 +952,8 @@ blockquote.blockquote {
 
 /* line 71, ../../source/sass/layout/_grid.scss */
 .two-thirds {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
@@ -957,8 +973,8 @@ blockquote.blockquote {
 
 /* line 86, ../../source/sass/layout/_grid.scss */
 .one-quarter {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
@@ -1008,8 +1024,8 @@ blockquote.blockquote {
 
 /* line 124, ../../source/sass/layout/_grid.scss */
 .three-quarters {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
   vertical-align: top;
@@ -1095,17 +1111,20 @@ blockquote.blockquote {
 /* line 2, ../../source/sass/layout/_navigation.scss */
 #title {
   position: fixed;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  padding-top: 1em 4em;
   top: 0;
   left: 0;
   right: 0;
   background: white;
   z-index: 10000;
 }
-/* line 11, ../../source/sass/layout/_navigation.scss */
+/* line 10, ../../source/sass/layout/_navigation.scss */
 #title .left {
   float: left;
+}
+/* line 12, ../../source/sass/layout/_navigation.scss */
+#title .left img {
+  display: block;
 }
 /* line 15, ../../source/sass/layout/_navigation.scss */
 #title .right {
@@ -1218,14 +1237,14 @@ table th {
 /* line 49, ../../source/sass/components/_table.scss */
 table.fixed {
   table-layout: fixed;
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 /* line 52, ../../source/sass/components/_table.scss */
 table.fixed * {
-  -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 

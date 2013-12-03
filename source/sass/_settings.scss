@@ -94,8 +94,8 @@ $code-color                             : $color-grey-light;
 
 // Links
 
-$link-color:                              $color-primary; 
-$link-color-hover:                        darken($link-color, 15%); 
+$link-color:                              $color-primary;
+$link-color-hover:                        darken($link-color, 15%);
 $link-color-active:                       darken($link-color, 25%);
 $link-color-visited:                      lighten($link-color, 15%);
 
@@ -173,6 +173,8 @@ $breakpoint-large:                        75em;
 
 
 // Layout
+
+$title-height: 2.5em;
 
 $gutter:                                  $line-height * 1.5 !default;
 $page-margin:                             $line-height * 2 !default;

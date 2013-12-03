@@ -1,12 +1,29 @@
 
+// body {
+//   padding-top: $title-height + $gutter;
+// }
+
+// #title {
+//   position: fixed;
+//   padding-top: ($page-margin / 4);
+//   padding-bottom: ($page-margin / 4);
+//   top: 0;
+//   left: 0; right: 0;
+//   background: $color-white;
+//   z-index: 10000;
+//   height: $title-height;
+// }
+
+
 #title {
-  position: fixed;
-  padding-top: $page-margin / 4;
-  padding-bottom: $page-margin / 4;
-  top: 0;
-  left: 0; right: 0;
-  background: $color-white;
-  z-index: 10000;
+  @extend %clearfix;
+  padding-top: ($page-margin / 4);
+  padding-bottom: ($page-margin / 4);
+  height: $title-height;
+
+  .left, .right {
+    img { display: block; }
+  }
 
   .left {
     float: left;
@@ -15,5 +32,83 @@
   .right {
     float: right;
     text-align: right;
+  }
+}
+
+
+.docnav {
+  @extend %clearfix;
+  position: relative;
+  padding-top: ($page-margin / 4);
+  padding-bottom: $page-margin * 2;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+  }
+
+  .previous, .next {
+    position: absolute;
+    top: ($page-margin / 4);
+    max-width: 35%;
+
+    a {
+      line-height: 1.5em;
+      strong {
+        display: block;
+        @extend %icon;
+
+        &:before {
+          display: inline-block;
+        }
+      }
+    }
+
+  }
+
+  .home {
+    margin: auto;
+  }
+
+  .previous {
+    left: $page-margin;
+    text-align: left;
+
+    a strong {
+      @extend .icon-arrow-left;
+    }
+  }
+
+  .next {
+    right: $page-margin;
+    text-align: right;
+
+    a strong {
+      @extend .icon-arrow-right;
+      direction: rtl;
+
+      &:before {
+        margin: 0 0 0 .5em;
+      }
+    }
+  }
+
+  .up {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    height: $page-margin / 2;
+    width: 3em;
+    margin-left: -1.5em;
+
+    a {
+      display: block;
+      background: $color-primary;
+      color: $color-white;
+    }
+  }
+
+  &.top {
+    padding-bottom: ($page-margin / 4);
   }
 }

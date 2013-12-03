@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">Power Management Guide</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="next" href="pref-blank-Preface.html" title="Preface" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="pref-blank-Preface.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="book" lang="en-US"><div class="titlepage"><div><div class="producttitle"><span xmlns:d="http://docbook.org/ns/docbook" class="productname">Red Hat Enterprise Linux</span> <span xmlns:d="http://docbook.org/ns/docbook" class="productnumber">6</span></div><div><h1 class="title"><a id="idm236078819088"></a>Power Management Guide</h1></div><div><h2 class="subtitle">Managing power consumption on Red Hat Enterprise Linux </h2></div><p xmlns:d="http://docbook.org/ns/docbook" class="edition">Edition 1.0</p><div><div xml:lang="en-US" class="authorgroup" lang="en-US">
+	 <div class="author"><h3 class="author">
+		<span class="orgname">Red Hat Inc.</span>
+	</h3></div>
+	 <div class="author"><h3 class="author"><span class="firstname">Don</span> <span class="surname">Domingo</span></h3><div class="affiliation">
+			<span xmlns:d="http://docbook.org/ns/docbook" class="orgname">Red Hat</span>
+			  <span xmlns:d="http://docbook.org/ns/docbook" class="orgdiv">Engineering Content Services</span>
+
+		</div></div>
+	 <div class="author"><h3 class="author"><span class="firstname">Ruediger</span> <span class="surname">Landmann</span></h3><div class="affiliation">
+			<span xmlns:d="http://docbook.org/ns/docbook" class="orgname">Red Hat</span>
+			  <span xmlns:d="http://docbook.org/ns/docbook" class="orgdiv">Engineering Content Services</span>
+
+		</div><code class="email"><a class="email" href="mailto:r.landmann@redhat.com">r.landmann@redhat.com</a></code></div>
+</div></div><div><div class="author"><h3 class="author">
+	<span class="orgname"> <span class="inlinemediaobject"><object data="Common_Content/images/title_logo.svg" type="image/svg+xml"><img src="Common_Content/images/title_logo.png" alt="&#10;&#9;&#9;&#9;Logo&#10;&#9;&#9;" /></object></span>
+	 </span>
+</h3></div></div><div><div class="legalnotice"><a id="idm236078289680"></a><h1 class="legalnotice">Legal Notice</h1>
+	 <div class="para">
+		Copyright <span class="trademark"></span>© 2010 Red Hat Inc..
+	</div>
+	 <div class="para">
+		The text of and illustrations in this document are licensed by Red Hat under a Creative Commons Attribution–Share Alike 3.0 Unported license ("CC-BY-SA"). An explanation of CC-BY-SA is available at <code class="uri"><a class="uri" href="http://creativecommons.org/licenses/by-sa/3.0/">http://creativecommons.org/licenses/by-sa/3.0/</a></code>. In accordance with CC-BY-SA, if you distribute this document or an adaptation of it, you must provide the URL for the original version.
+	</div>
+	 <div class="para">
+		Red Hat, as the licensor of this document, waives the right to enforce, and agrees not to assert, Section 4d of CC-BY-SA to the fullest extent permitted by applicable law.
+	</div>
+	 <div class="para">
+		Red Hat, Red Hat Enterprise Linux, the Shadowman logo, JBoss, MetaMatrix, Fedora, the Infinity Logo, and RHCE are trademarks of Red Hat, Inc., registered in the United States and other countries.
+	</div>
+	 <div class="para">
+		<span class="trademark">Linux</span>® is the registered trademark of Linus Torvalds in the United States and other countries.
+	</div>
+	 <div class="para">
+		<span class="trademark">Java</span>® is a registered trademark of Oracle and/or its affiliates.
+	</div>
+	 <div class="para">
+		<span class="trademark">XFS</span>® is a trademark of Silicon Graphics International Corp. or its subsidiaries in the United States and/or other countries.
+	</div>
+	 <div class="para">
+		<span class="trademark">MySQL</span>® is a registered trademark of MySQL AB in the United States, the European Union and other countries.
+	</div>
+	 <div class="para">
+		<span class="trademark">Node.js</span>® is an official trademark of Joyent. Red Hat Software Collections is not formally related to or endorsed by the official Joyent Node.js open source or commercial project.
+	</div>
+	 <div class="para">
+		The <span class="trademark">OpenStack</span>® Word Mark and OpenStack Logo are either registered trademarks/service marks or trademarks/service marks of the OpenStack Foundation, in the United States and other countries and are used with the OpenStack Foundation's permission. We are not affiliated with, endorsed or sponsored by the OpenStack Foundation, or the OpenStack community.
+	</div>
+	 <div class="para">
+		All other trademarks are the property of their respective owners.
+	</div>
+
+</div></div></div></div><div class="toc"><dl class="toc"><dt><span class="preface"><a href="pref-blank-Preface.html">Preface</a></span></dt><dd><dl><dt><span class="section"><a href="pref-blank-Preface.html#idm236164075568">1. Document Conventions</a></span></dt><dd><dl><dt><span class="section"><a href="pref-blank-Preface.html#idm236163710864">1.1. Typographic Conventions</a></span></dt><dt><span class="section"><a href="pref-blank-Preface.html#idm236163710224">1.2. Pull-quote Conventions</a></span></dt><dt><span class="section"><a href="pref-blank-Preface.html#idm236078259360">1.3. Notes and Warnings</a></span></dt></dl></dd><dt><span class="section"><a href="sect_RedHat-Getting_Help_and_Giving_Feedback.html">2. Getting Help and Giving Feedback</a></span></dt><dd><dl><dt><span class="section"><a href="sect_RedHat-Getting_Help_and_Giving_Feedback.html#sect_RedHat-Do_You_Need_Help">2.1. Do You Need Help?</a></span></dt><dt><span class="section"><a href="sect-RedHat-We_Need_Feedback.html">2.2. We Need Feedback!</a></span></dt></dl></dd></dl></dd><dt><span class="chapter"><a href="overview.html">1. Overview</a></span></dt><dd><dl><dt><span class="section"><a href="overview.html#intro_importance">1.1. Importance of Power Management</a></span></dt><dt><span class="section"><a href="basics.html">1.2. Power Management Basics</a></span></dt></dl></dd><dt><span class="chapter"><a href="Audit_and_Analysis.html">2. Power management auditing and analysis</a></span></dt><dd><dl><dt><span class="section"><a href="Audit_and_Analysis.html#Audit_and_analysis_overview">2.1. Audit and analysis overview</a></span></dt><dt><span class="section"><a href="PowerTOP.html">2.2. PowerTOP</a></span></dt><dt><span class="section"><a href="diskdevstat_and_netdevstat.html">2.3. Diskdevstat and netdevstat</a></span></dt><dt><span class="section"><a href="BLTK.html">2.4. Battery Life Tool Kit</a></span></dt><dt><span class="section"><a href="Tuned.html">2.5. Tuned and ktune</a></span></dt><dd><dl><dt><span class="section"><a href="Tuned.html#The_tuned.conf_file">2.5.1. The <code class="filename">tuned.conf</code> file</a></span></dt><dt><span class="section"><a href="tuned-adm.html">2.5.2. Tuned-adm</a></span></dt></dl></dd><dt><span class="section"><a href="devicekit-power.html">2.6. DeviceKit-power and devkit-power</a></span></dt><dt><span class="section"><a href="gnome-power-manager.html">2.7. GNOME Power Manager</a></span></dt><dt><span class="section"><a href="Other_auditing.html">2.8. Other means for auditing</a></span></dt></dl></dd><dt><span class="chapter"><a href="Core_Infrastructure.html">3. Core Infrastructure and Mechanics</a></span></dt><dd><dl><dt><span class="section"><a href="Core_Infrastructure.html#C-States">3.1. CPU Idle States</a></span></dt><dt><span class="section"><a href="cpufreq_governors.html">3.2. Using <code class="command">CPUfreq</code> Governors</a></span></dt><dd><dl><dt><span class="section"><a href="cpufreq_governors.html#governor_types">3.2.1. CPUfreq Governor Types</a></span></dt><dt><span class="section"><a href="cpufreq_setup.html">3.2.2. CPUfreq Setup</a></span></dt><dt><span class="section"><a href="tuning_cpufreq_policy_and_speed.html">3.2.3. Tuning CPUfreq Policy and Speed</a></span></dt></dl></dd><dt><span class="section"><a href="Suspend_and_Resume.html">3.3. Suspend and Resume</a></span></dt><dt><span class="section"><a href="Tickless-kernel.html">3.4. Tickless Kernel</a></span></dt><dt><span class="section"><a href="ASPM.html">3.5. Active-State Power Management</a></span></dt><dt><span class="section"><a href="ALPM.html">3.6. Aggressive Link Power Management</a></span></dt><dt><span class="section"><a href="Relatime.html">3.7. Relatime Drive Access Optimization</a></span></dt><dt><span class="section"><a href="Power_Capping.html">3.8. Power Capping</a></span></dt><dt><span class="section"><a href="Enhanced_Graphics_Power_Management.html">3.9. Enhanced Graphics Power Management</a></span></dt><dt><span class="section"><a href="RFKill.html">3.10. RFKill</a></span></dt><dt><span class="section"><a href="Optimizations_in_User_Space.html">3.11. Optimizations in User Space</a></span></dt></dl></dd><dt><span class="chapter"><a href="Use_Cases.html">4. Use Cases</a></span></dt><dd><dl><dt><span class="section"><a href="Use_Cases.html#Example_Server">4.1. Example â Server</a></span></dt><dt><span class="section"><a href="Example_Laptop.html">4.2. Example â Laptop</a></span></dt></dl></dd><dt><span class="appendix"><a href="Developer_Tips.html">A. Tips for Developers</a></span></dt><dd><dl><dt><span class="section"><a href="Developer_Tips.html#Developer_Tips-Threads">A.1. Using Threads</a></span></dt><dt><span class="section"><a href="Developer_Tips-Wake-ups.html">A.2. Wake-ups</a></span></dt><dt><span class="section"><a href="Developer_Tips-Fsync.html">A.3. Fsync</a></span></dt></dl></dd><dt><span class="appendix"><a href="appe-Publican-Revision_History.html">B. Revision History</a></span></dt></dl></div>
+	 
+	 
+	 
+	  
+	 
+	 
+	 
+	 
+	 
+</div><ul class="docnav"><li class="previous"></li><li class="next"><a accesskey="n" href="pref-blank-Preface.html"><strong>Next</strong>Preface</a></li></ul></body></html>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">1.2. Power Management Basics</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="overview.html" title="Chapter 1. Overview" /><link rel="prev" href="overview.html" title="Chapter 1. Overview" /><link rel="next" href="Audit_and_Analysis.html" title="Chapter 2. Power management auditing and analysis" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="overview.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="Audit_and_Analysis.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="basics"></a>1.2. Power Management Basics</h2></div></div></div>
+	 <a id="idm236078200176" class="indexterm"></a>
+	 <a id="idm236078197984" class="indexterm"></a>
+	 <div class="para">
+		Effective power management is built on the following principles:
+	</div>
+	 <a id="idm236078196288" class="indexterm"></a>
+	 <a id="idm236078194752" class="indexterm"></a>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">An idle CPU should only wake up when needed</div> 
+			The Red Hat Enterprise Linux 5 kernel used a periodic timer for each CPU. This timer prevents the CPU from truly going idle, as it requires the CPU to process each timer event (which would happen every few milliseconds, depending on the setting), regardless of whether any process was running or not. A large part of effective power management involves reducing the frequency at which CPU wakeups are made.
+		
+
+	</div>
+	 <div class="para">
+		Because of this, the Linux kernel in Red Hat Enterprise Linux 6 eliminates the periodic timer: as a result, the idle state of a CPU is now <em class="firstterm">tickless</em>. This prevents the CPU from consuming unnecessary power when it is idle. However, benefits from this feature can be offset if your system has applications that create unnecessary timer events. Polling events (such as checks for volume changes, mouse movement, and the like) are examples of such events.
+	</div>
+	 <div class="para">
+		Red Hat Enterprise Linux 6 includes tools with which you can identify and audit applications on the basis of their CPU usage. Refer to <a class="xref" href="Audit_and_Analysis.html">Chapter 2, <em>Power management auditing and analysis</em></a> for details.
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Unused hardware and devices should be disabled completely</div> 
+			This is especially true for devices that have moving parts (for example, hard disks). In addition to this, some applications may leave an unused but enabled device "open"; when this occurs, the kernel assumes that the device is in use, which can prevent the device from going into a power saving state.
+		
+
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Low activity should translate to low wattage</div> 
+			In many cases, however, this depends on modern hardware and correct BIOS configuration. Older system components often do not have support for some of the new features that we now can support in Red Hat Enterprise Linux 6. Make sure that you are using the latest official firmware for your systems and that in the power management or device configuration sections of the BIOS the power management features are enabled. Some features to look for include:
+		
+
+	</div>
+	 <div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+			<div class="para">
+				SpeedStep
+			</div>
+		</li><li class="listitem">
+			<div class="para">
+				PowerNow!
+			</div>
+		</li><li class="listitem">
+			<div class="para">
+				Cool'n'Quiet
+			</div>
+		</li><li class="listitem">
+			<div class="para">
+				ACPI (C state)
+			</div>
+		</li><li class="listitem">
+			<div class="para">
+				Smart
+			</div>
+		</li></ul></div>
+	 <div class="para">
+		If your hardware has support for these features and they are enabled in the BIOS, Red Hat Enterprise Linux 6 will use them by default.
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Different forms of CPU states and their effects</div> 
+			Modern CPUs together with <em class="firstterm">Advanced Configuration and Power Interface</em> (ACPI) provide different power states. The three different states are:
+		
+
+	</div>
+	 <div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+			<div class="para">
+				Sleep (C-states)
+			</div>
+		</li><li class="listitem">
+			<div class="para">
+				Frequency (P-states)
+			</div>
+		</li><li class="listitem">
+			<div class="para">
+				Heat output (T-states or "thermal states")
+			</div>
+		</li></ul></div>
+	 <div class="para">
+		A CPU running on the lowest sleep state possible consumes the least amount of watts, but it also takes considerably more time to wake it up from that state when needed. In very rare cases this can lead to the CPU having to wake up immediately every time it just went to sleep. This situation results in an effectively permanently busy CPU and loses some of the potential power saving if another state had been used.
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">A turned off machine uses the least amount of power</div> 
+			As obvious as this might sound, one of the best ways to actually save power is to turn off systems. For example, your company can develop a corporate culture focused on "green IT" awareness with a guideline to turn of machines during lunch break or when going home. You also might consolidate several physical servers into one bigger server and virtualize them using the virtualization technology we ship with Red Hat Enterprise Linux 6.
+		
+
+	</div>
+	  
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="overview.html"><strong>Prev</strong>Chapter 1. Overview</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="Audit_and_Analysis.html"><strong>Next</strong>Chapter 2. Power management auditing and analysis</a></li></ul></body></html>

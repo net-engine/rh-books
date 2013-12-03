@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">2.5.2. Tuned-adm</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Tuned.html" title="2.5. Tuned and ktune" /><link rel="prev" href="Tuned.html" title="2.5. Tuned and ktune" /><link rel="next" href="devicekit-power.html" title="2.6. DeviceKit-power and devkit-power" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="Tuned.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="devicekit-power.html"><strong>Next</strong></a></li></ul><div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="tuned-adm"></a>2.5.2. Tuned-adm</h3></div></div></div>
+		 <div class="para">
+			Often, a detailed audit and analysis of a system can be very time consuming and might not be worth the few extra watts you might be able to save by doing so. Previously, the only alternative was simply to use the defaults. Therefore, Red Hat Enterprise Linux 6 includes separate profiles for specific use cases as an alternative between those two extremes, together with the <span class="application"><strong>tuned-adm</strong></span> tool that allows you to switch between these profiles easily at the command line. Red Hat Enterprise Linux 6 includes a number of predefined profiles for typical use cases that you can simply select and activate with the <code class="command">tuned-adm</code> command, but you can also create, modify or delete profiles yourself.
+		</div>
+		 <div class="para">
+			To list all available profiles and identify the current active profile, run:
+		</div>
+		
+<pre class="screen"><code class="command">tuned-adm list</code></pre>
+		 <div class="para">
+			To only display the currently active profile, run:
+		</div>
+		
+<pre class="screen"><code class="command">tuned-adm active</code></pre>
+		 <div class="para">
+			To switch to one of the available profiles, run:
+		</div>
+		
+<pre class="screen"><code class="command">tuned-adm profile <em class="replaceable"><code>profile_name</code></em></code></pre>
+		 <div class="para">
+			for example:
+		</div>
+		
+<pre class="screen"><code class="command">tuned-adm profile server-powersave</code></pre>
+		 <div class="para">
+			To disable all tuning:
+		</div>
+		
+<pre class="screen"><code class="command">tuned-adm off</code></pre>
+		 <div class="para">
+			When you first install <span class="application"><strong>tuned</strong></span>, the <code class="literal">default</code> profile will be active. Red Hat Enterprise Linux 6 also includes the following predefined profiles:
+		</div>
+		 <div class="variablelist"><dl class="variablelist"><dt><span class="term">default</span></dt><dd>
+					<div class="para">
+						the default power-saving profile. It has the lowest impact on power saving of the available profiles and only enables CPU and disk plugins of <span class="application"><strong>tuned</strong></span>.
+					</div>
+
+				</dd><dt><span class="term">desktop-powersave</span></dt><dd>
+					<div class="para">
+						a power-saving profile directed at desktop systems. Enables ALPM power saving for SATA host adapters (refer to <a class="xref" href="ALPM.html">Section 3.6, “Aggressive Link Power Management”</a>) as well as the CPU, Ethernet, and disk plugins of <span class="application"><strong>tuned</strong></span>.
+					</div>
+
+				</dd><dt><span class="term">server-powersave</span></dt><dd>
+					<div class="para">
+						a power-saving profile directed at server systems. Enables ALPM powersaving for SATA host adapters, disables CD-ROM polling through <span class="application"><strong>HAL</strong></span> (refer to the <span class="citerefentry"><span class="refentrytitle">hal-disable-polling</span>
+						</span> man page) and activates the CPU and disk plugins of <span class="application"><strong>tuned</strong></span>.
+					</div>
+
+				</dd><dt><span class="term">laptop-ac-powersave</span></dt><dd>
+					<div class="para">
+						a medium-impact power-saving profile directed at laptops running on AC. Enables ALPM powersaving for SATA host adapters, WiFi power saving, as well as the CPU, Ethernet and disk plugins of <span class="application"><strong>tuned</strong></span>.
+					</div>
+
+				</dd><dt><span class="term">laptop-battery-powersave</span></dt><dd>
+					<div class="para">
+						a high-impact power-saving profile directed at laptops running on battery. It activates all power saving mechanisms from the previous profiles plus it enables the multi-core power-savings scheduler for low wakeup systems and makes sure that the ondemand governor is active and that AC97 audio power-saving is enabled. You can use this profile to save the maximum amount of power on any kind of system, not only laptops on battery power. The tradeoff for this profile is a noticeable impact on performance, specifically latency of disk and network I/O.
+					</div>
+
+				</dd><dt><span class="term">throughput-performance</span></dt><dd>
+					<div class="para">
+						a server profile for typical throughput performance tuning. It disables <span class="application"><strong>tuned</strong></span> and <span class="application"><strong>ktune</strong></span> power saving mechanisms, enables <span class="application"><strong>sysctl</strong></span> settings that improve the throughput performance of your disk and network I/O, and switches to the <span class="application"><strong>deadline scheduler</strong></span>.
+					</div>
+
+				</dd><dt><span class="term">latency-performance</span></dt><dd>
+					<div class="para">
+						a server profile for typical latency performance tuning. it disables <span class="application"><strong>tuned</strong></span> and <span class="application"><strong>ktune</strong></span> power saving mechanisms and enables <span class="application"><strong>sysctl</strong></span> settings that improve the latency performance of your network I/O.
+					</div>
+
+				</dd></dl></div>
+		 <div class="para">
+			All the profiles are stored in separate subdirectories under <code class="filename">/etc/tune-profiles</code>. So <code class="filename">/etc/tune-profiles/desktop-powersave</code> contains all the necessary files and settings for that profile. Each of these directories contains up to four files:
+		</div>
+		 <div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="filename">tuned.conf</code></span></dt><dd>
+					<div class="para">
+						the configuration for the tuned service to be active for this profile.
+					</div>
+
+				</dd><dt><span class="term"><code class="filename">sysctl.ktune</code></span></dt><dd>
+					<div class="para">
+						the <span class="application"><strong>sysctl</strong></span> settings used by <span class="application"><strong>ktune</strong></span>. The format is identical to the <code class="filename">/etc/sysconfig/sysctl</code> file (refer to the <span class="citerefentry"><span class="refentrytitle">sysctl</span>
+						</span> and <span class="citerefentry"><span class="refentrytitle">sysctl.conf</span>
+						</span> man pages).
+					</div>
+
+				</dd><dt><span class="term"><code class="filename">ktune.sysconfig</code></span></dt><dd>
+					<div class="para">
+						the configuration file of ktune itself, typically <code class="filename">/etc/sysconfig/ktune</code>.
+					</div>
+
+				</dd><dt><span class="term"><code class="filename">ktune.sh</code></span></dt><dd>
+					<div class="para">
+						an <span class="application"><strong>init</strong></span>-style shell script used by the <span class="application"><strong>ktune</strong></span> service which can run specific commands during system startup to tune the system.
+					</div>
+
+				</dd></dl></div>
+		 <div class="para">
+			The easiest way to start a new profile is to copy an existing one. The <code class="literal">laptop-battery-powersave</code> profile contains a very rich set of tunings already and is therefore a useful starting point. Simply copy the whole directory to the new profile name like this:
+		</div>
+		
+<pre class="screen"><code class="command">cp -a /etc/tune-profiles/laptop-battery-powersave/ /etc/tune-profiles/myprofile</code></pre>
+		 <div class="para">
+			Modify any of the files in the new profile to match your personal requirements. For example, if you require the detection of CD changes you could disable that optimization by commenting out the appropriate line in the ktune.sh script:
+		</div>
+		
+<pre class="programlisting"># Disable HAL polling of CDROMS
+# for i in /dev/scd*; do hal-disable-polling --device $i; done  /dev/null 2&amp;1</pre>
+
+	</div><ul class="docnav"><li class="previous"><a accesskey="p" href="Tuned.html"><strong>Prev</strong>2.5. Tuned and ktune</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="devicekit-power.html"><strong>Next</strong>2.6. DeviceKit-power and devkit-power</a></li></ul></body></html>

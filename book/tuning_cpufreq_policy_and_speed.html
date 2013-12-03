@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">3.2.3. Tuning CPUfreq Policy and Speed</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="cpufreq_governors.html" title="3.2. Using CPUfreq Governors" /><link rel="prev" href="cpufreq_setup.html" title="3.2.2. CPUfreq Setup" /><link rel="next" href="Suspend_and_Resume.html" title="3.3. Suspend and Resume" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="cpufreq_setup.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="Suspend_and_Resume.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="tuning_cpufreq_policy_and_speed"></a>3.2.3. Tuning CPUfreq Policy and Speed</h3></div></div></div>
+	 <a id="idm236077666800" class="indexterm"></a>
+	 <a id="idm236077665104" class="indexterm"></a>
+	 <a id="idm236077663824" class="indexterm"></a>
+	 <a id="idm236077662288" class="indexterm"></a>
+	 <a id="idm236077660752" class="indexterm"></a>
+	 <a id="idm236077658832" class="indexterm"></a>
+	 <div class="para">
+		Once you've chosen an appropriate CPUfreq governor, you can further tune the speed of each CPU using the tunables found in <code class="filename">/sys/devices/system/cpu/<em class="replaceable"><code>[cpu ID]</code></em>/cpufreq/</code>. These tunables are:
+	</div>
+	 <div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+			<div class="para">
+				<code class="filename">cpuinfo_min_freq</code> Shows the CPU's available minimum operating frequency (in KHz).
+			</div>
+			 <a id="idm236077653696" class="indexterm"></a>
+			 <a id="idm236077651760" class="indexterm"></a>
+			 <a id="idm236077649808" class="indexterm"></a>
+
+		</li><li class="listitem">
+			<a id="idm236077647664" class="indexterm"></a>
+			 <a id="idm236077645840" class="indexterm"></a>
+			 <a id="idm236077644080" class="indexterm"></a>
+			 <div class="para">
+				<code class="filename">cpuinfo_max_freq</code> Shows the CPU's available maximum operating frequency (in KHz).
+			</div>
+		</li><li class="listitem">
+			<a id="idm236077641104" class="indexterm"></a>
+			 <a id="idm236077639152" class="indexterm"></a>
+			 <a id="idm236077637296" class="indexterm"></a>
+			 <div class="para">
+				<code class="filename">scaling_driver</code> Shows what CPUfreq driver is used to set the frequency on this CPU.
+			</div>
+		</li><li class="listitem">
+			<a id="idm236077634320" class="indexterm"></a>
+			 <a id="idm236077632272" class="indexterm"></a>
+			 <a id="idm236077630512" class="indexterm"></a>
+			 <div class="para">
+				<code class="filename">scaling_available_governors</code> Shows the CPUfreq governors available in this kernel. If you wish to use a CPUfreq governor that is not listed in this file, refer to <a class="xref" href="cpufreq_setup.html#enabling_a_cpufreq_governor">Procedure 3.2, “Enabling a CPUfreq Governor”</a> in <a class="xref" href="cpufreq_setup.html">Section 3.2.2, “CPUfreq Setup”</a> for instructions on how to do so.
+			</div>
+		</li><li class="listitem">
+			<a id="idm236077626160" class="indexterm"></a>
+			 <a id="idm236077624304" class="indexterm"></a>
+			 <a id="idm236077622512" class="indexterm"></a>
+			 <div class="para">
+				<code class="filename">scaling_governor</code> Shows what CPUfreq governor is currently in use. To use a different governor, simply use <code class="command">echo <em class="replaceable"><code>[governor]</code></em> /sys/devices/system/cpu/<em class="replaceable"><code>[cpu ID]</code></em>/cpufreq/scaling_governor</code> (refer to <a class="xref" href="cpufreq_setup.html#enabling_a_cpufreq_governor">Procedure 3.2, “Enabling a CPUfreq Governor”</a> in <a class="xref" href="cpufreq_setup.html">Section 3.2.2, “CPUfreq Setup”</a> for more information).
+			</div>
+		</li><li class="listitem">
+			<a id="idm236077616736" class="indexterm"></a>
+			 <a id="idm236077614880" class="indexterm"></a>
+			 <a id="idm236077613088" class="indexterm"></a>
+			 <div class="para">
+				<code class="filename">cpuinfo_cur_freq</code> Shows the current speed of the CPU (in KHz).
+			</div>
+		</li><li class="listitem">
+			<a id="idm236077609952" class="indexterm"></a>
+			 <a id="idm236077608128" class="indexterm"></a>
+			 <a id="idm236077606368" class="indexterm"></a>
+			 <div class="para">
+				<code class="filename">scaling_available_frequencies</code> Lists available frequencies for the CPU, in KHz.
+			</div>
+		</li><li class="listitem">
+			<a id="idm236077603024" class="indexterm"></a>
+			 <a id="idm236077601232" class="indexterm"></a>
+			 <a id="idm236077599440" class="indexterm"></a>
+			 <div class="para">
+				<code class="filename">scaling_min_freq</code> and <code class="filename">scaling_max_freq</code> Sets the <em class="firstterm">policy limits</em> of the CPU, in KHz.
+			</div>
+			 <div class="important"><div class="admonition_header"><p><strong>Important</strong></p></div><div class="admonition">
+				 <a id="idm236077593200" class="indexterm"></a>
+				 <a id="idm236077591568" class="indexterm"></a>
+				 <a id="idm236077589776" class="indexterm"></a>
+				 <div class="para">
+					When setting policy limits, you should set <code class="filename">scaling_max_freq</code> before <code class="filename">scaling_min_freq</code>.
+				</div>
+			</div></div>
+
+		</li><li class="listitem">
+			<a id="idm236077586320" class="indexterm"></a>
+			 <a id="idm236077584496" class="indexterm"></a>
+			 <a id="idm236077582704" class="indexterm"></a>
+			 <div class="para">
+				<code class="filename">affected_cpus</code> Lists CPUs that require frequency coordination software.
+			</div>
+		</li><li class="listitem">
+			<a id="idm236077579568" class="indexterm"></a>
+			 <a id="idm236077577744" class="indexterm"></a>
+			 <a id="idm236077575952" class="indexterm"></a>
+			 <div class="para">
+				<code class="filename">scaling_setspeed</code> Used to change the clock speed of the CPU, in KHz. You can only set a speed within the policy limits of the CPU (as per <code class="filename">scaling_min_freq</code> and <code class="filename">scaling_max_freq</code>).
+			</div>
+		</li></ul></div>
+	 <div class="para">
+		To view the current value of each tunable, use <code class="command">cat <em class="replaceable"><code>[tunable]</code></em></code>. For example, to view the current speed of cpu0 (in KHz), use:
+	</div>
+	 <div class="para">
+		<code class="command">cat /sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_cur_freq</code>.
+	</div>
+	 <div class="para">
+		To change the value of each tunable, use <code class="command">echo <em class="replaceable"><code>[value]</code></em> /sys/devices/system/cpu/<em class="replaceable"><code>[cpu ID]</code></em>/cpufreq/<em class="replaceable"><code>[tunable]</code></em></code>. For example, to set the minimum clock speed of cpu0 to 360 KHz, use:
+	</div>
+	 <div class="para">
+		<code class="command">echo 360000 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq</code>
+	</div>
+
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="cpufreq_setup.html"><strong>Prev</strong>3.2.2. CPUfreq Setup</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="Suspend_and_Resume.html"><strong>Next</strong>3.3. Suspend and Resume</a></li></ul></body></html>

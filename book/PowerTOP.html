@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">2.2. PowerTOP</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Audit_and_Analysis.html" title="Chapter 2. Power management auditing and analysis" /><link rel="prev" href="Audit_and_Analysis.html" title="Chapter 2. Power management auditing and analysis" /><link rel="next" href="diskdevstat_and_netdevstat.html" title="2.3. Diskdevstat and netdevstat" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="Audit_and_Analysis.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="diskdevstat_and_netdevstat.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="PowerTOP"></a>2.2. PowerTOP</h2></div></div></div>
+	 <div class="para">
+		The introduction of the tickless kernel in Red Hat Enterprise Linux 6 (refer to <a class="xref" href="Tickless-kernel.html">Section 3.4, “Tickless Kernel”</a>) allows the CPU to enter the idle state more frequently, reducing power consumption and improving power management. The new <span class="application"><strong>PowerTOP</strong></span> tool identifies specific components of kernel and userspace applications that frequently wake up the CPU. <span class="application"><strong>PowerTOP</strong></span> was used in development to perform the audits described in <a class="xref" href="Optimizations_in_User_Space.html">Section 3.11, “Optimizations in User Space”</a> that led to many applications being tuned in this release, reducing unnecessary CPU wake up by a factor of ten.
+	</div>
+	 <div class="para">
+		Install <span class="application"><strong>PowerTOP</strong></span> with the command:
+	</div>
+	
+<pre class="screen"><code class="command">yum install powertop</code></pre>
+	 <div class="para">
+		Run <span class="application"><strong>PowerTOP</strong></span> with the command:
+	</div>
+	
+<pre class="screen"><code class="command">powertop</code></pre>
+	 <div class="para">
+		Note that you will need to run <span class="application"><strong>PowerTOP</strong></span> with root privileges to allow the application to do anything useful.
+	</div>
+	 <div class="para">
+		When it runs, <span class="application"><strong>PowerTOP</strong></span> gathers statistics from the system and presents you with a list of the components that are sending wakeups to the CPU most frequently. <span class="application"><strong>PowerTOP</strong></span> also makes suggestions for tuning the system for lower power consumption. These suggestions appear at the bottom of the screen, and specify a key for you to press to accept <span class="application"><strong>PowerTOP</strong></span>'s suggestion. As <span class="application"><strong>PowerTOP</strong></span> refreshes periodically, further suggestions appear. In <a class="xref" href="PowerTOP.html#fig-PowerTOP">Figure 2.1, “PowerTOP in Operation”</a>, note the suggestion to <code class="literal">increase the VM dirty writeback time</code>, and the key (<span class="keycap"><strong>W</strong></span>) to press to accept the suggestion.
+	</div>
+	 <div class="para">
+		When it runs, <span class="application"><strong>PowerTOP</strong></span> gathers statistics from the system and presents you with several important lists of information. At the top is a list of how long your CPU cores have been in each of the available C and P states. The longer the CPU stays in the higher C or P stats the better (<code class="literal">C4</code> being higher than <code class="literal">C3</code>) and is a good indicator of how well the system is tuned towards CPU utilization. Your goal should be residency of 90% or more in the highest C or P state while the system is idle.
+	</div>
+	 <div class="para">
+		The second piece of information is a summary of the actual wakeups per second of the machine. The number of wakeups per second gives you a good measure of how well the services or the devices and drivers of the kernel are performing with regard to power usage on your system. The more wakeups per second you have, the more power is consumed, so lower is better here.
+	</div>
+	 <div class="para">
+		Next, <span class="application"><strong>PowerTOP</strong></span> provides an estimate of the actual power usage of the system, if available. Expect <span class="application"><strong>PowerTOP</strong></span> to report this figure on laptops while they are in battery mode.
+	</div>
+	 <div class="para">
+		Any available estimates of power usage are followed by a detailed list of the components that send wakeups to the CPU most frequently. At the top of the list are those components that you should investigate more closely to optimize your system to reduce power usage. If they are kernel components, (indicated by the name of the component being listed in <code class="literal">&lt;</code><code class="literal"></code>) then the wakeups are often associated with a specific driver that causes them. Tuning drivers most usually requires kernel changes which go beyond the scope of this document. However, userland processes that send wakeups are more easily managed. First, identify if this service or application should run at all on this system. If not, simply deactivate it. To turn off a service permanently, run:
+	</div>
+	
+<pre class="screen"><code class="command">chkconfig <em class="replaceable"><code>servicename</code></em> off</code></pre>
+	 <div class="para">
+		If you need more details about the what the component actually does, run:
+	</div>
+	
+<pre class="screen"><code class="command">ps -awux | grep <em class="replaceable"><code>componentname</code></em></code> 
+<code class="command">strace -p <em class="replaceable"><code>processid</code></em></code></pre>
+	 <div class="para">
+		If the trace looks like it is repeating itself, then you probably have found a busy loop. To fix this would require a code change in that component and that again goes beyond the scope of this document.
+	</div>
+	 <div class="para">
+		Finally, <span class="application"><strong>PowerTOP</strong></span> also makes suggestions for tuning the system for lower power consumption. These suggestions appear at the bottom of the screen, and specify a key for you to press to accept <span class="application"><strong>PowerTOP</strong></span>'s suggestion. As <span class="application"><strong>PowerTOP</strong></span> refreshes periodically, further suggestions appear. In <a class="xref" href="PowerTOP.html#fig-PowerTOP">Figure 2.1, “PowerTOP in Operation”</a>, note the suggestion to <code class="literal">increase the VM dirty writeback time</code>, and the key (<span class="keycap"><strong>W</strong></span>) to press to accept the suggestion. These changes will only be active until the next reboot. To help you make the changes permanent, <span class="application"><strong>PowerTOP</strong></span> displays the exact command it runs to perform this optimization. Add the command to your <code class="filename">/etc/rc.local</code> file with your preferred text editor so that it takes effect every time that the computer starts.
+	</div>
+	 <div class="figure"><a id="fig-PowerTOP"></a><div class="figure-contents">
+		 <div class="mediaobject"><img src="images/powertop.png" alt="PowerTOP in Operation" /></div>
+
+	</div><p class="title"><strong>Figure 2.1. PowerTOP in Operation</strong></p></div><br class="figure-break" />
+	 <div class="para">
+		The <em class="citetitle">Less Watts</em> website publishes a list of applications that <span class="application"><strong>PowerTOP</strong></span> has identified as keeping CPUs active. Refer to <code class="uri"><a class="uri" href="http://www.lesswatts.org/projects/powertop/known.php">http://www.lesswatts.org/projects/powertop/known.php</a></code>.
+	</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="Audit_and_Analysis.html"><strong>Prev</strong>Chapter 2. Power management auditing and analysis</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="diskdevstat_and_netdevstat.html"><strong>Next</strong>2.3. Diskdevstat and netdevstat</a></li></ul></body></html>
