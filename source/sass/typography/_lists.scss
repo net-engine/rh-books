@@ -52,3 +52,7 @@ dl {
     padding-left: $gutter / 2;
   }
 }
+
+.para .itemizedlist {
+  margin-top: $line-height;
+}

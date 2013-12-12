@@ -3,14 +3,27 @@ table {
   text-align: left;
   width: 100%;
   margin: 0 0 $line-height;
-  &:last-child {
-    margin-bottom: 0;
+  border: thin solid $color-grey-light;
+
+  caption, th, td {
+    vertical-align: top;
+    padding: $line-height / 2;
+  }
+
+  caption {
+    font-weight: $font-weight-medium;
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+
+  th {
+    font-weight: $font-weight-medium;
   }
 
   thead tr { 
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    &.no_wrap {
+    background-color: $color-grey-lighter;
+
+    &.no-wrap {
       th { 
         vertical-align: center; 
         @include ellipsis;
@@ -20,12 +33,15 @@ table {
   }
 
   tbody tr {
-    border-top-width: 1px;
-    border-top-style: solid;
-    &:first-child { border-top: none; }
+    border-top: thin solid $color-grey-light;
 
-    &.no_wrap {
-      td { 
+    th {
+      background-color: $color-grey-lighter;
+      font-weight: $font-weight-medium;
+    }
+
+    &.no-wrap {
+      td, th { 
         vertical-align: center; 
         @include ellipsis;
         line-height: $line-height + $line-height / 2;
@@ -33,19 +49,13 @@ table {
     }
   }
 
-  th, td, th[class*="span_"], td[class*="span_"] {
-    display: table-cell;
-    vertical-align: top;
-    padding-top: $line-height / 2;
-    padding-bottom: $line-height / 2;
-    &:first-child { padding-left: 0; }
-    &:last-child { padding-right: 0; }
+  tfoot {
+    color: $color-grey;
+    tr {
+      border-top: thin solid $color-grey-light;
+    }
   }
-
-  th {
-    font-weight: 600;
-    white-space: nowrap;
-  }
+  
   &.fixed {
     table-layout: fixed;
     @include box-sizing( border-box );

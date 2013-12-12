@@ -6,11 +6,11 @@ $margin-level-five:  $line-height / $font-size-level-five;
 $margin-level-six:   $line-height / $font-size-level-six;
 
 $line-height-level-one:   #{$margin-level-one * 2}em;
-$line-height-level-two:   #{$margin-level-two * 2}em;
-$line-height-level-three: #{$margin-level-three * 2}em;
-$line-height-level-four:  #{$margin-level-four * 2}em;
-$line-height-level-five:  #{$margin-level-five * 2}em;
-$line-height-level-six:   #{$margin-level-six * 2}em;
+$line-height-level-two:   #{$margin-level-two * 1.5}em;
+$line-height-level-three: #{$margin-level-three * 1.25}em;
+$line-height-level-four:  #{$margin-level-four * 1}em;
+$line-height-level-five:  #{$margin-level-five * 1}em;
+$line-height-level-six:   #{$margin-level-six * 0.75}em;
 
 h1, h2, h3, h4, h5, h6, .formalpara > .title, .para > .title {
   font-family: $font-family-headings;
