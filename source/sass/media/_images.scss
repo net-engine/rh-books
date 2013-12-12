@@ -3,3 +3,17 @@ img {
   width: auto;
   max-width: 100%;
 }
+
+.para .mediaobject {
+  margin-top: $line-height;
+}
+
+.inlinemediaobject {
+  display: inline-block;
+  line-height: $line-height;
+
+  img {
+    min-width: 100%;
+    max-width: inherit;
+  }
+}
