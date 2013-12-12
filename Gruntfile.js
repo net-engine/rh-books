@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     watch: {
       css: {
         files: ['source/sass/**/*'],
-        tasks: ['compass:dev'],
+        tasks: ['compass'],
         options: {
           livereload: true,
           force: true
@@ -23,27 +23,21 @@ module.exports = function(grunt) {
       dist: {
         options: {
           sassDir: 'source/sass',
-          cssDir: 'book/Common_Content/css/',
+          cssDir: 'docs/Common_Content/css/',
           environment: 'production'
-        }
-      },
-      dev: {
-        options: {
-          sassDir: 'source/sass',
-          cssDir: 'book/Common_Content/css/'
         }
       }
     },
     webfont: {
       icons: {
         src: 'source/icons/svg/*',
-        dest: 'book/Common_Content/icons',
+        dest: 'docs/Common_Content/icons',
         destCss: 'source/sass/icons',
         options: {
           font: 'redhat-books-icons',
           stylesheet: 'scss',
           syntax: 'bootstrap',
-          relativeFontPath: '/book/Common_Content/icons'
+          relativeFontPath: '../icons'
         }
       }
     }
@@ -57,6 +51,6 @@ module.exports = function(grunt) {
   // Making grunt default to force in order not to break the project.
   grunt.option('force', true);
 
-  grunt.registerTask('default', ['connect', 'compass:dev', 'watch']);
-  grunt.registerTask('build', ['compass:dist', 'webfont']);
+  grunt.registerTask('default', ['connect', 'compass', 'watch']);
+  grunt.registerTask('build', ['compass', 'webfont']);
 }

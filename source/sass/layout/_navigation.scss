@@ -16,22 +16,33 @@
 
 
 #title {
-  @extend %clearfix;
   padding-top: ($page-margin / 4);
   padding-bottom: ($page-margin / 4);
   height: $title-height;
 
   .left, .right {
-    img { display: block; }
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 1em;
+    text-decoration: none;
   }
 
   .left {
-    float: left;
+    img { display: block; }
   }
 
   .right {
-    float: right;
-    text-align: right;
+    font-family: $font-family-headings;
+
+    &:before {
+      content: 'Documentation';
+      font-size: 1.5em;
+      line-height: 44px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    img { display: none; }
   }
 }
 
