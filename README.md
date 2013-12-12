@@ -5,8 +5,9 @@
 The following are based on output from REL Power Management Guide
 
 * [HTML Example](http://net-engine.github.io/rh-books/html.html)
-
 * [HTML Single Example](http://net-engine.github.io/rh-books/html-single.html)
+
+The following is based on output from REL Openstack Platform
 
 * [HTML Single Example 2](http://net-engine.github.io/rh-books/html-single-2.html)
 
