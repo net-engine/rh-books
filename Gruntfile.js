@@ -28,6 +28,12 @@ module.exports = function(grunt) {
         }
       }
     },
+    'gh-pages': {
+      options: {
+        base: 'docs'
+      },
+      src: ['**']
+    },
     webfont: {
       icons: {
         src: 'source/icons/svg/*',
@@ -46,11 +52,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-gh-pages');
   grunt.loadNpmTasks('grunt-webfont');
 
   // Making grunt default to force in order not to break the project.
   grunt.option('force', true);
 
   grunt.registerTask('default', ['connect', 'compass', 'watch']);
-  grunt.registerTask('build', ['compass', 'webfont']);
+  grunt.registerTask('build', ['compass', 'webfont', 'gh-pages']);
 }

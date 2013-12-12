@@ -1,13 +1,21 @@
 # The Red Hat Books Project!
 
-## Setup
+## Examples
 
-first: 
+The following are based on output from REL Power Management Guide
+
+[HTML Single](http://net-engine.github.io/rh-books/html-single.html)
+[HTML](http://net-engine.github.io/rh-books/html.html)
+
+
+## Dev Setup
+
+first:
 
     bundle install
 
 
-then: 
+then:
 
     npm install
 
@@ -18,7 +26,7 @@ then:
 
 this will compile the sass and start a server listening on 9001
 
-sooo, visit: 
+sooo, visit:
 
     localhost:9001
 
