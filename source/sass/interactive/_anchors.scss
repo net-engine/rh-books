@@ -23,3 +23,20 @@ footer a {
   &:active { color: $footer-link-color-active; }
   &:visited { color: $footer-link-color-visited; }
 }
+
+.RoleCreateBugPara a {
+  @extend .icon-support;
+  &:before { 
+    font-family: 'redhat-books-icons';
+    display: inline-block;
+    vertical-align: middle;
+    line-height: $line-height * 0.667;
+    width: $line-height * 0.667;
+    background-color: $color-grey-lighter;
+    color: $color-grey-dark;
+    font-size: 3em;
+    @include border-radius(50%);
+    text-align: center;
+    margin-right: 0.25em;
+  }
+}
