@@ -181,3 +181,26 @@ $nav-width: 26em;
 
 }
 
+
+#main {
+  position: relative;
+
+  &.has-fixed {
+    padding-left: $nav-width;
+
+    .book {
+      > .toc {
+        position: absolute;
+        top: 0; left: 0;
+        width: $nav-width;
+        height: 100vh;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        padding: $line-height;
+        background: darken($color-white, 2.5%);
+        @include box-sizing(border-box);
+      }
+    }
+
+  }
+}

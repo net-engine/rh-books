@@ -54,6 +54,11 @@ ajq(document).ready(function() {
 
   if ( ajq('#main').length ) { fixedNav(); }
 
+  // ajq('#main').addClass('fixed-nav');
+  // ajq(".book>.toc").stick_in_parent({
+  //   parent: ajq('#main')
+  // });
+
 
   // ajq('.book').children('.toc').eq(0)
 
