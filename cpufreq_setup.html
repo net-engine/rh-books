@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">3.2.2. CPUfreq Setup</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="cpufreq_governors.html" title="3.2. Using CPUfreq Governors" /><link rel="prev" href="cpufreq_governors.html" title="3.2. Using CPUfreq Governors" /><link rel="next" href="tuning_cpufreq_policy_and_speed.html" title="3.2.3. Tuning CPUfreq Policy and Speed" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="cpufreq_governors.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="tuning_cpufreq_policy_and_speed.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h3 class="title"><a id="cpufreq_setup"></a>3.2.2. CPUfreq Setup</h3></div></div></div>
+	 <a id="idm236077735680" class="indexterm"></a>
+	 <a id="idm236077734256" class="indexterm"></a>
+	 <a id="idm236077733008" class="indexterm"></a>
+	 <div class="para">
+		Before selecting and configuring a CPUfreq governor, you need to add the appropriate CPUfreq driver first.
+	</div>
+	 
+	 
+	 <div xmlns:d="http://docbook.org/ns/docbook" class="procedure"><a id="idm236077730096"></a><p class="title"><strong>Procedure 3.1. How to Add a CPUfreq Driver</strong></p><a id="idm236077727776" class="indexterm"></a><a id="idm236077726112" class="indexterm"></a><a id="idm236077724320" class="indexterm"></a><ol class="1"><li class="step">
+			<div class="para">
+				Use the following command to view which CPUfreq drivers are available for your system:
+			</div>
+			
+<pre class="screen"><code class="command">ls /lib/modules/<em class="replaceable"><code>[kernel version]</code></em>/kernel/arch/<em class="replaceable"><code>[architecture]</code></em>/kernel/cpu/cpufreq/</code></pre>
+
+		</li><li class="step">
+			<div class="para">
+				Use <code class="command">modprobe</code> to add the appropriate CPUfreq driver.
+			</div>
+			 
+<pre class="screen"><code class="command">modprobe <em class="replaceable"><code>[CPUfreq driver]</code></em></code></pre>
+			 <div class="para">
+				When using the above command, be sure to remove the <code class="command">.ko</code> filename suffix.
+			</div>
+			<div class="important"><div class="admonition_header"><p><strong>Important</strong></p></div><div class="admonition">
+				 <a id="idm236077715184" class="indexterm"></a>
+				 <a id="idm236077713392" class="indexterm"></a>
+				 <a id="idm236077711600" class="indexterm"></a>
+				  <a id="idm236077709552" class="indexterm"></a>
+				 <a id="idm236077707792" class="indexterm"></a>
+				 <a id="idm236077706000" class="indexterm"></a>
+				  <a id="idm236077728752" class="indexterm"></a>
+				 <a id="idm236077702928" class="indexterm"></a>
+				 <a id="idm236077701392" class="indexterm"></a>
+				  <div class="para">
+					When choosing an appropriate CPUfreq driver, always choose <code class="filename">acpi-cpufreq</code> over <code class="filename">p4-clockmod</code>. While using the <code class="filename">p4-clockmod</code> driver reduces the clock frequency of a CPU, it does not reduce the voltage. <code class="filename">acpi-cpufreq</code>, on the other hand, reduces voltage along with CPU clock frequency, allowing less power consumption and heat output for each unit reduction in performance.
+				</div>
+
+			</div></div>
+
+		</li><li class="step">
+			<div class="para">
+				Once the CPUfreq driver is set up, you can view which governor the system is currently using with:
+			</div>
+			 
+<pre class="screen"><code class="command">cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor</code></pre>
+
+		</li></ol></div>
+	
+	 <div class="para">
+		You can also view which governors are available for use for a specific CPU using:
+	</div>
+	 
+<pre class="screen"><code class="command">cat /sys/devices/system/cpu/<em class="replaceable"><code>[cpu ID]</code></em>/cpufreq/scaling_available_governors</code></pre>
+	 <div class="para">
+		Some CPUfreq governors may not be available for you to use. In this case, use <code class="command">modprobe</code> to add the necessary kernel modules that enable the specific CPUfreq governor you wish to use. These kernel modules are available in <code class="filename">/lib/modules/<em class="replaceable"><code>[kernel version]</code></em>/kernel/drivers/cpufreq/</code>.
+	</div>
+	 <div xmlns:d="http://docbook.org/ns/docbook" class="procedure"><a id="enabling_a_cpufreq_governor"></a><p class="title"><strong>Procedure 3.2. Enabling a CPUfreq Governor</strong></p><a id="idm236077689280" class="indexterm"></a><a id="idm236077689920" class="indexterm"></a><a id="idm236077685936" class="indexterm"></a><a id="idm236077683888" class="indexterm"></a><a id="idm236077682128" class="indexterm"></a><a id="idm236077680272" class="indexterm"></a><a id="idm236077678416" class="indexterm"></a><a id="idm236077676656" class="indexterm"></a><a id="idm236077674896" class="indexterm"></a><ol class="1"><li class="step">
+			<div class="para">
+				If a specific governor is not listed as available for your CPU, use <code class="command">modprobe</code> to enable the governor you wish to use. For example, if the <code class="command">ondemand</code> governor is not available for your CPU, use the following command:
+			</div>
+			
+<pre class="screen"><code class="command">modprobe cpufreq_ondemand</code></pre>
+
+		</li><li class="step">
+			<div class="para">
+				Once a governor is listed as available for your CPU, you can enable it using:
+			</div>
+			 
+<pre class="screen"><code class="command">echo <em class="replaceable"><code>[governor]</code></em> /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor</code></pre>
+
+		</li></ol></div>
+	
+	 
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="cpufreq_governors.html"><strong>Prev</strong>3.2. Using CPUfreq Governors</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="tuning_cpufreq_policy_and_speed.html"><strong>Next</strong>3.2.3. Tuning CPUfreq Policy and Speed</a></li></ul></body></html>

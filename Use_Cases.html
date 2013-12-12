@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">Chapter 4. Use Cases</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="index.html" title="Power Management Guide" /><link rel="prev" href="Optimizations_in_User_Space.html" title="3.11. Optimizations in User Space" /><link rel="next" href="Example_Laptop.html" title="4.2. Example â Laptop" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="Optimizations_in_User_Space.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="Example_Laptop.html"><strong>Next</strong></a></li></ul><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="Use_Cases"></a>Chapter 4. Use Cases</h1></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="Use_Cases.html#Example_Server">4.1. Example â Server</a></span></dt><dt><span class="section"><a href="Example_Laptop.html">4.2. Example â Laptop</a></span></dt></dl></div>
+		 <div class="para">
+			This chapter describes two types of use case to illustrate the analysis and configuration methods described elsewhere in this guide. The first example considers typical servers and the second is a typical laptop.
+		</div>
+		 <div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Example_Server"></a>4.1. Example â Server</h2></div></div></div>
+	 <div class="para">
+		A typical standard server nowadays comes with basically all of the necessary hardware features supported in Red Hat Enterprise Linux 6. The first thing to take into consideration is the kinds of workloads for which the server will mainly be used. Based on this information you can decide which components can be optimized for power savings.
+	</div>
+	 <div class="para">
+		Regardless of the type of server, graphics performance is generally not required. Therefore, GPU power savings can be left turned on.
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Webserver</div> 
+			A webserver needs network and disk I/O. Depending on the external connection speed 100Mbit/s might be enough. If the machine serves mostly static pages, CPU performance might not be very important. Power-management choices might therefore include:
+		
+
+	</div>
+	 <div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+			<div class="para">
+				no disk or network plugins for <span class="application"><strong>tuned</strong></span>.
+			</div>
+
+		</li><li class="listitem">
+			<div class="para">
+				ALPM turned on.
+			</div>
+
+		</li><li class="listitem">
+			<div class="para">
+				<code class="systemitem">ondemand</code> governor turned on.
+			</div>
+
+		</li><li class="listitem">
+			<div class="para">
+				network card limited to 100Mbit/s.
+			</div>
+
+		</li></ul></div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Compute server</div> 
+			A compute server mainly needs CPU. Power management choices might include:
+		
+
+	</div>
+	 <div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+			<div class="para">
+				depending on the jobs and where data storage happens, disk or network plugins for <span class="application"><strong>tuned</strong></span>; or for batch-mode systems, fully active <span class="application"><strong>tuned</strong></span>.
+			</div>
+
+		</li><li class="listitem">
+			<div class="para">
+				depending on utilization, perhaps the <code class="systemitem">performance</code> governor.
+			</div>
+
+		</li></ul></div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Mailserver</div> 
+			A mailserver needs mostly disk I/O and CPU. Power management choices might include:
+		
+
+	</div>
+	 <div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+			<div class="para">
+				<code class="systemitem">ondemand</code> governor turned on, because the last few percent of CPU performance are not important.
+			</div>
+
+		</li><li class="listitem">
+			<div class="para">
+				no disk or network plugins for <span class="application"><strong>tuned</strong></span>.
+			</div>
+
+		</li><li class="listitem">
+			<div class="para">
+				network speed should not be limited, because mail is often internal and can therefore benefit from a 1Gbit/s or 10Gbit/s link.
+			</div>
+
+		</li></ul></div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Fileserver</div> 
+			Fileserver requirements are similar to those of a mailserver, but depending on the protocol used, might require more CPU performance. Typically, Samba-based servers require more CPU than NFS, and NFS typically requires more than iSCSI. Even so, you should be able to use the <code class="systemitem">ondemand</code> governor.
+		
+
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Directory server</div> 
+			A directory server typically has lower requirements for disk I/O, especially if equipped with enough RAM. Network latency is important although network I/O less so. You might consider latency network tuning with a lower link speed, but you should test this carefully for your particular network.
+		
+
+	</div>
+</div>
+		 
+
+	</div><ul class="docnav"><li class="previous"><a accesskey="p" href="Optimizations_in_User_Space.html"><strong>Prev</strong>3.11. Optimizations in User Space</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="Example_Laptop.html"><strong>Next</strong>4.2. Example â Laptop</a></li></ul></body></html>

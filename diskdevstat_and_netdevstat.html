@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">2.3. Diskdevstat and netdevstat</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Audit_and_Analysis.html" title="Chapter 2. Power management auditing and analysis" /><link rel="prev" href="PowerTOP.html" title="2.2. PowerTOP" /><link rel="next" href="BLTK.html" title="2.4. Battery Life Tool Kit" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="PowerTOP.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="BLTK.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="diskdevstat_and_netdevstat"></a>2.3. Diskdevstat and netdevstat</h2></div></div></div>
+	 <a id="idm236078124768" class="indexterm"></a>
+	 <a id="idm236078123408" class="indexterm"></a>
+	 <a id="idm236078122640" class="indexterm"></a>
+	 <a id="idm236078121488" class="indexterm"></a>
+	 <div class="para">
+		<span class="application"><strong>Diskdevstat</strong></span> and <span class="application"><strong>netdevstat</strong></span> are <span class="application"><strong>SystemTap</strong></span> tools that collect detailed information about the disk activity and network activity of all applications running on a system. These tools were inspired by <span class="application"><strong>PowerTOP</strong></span>, which shows the number of CPU wakeups by every application per second (refer to <a class="xref" href="PowerTOP.html">Section 2.2, “PowerTOP”</a>). The statistics that these tools collect allow you to identify applications that waste power with many small I/O operations rather than fewer, larger operations. Other monitoring tools that measure only transfer speeds do not help to identify this type of usage.
+	</div>
+	 <div class="para">
+		Install these tools with <span class="application"><strong>SystemTap</strong></span> with the command:
+	</div>
+	
+<pre class="screen"><code class="command">yum install systemtap tuned-utils kernel-debuginfo</code></pre>
+	 <div class="para">
+		Run the tools with the command:
+	</div>
+	
+<pre class="screen"><code class="command">diskdevstat</code></pre>
+	 <div class="para">
+		or the command:
+	</div>
+	
+<pre class="screen"><code class="command">netdevstat</code></pre>
+	 <div class="para">
+		Both commands can take up to three parameters, as follows:
+	</div>
+	 <div class="para">
+		<code class="command">diskdevstat <em class="replaceable"><code>update_interval</code></em> <em class="replaceable"><code>total_duration</code></em> <em class="replaceable"><code>display_histogram</code></em></code>
+	</div>
+	 <div class="para">
+		<code class="command">netdevstat <em class="replaceable"><code>update_interval</code></em> <em class="replaceable"><code>total_duration</code></em> <em class="replaceable"><code>display_histogram</code></em></code>
+	</div>
+	 <div class="variablelist"><dl class="variablelist"><dt><span class="term"><em class="replaceable"><code>update_interval</code></em></span></dt><dd>
+				<div class="para">
+					The time in seconds between updates of the display. Default: <code class="literal">5</code>
+				</div>
+
+			</dd><dt><span class="term"><em class="replaceable"><code>total_duration</code></em></span></dt><dd>
+				<div class="para">
+					The time in seconds for the whole run. Default: <code class="literal">86400</code> (1 day)
+				</div>
+
+			</dd><dt><span class="term"><em class="replaceable"><code>display_histogram</code></em></span></dt><dd>
+				<div class="para">
+					Flag whether to histogram for all the collected data at the end of the run.
+				</div>
+
+			</dd></dl></div>
+	 <div class="para">
+		The output resembles that of <span class="application"><strong>PowerTOP</strong></span>. Here is sample output from a longer <span class="application"><strong>diskdevstat</strong></span> run on a Fedora10 system running KDE4.2:
+	</div>
+	
+<pre class="screen">  PID   UID DEV     WRITE_CNT WRITE_MIN WRITE_MAX WRITE_AVG    READ_CNT  READ_MIN  READ_MAX  READ_AVG COMMAND        
+ 2789  2903 sda1          854     0.000   120.000    39.836           0     0.000     0.000     0.000 plasma            
+15494     0 sda1            0     0.000     0.000     0.000         758     0.000     0.012     0.000 0logwatch         
+15520     0 sda1            0     0.000     0.000     0.000         140     0.000     0.009     0.000 perl              
+15549     0 sda1            0     0.000     0.000     0.000         140     0.000     0.009     0.000 perl              
+15585     0 sda1            0     0.000     0.000     0.000         108     0.001     0.002     0.000 perl              
+ 2573     0 sda1           63     0.033  3600.015   515.226           0     0.000     0.000     0.000 auditd            
+15429     0 sda1            0     0.000     0.000     0.000          62     0.009     0.009     0.000 crond             
+15379     0 sda1            0     0.000     0.000     0.000          62     0.008     0.008     0.000 crond             
+15473     0 sda1            0     0.000     0.000     0.000          62     0.008     0.008     0.000 crond             
+15415     0 sda1            0     0.000     0.000     0.000          62     0.008     0.008     0.000 crond             
+15433     0 sda1            0     0.000     0.000     0.000          62     0.008     0.008     0.000 crond             
+15425     0 sda1            0     0.000     0.000     0.000          62     0.007     0.007     0.000 crond             
+15375     0 sda1            0     0.000     0.000     0.000          62     0.008     0.008     0.000 crond             
+15477     0 sda1            0     0.000     0.000     0.000          62     0.007     0.007     0.000 crond             
+15469     0 sda1            0     0.000     0.000     0.000          62     0.007     0.007     0.000 crond             
+15419     0 sda1            0     0.000     0.000     0.000          62     0.008     0.008     0.000 crond             
+15481     0 sda1            0     0.000     0.000     0.000          61     0.000     0.001     0.000 crond             
+15355     0 sda1            0     0.000     0.000     0.000          37     0.000     0.014     0.001 laptop_mode       
+ 2153     0 sda1           26     0.003  3600.029  1290.730           0     0.000     0.000     0.000 rsyslogd          
+15575     0 sda1            0     0.000     0.000     0.000          16     0.000     0.000     0.000 cat               
+15581     0 sda1            0     0.000     0.000     0.000          12     0.001     0.002     0.000 perl              
+15582     0 sda1            0     0.000     0.000     0.000          12     0.001     0.002     0.000 perl              
+15579     0 sda1            0     0.000     0.000     0.000          12     0.000     0.001     0.000 perl              
+15580     0 sda1            0     0.000     0.000     0.000          12     0.001     0.001     0.000 perl              
+15354     0 sda1            0     0.000     0.000     0.000          12     0.000     0.170     0.014 sh                
+15584     0 sda1            0     0.000     0.000     0.000          12     0.001     0.002     0.000 perl              
+15548     0 sda1            0     0.000     0.000     0.000          12     0.001     0.014     0.001 perl              
+15577     0 sda1            0     0.000     0.000     0.000          12     0.001     0.003     0.000 perl              
+15519     0 sda1            0     0.000     0.000     0.000          12     0.001     0.005     0.000 perl              
+15578     0 sda1            0     0.000     0.000     0.000          12     0.001     0.001     0.000 perl              
+15583     0 sda1            0     0.000     0.000     0.000          12     0.001     0.001     0.000 perl              
+15547     0 sda1            0     0.000     0.000     0.000          11     0.000     0.002     0.000 perl              
+15576     0 sda1            0     0.000     0.000     0.000          11     0.001     0.001     0.000 perl              
+15518     0 sda1            0     0.000     0.000     0.000          11     0.000     0.001     0.000 perl              
+15354     0 sda1            0     0.000     0.000     0.000          10     0.053     0.053     0.005 lm_lid.sh</pre>
+	 <div class="para">
+		The columns are:
+	</div>
+	 <div class="variablelist"><dl class="variablelist"><dt><span class="term">PID</span></dt><dd>
+				<div class="para">
+					the process ID of the application
+				</div>
+
+			</dd><dt><span class="term">UID</span></dt><dd>
+				<div class="para">
+					the user ID under which the applications is running
+				</div>
+
+			</dd><dt><span class="term">DEV</span></dt><dd>
+				<div class="para">
+					the device on which the I/O took place
+				</div>
+
+			</dd><dt><span class="term">WRITE_CNT</span></dt><dd>
+				<div class="para">
+					the total number of write operations
+				</div>
+
+			</dd><dt><span class="term">WRITE_MIN</span></dt><dd>
+				<div class="para">
+					the lowest time taken for two consecutive writes (in seconds)
+				</div>
+
+			</dd><dt><span class="term">WRITE_MAX</span></dt><dd>
+				<div class="para">
+					the greatest time taken for two consecutive writes (in seconds)
+				</div>
+
+			</dd><dt><span class="term">WRITE_AVG</span></dt><dd>
+				<div class="para">
+					the average time taken for two consecutive writes (in seconds)
+				</div>
+
+			</dd><dt><span class="term">READ_CNT</span></dt><dd>
+				<div class="para">
+					the total number of read operations
+				</div>
+
+			</dd><dt><span class="term">READ_MIN</span></dt><dd>
+				<div class="para">
+					the lowest time taken for two consecutive reads (in seconds)
+				</div>
+
+			</dd><dt><span class="term">READ_MAX</span></dt><dd>
+				<div class="para">
+					the greatest time taken for two consecutive reads (in seconds)
+				</div>
+
+			</dd><dt><span class="term">READ_AVG</span></dt><dd>
+				<div class="para">
+					the average time taken for two consecutive reads (in seconds)
+				</div>
+
+			</dd><dt><span class="term">COMMAND</span></dt><dd>
+				<div class="para">
+					the name of the process
+				</div>
+
+			</dd></dl></div>
+	 <div class="para">
+		In this example, three very obvious applications stand out:
+	</div>
+	
+<pre class="screen">  PID   UID DEV     WRITE_CNT WRITE_MIN WRITE_MAX WRITE_AVG    READ_CNT  READ_MIN  READ_MAX  READ_AVG COMMAND
+ 2789  2903 sda1          854     0.000   120.000    39.836           0     0.000     0.000     0.000 plasma
+ 2573     0 sda1           63     0.033  3600.015   515.226           0     0.000     0.000     0.000 auditd
+ 2153     0 sda1           26     0.003  3600.029  1290.730           0     0.000     0.000     0.000 rsyslogd</pre>
+	 <div class="para">
+		These three applications have a <code class="literal">WRITE_CNT</code> greater than <code class="literal">0</code>, which means that they performed some form of write during the measurement. Of those, <span class="application"><strong>plasma</strong></span> was the worst offender by a large degree: it performed the most write operations, and of course the average time between writes was the lowest. <span class="application"><strong>Plasma</strong></span> would therefore be the best candidate to investigate if you were concerned about power-inefficient applications.
+	</div>
+	 <div class="para">
+		Use the <span class="application"><strong>strace</strong></span> and <span class="application"><strong>ltrace</strong></span> commands to examine applications more closely by tracing all system calls of the given process ID. In the present example, you could run:
+	</div>
+	
+<pre class="screen"><code class="command">strace -p 2789</code></pre>
+	 <div class="para">
+		In this example, the output of the <code class="command">strace</code> contained a repeating pattern every 45 seconds that opened the KDE icon cache file of the user for writing followed by an immediate close of the file again. This led to a necessary physical write to the hard disk as the file metadata (specifically, the modification time) had changed. The final fix was to prevent those unnecessary calls when no updates to the icons had occurred.
+	</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="PowerTOP.html"><strong>Prev</strong>2.2. PowerTOP</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="BLTK.html"><strong>Next</strong>2.4. Battery Life Tool Kit</a></li></ul></body></html>

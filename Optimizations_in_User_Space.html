@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">3.11. Optimizations in User Space</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Core_Infrastructure.html" title="Chapter 3. Core Infrastructure and Mechanics" /><link rel="prev" href="RFKill.html" title="3.10. RFKill" /><link rel="next" href="Use_Cases.html" title="Chapter 4. Use Cases" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="RFKill.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="Use_Cases.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Optimizations_in_User_Space"></a>3.11. Optimizations in User Space</h2></div></div></div>
+	 <div class="para">
+		Reducing the amount of work performed by system hardware is fundamental to saving power. Therefore, although the changes described in <a class="xref" href="Core_Infrastructure.html">Chapter 3, <em>Core Infrastructure and Mechanics</em></a> permit the system to operate in various states of reduced power consumption, applications in user space that request unnecessary work from system hardware prevent the hardware from entering those states. During the development of Red Hat Enterprise Linux 6, audits were undertaken in the following areas to reduce unnecessary demands on hardware:
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Reduced wakeups</div> 
+			Red Hat Enterprise Linux 6 uses a <em class="firstterm">tickless kernel</em> (refer to <a class="xref" href="Tickless-kernel.html">Section 3.4, “Tickless Kernel”</a>), which allows the CPUs to remain in deeper idle states longer. However, the <em class="firstterm">timer tick</em> is not the only source of excessive CPU wakeups, and function calls from applications can also prevent the CPU from entering or remaining in idle states. Unnecessary function calls were reduced in over 50 applications.
+		
+
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Reduced storage and network IO</div> 
+			Input or output (IO) to storage devices and network interfaces forces devices to consume power. In storage and network devices that feature reduced power states when idle (for example, ALPM or ASPM), this traffic can prevent the device from entering or remaining in an idle state, and can prevent hard drives from spinning down when not in use. Excessive and unnecessary demands on storage have been minimized in several applications. In particular, those demands that prevented hard drives from spinning down.
+		
+
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Initscript audit</div> 
+			Services that start automatically whether required or not have great potential to waste system resources. Services instead should default to "off" or "on demand" wherever possible. For example, the <span class="application"><strong>BlueZ</strong></span> service that enables Bluetooth support previously ran automatically when the system started, whether Bluetooth hardware was present or not. The <span class="application"><strong>BlueZ</strong></span> initscript now checks that Bluetooth hardware is present on the system before starting the service.
+		
+
+	</div>
+
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="RFKill.html"><strong>Prev</strong>3.10. RFKill</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="Use_Cases.html"><strong>Next</strong>Chapter 4. Use Cases</a></li></ul></body></html>

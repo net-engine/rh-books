@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">Chapter 3. Core Infrastructure and Mechanics</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="index.html" title="Power Management Guide" /><link rel="prev" href="Other_auditing.html" title="2.8. Other means for auditing" /><link rel="next" href="cpufreq_governors.html" title="3.2. Using CPUfreq Governors" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="Other_auditing.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="cpufreq_governors.html"><strong>Next</strong></a></li></ul><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a id="Core_Infrastructure"></a>Chapter 3. Core Infrastructure and Mechanics</h1></div></div></div><div class="toc"><dl class="toc"><dt><span class="section"><a href="Core_Infrastructure.html#C-States">3.1. CPU Idle States</a></span></dt><dt><span class="section"><a href="cpufreq_governors.html">3.2. Using <code class="command">CPUfreq</code> Governors</a></span></dt><dd><dl><dt><span class="section"><a href="cpufreq_governors.html#governor_types">3.2.1. CPUfreq Governor Types</a></span></dt><dt><span class="section"><a href="cpufreq_setup.html">3.2.2. CPUfreq Setup</a></span></dt><dt><span class="section"><a href="tuning_cpufreq_policy_and_speed.html">3.2.3. Tuning CPUfreq Policy and Speed</a></span></dt></dl></dd><dt><span class="section"><a href="Suspend_and_Resume.html">3.3. Suspend and Resume</a></span></dt><dt><span class="section"><a href="Tickless-kernel.html">3.4. Tickless Kernel</a></span></dt><dt><span class="section"><a href="ASPM.html">3.5. Active-State Power Management</a></span></dt><dt><span class="section"><a href="ALPM.html">3.6. Aggressive Link Power Management</a></span></dt><dt><span class="section"><a href="Relatime.html">3.7. Relatime Drive Access Optimization</a></span></dt><dt><span class="section"><a href="Power_Capping.html">3.8. Power Capping</a></span></dt><dt><span class="section"><a href="Enhanced_Graphics_Power_Management.html">3.9. Enhanced Graphics Power Management</a></span></dt><dt><span class="section"><a href="RFKill.html">3.10. RFKill</a></span></dt><dt><span class="section"><a href="Optimizations_in_User_Space.html">3.11. Optimizations in User Space</a></span></dt></dl></div>
+		 <div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="C-States"></a>3.1. CPU Idle States</h2></div></div></div>
+	 <div class="para">
+		CPUs with the x86 architecture support various states in which parts of the CPU are deactivated or run at lower performance settings. These states, known as <em class="firstterm">C-states</em>, allow systems to save power by partially deactivating CPUs that are not in use. C-states are numbered from C0 upwards, with higher numbers representing decreased CPU functionality and greater power saving. C-States of a given number are broadly similar across processors, although the exact details of the specific feature sets of the state may vary between processor families. C-States 0â3 are defined as follows:
+	</div>
+	 <div class="variablelist"><dl class="variablelist"><dt><span class="term">C0</span></dt><dd>
+				<div class="para">
+					the operating or running state. In this state, the CPU is working and not idle at all.
+				</div>
+
+			</dd><dt><span class="term">C1, </span><span class="term">Halt</span></dt><dd>
+				<div class="para">
+					a state where the processor is not executing any instructions but is typically not in a lower power state. The CPU can continue processing with practically no delay. All processors offering C-States need to support this state. Pentium4 processors support an enhanced C1 state called C1E that actually is a state for lower power consumption.
+				</div>
+
+			</dd><dt><span class="term">C2, </span><span class="term">Stop-Clock</span></dt><dd>
+				<div class="para">
+					a state where the the clock is frozen for this processor but it keeps the complete state for its registers and caches, so after starting the clock again it can immediately start processing again. This is an optional state.
+				</div>
+
+			</dd><dt><span class="term">C3, </span><span class="term">Sleep</span></dt><dd>
+				<div class="para">
+					a state where the processor really goes to sleep and doesn't need to keep it's cache up to date. Waking up from this state takes considerably longer than from C2 due to this. Again this is an optional state.
+				</div>
+
+			</dd></dl></div>
+	 <div class="para">
+		Recent Intel CPUs with the "Nehalem" microarchitecture feature a new C-State, C6, which can reduce the voltage supply of a CPU to zero, but typically reduces power consumption by between 80% and 90%. The kernel in Red Hat Enterprise Linux6 includes optimizations for this new C-State.
+	</div>
+</div>
+		 
+		  
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+
+	</div><ul class="docnav"><li class="previous"><a accesskey="p" href="Other_auditing.html"><strong>Prev</strong>2.8. Other means for auditing</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="cpufreq_governors.html"><strong>Next</strong>3.2. Using CPUfreq Governors</a></li></ul></body></html>

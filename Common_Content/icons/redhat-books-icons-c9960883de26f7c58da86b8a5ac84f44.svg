@@ -1,0 +1,48 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>
+Created by FontForge 20120731 at Thu Dec 12 12:26:47 2013
+ By Rowan Hogan
+Created by Rowan Hogan with FontForge 2.0 (http://fontforge.sf.net)
+</metadata>
+<defs>
+<font id="redhat-books-icons" horiz-adv-x="448" >
+  <font-face 
+    font-family="redhat-books-icons"
+    font-weight="500"
+    font-stretch="normal"
+    units-per-em="512"
+    panose-1="2 0 6 3 0 0 0 0 0 0"
+    ascent="448"
+    descent="-64"
+    bbox="0 -64 512 448"
+    underline-thickness="25"
+    underline-position="-52"
+    unicode-range="U+F100-F103"
+  />
+<missing-glyph horiz-adv-x="187" 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name=".notdef" horiz-adv-x="187" 
+d="M17 0v341h136v-341h-136zM34 17h102v307h-102v-307z" />
+    <glyph glyph-name=".null" horiz-adv-x="0" 
+ />
+    <glyph glyph-name="nonmarkingreturn" horiz-adv-x="170" 
+ />
+    <glyph glyph-name="uniF100" unicode="&#xf100;" 
+d="M448 352l-160 -64v-128l64 -224h-32l-96 224l-96 -224h-32l64 224v128l-160 64v32l224 -64l224 64v-32zM176 400q0 20 14 34t34 14t34 -14t14 -34t-14 -34t-34 -14t-34 14t-14 34z" />
+    <glyph glyph-name="uniF101" unicode="&#xf101;" 
+d="M169 375q9 9 23 9t23 -9t9 -23t-9 -23l-106 -105h307q14 0 23 -9t9 -23t-9 -23t-23 -9h-307l106 -105q9 -9 9 -23t-9 -23t-23 -9t-23 9l-160 160q-9 9 -9 23t9 23z" />
+    <glyph glyph-name="uniF102" unicode="&#xf102;" 
+d="M279 9q-9 -9 -23 -9t-23 9t-9 23t9 23l106 105h-307q-14 0 -23 9t-9 23t9 23t23 9h307l-106 105q-9 9 -9 23t9 23t23 9t23 -9l160 -160q9 -9 9 -23t-9 -23z" />
+    <glyph glyph-name="uniF103" unicode="&#xf103;" horiz-adv-x="512" 
+d="M226 92q2 -2 1 -4q-1 -1 -2 -1h-2q-7 4 -24 4h-136q-3 0 -3 3t3 3h136q22 0 27 -5zM63 120q-3 0 -3 3t3 3h136q22 0 27 -5q2 -3 1 -4t-2 -1h-2q-7 4 -24 4h-136zM63 149q-3 0 -3 3t3 3h136q22 0 27 -5q2 -2 1 -4q-1 -1 -2 -1h-2q-7 4 -24 4h-136zM63 178q-3 0 -3 3t3 3
+h136q22 0 27 -5q2 -3 1 -4t-2 -1h-2q-7 4 -24 4h-136zM63 207q-3 0 -3 3t3 3h136q22 0 27 -5q2 -2 1 -4q-1 -1 -2 -1h-2q-7 4 -24 4h-136zM63 236q-3 0 -3 3t3 3h136q22 0 27 -5q2 -3 1 -4t-2 -1h-2q-7 4 -24 4h-136zM63 265q-3 0 -3 3t3 3h136q21 0 27 -6q2 -2 1 -3l-2 -2
+l-2 1q-7 4 -24 4h-136zM63 294q-3 0 -3 3t3 3h136q21 0 27 -6q2 -2 1 -3l-2 -2l-2 1q-7 4 -24 4h-136zM63 323q-3 0 -3 3t3 3h136q21 0 27 -6q2 -2 1 -3l-2 -2l-2 1q-7 4 -24 4h-136zM284 174q-1 0 -2 1q-2 1 1 4q5 5 27 5h136q2 0 2 -3t-2 -3h-136l-24 -4h-2zM284 203
+q-1 0 -2 1q-2 2 1 4q5 5 27 5h136q2 0 2 -3t-2 -3h-136l-24 -4h-2zM284 232q-1 0 -2 1q-2 1 1 4q5 5 27 5h136q2 0 2 -3t-2 -3h-136l-24 -4h-2zM284 261q-1 0 -2 1q-2 2 1 4q5 5 27 5h136q2 0 2 -3t-2 -3h-136l-24 -4h-2zM284 290q-1 0 -2 1q-2 1 1 4q5 5 27 5h136q2 0 2 -3
+t-2 -3h-136l-24 -4h-2zM284 319q-1 0 -2 1q-2 2 1 4q5 5 27 5h136q2 0 2 -3t-2 -3h-136l-24 -4h-2zM493 352q8 0 13.5 -6.5t5.5 -16.5v-281q0 -10 -6.5 -16.5t-16.5 -6.5h-199q-15 -11 -34 -11q-20 0 -35 11h-198q-10 0 -16.5 6.5t-6.5 16.5v281q0 10 5 16.5t13 6.5h8v12
+q0 6 6 6h195q20 0 29 -11q9 11 28 11h195q6 0 6 -6v-12h8zM260 343v-290q9 7 24 7h39q10 3 19 10v1l3 2q9 9 13 18h-48l-24 -4h-2q-1 0 -2 1q-2 2 1 4q5 5 27 5h50l3 6q4 13 5 17h-58l-24 -4h-2q-1 0 -2 1q-2 1 1 4q5 5 27 5h59q2 6 2 10l1 7v6h-62l-24 -4h-2q-1 0 -2 1
+q-2 2 1 4q5 5 27 5h63h1q1 1 4 1q13 -5 40 -0.5t43 16.5l3 3h1q4 4 8 12v171h-189q-8 0 -14 -3t-7.5 -6t-1.5 -4l-1 -1v-1zM466 165l-115 -98q-5 -5 -8 -7h130v112l-6 -6zM369 93l67 58q-27 -8 -55 -4q-2 -33 -12 -54zM38 93v-33h189q15 0 24 -7v290v1l-1 1q0 1 -1.5 4
+t-7.5 6t-14 3h-189v-265zM500 48v281q0 11 -7 11h-8v-286q0 -6 -6 -6h-195q-13 0 -19 -7q-4 -4 -9 -4q-6 0 -10 4q-6 7 -19 7h-195q-6 0 -6 6v39v247h-8q-6 0 -6 -11v-281q0 -11 11 -11h201q2 0 4 -2q14 -9 28 -9q8 0 15 2t10 4l3 3q2 2 4 2h201q11 0 11 11z" />
+  </font>
+</defs></svg>

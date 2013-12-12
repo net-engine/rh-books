@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">4.2. Example â Laptop</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Use_Cases.html" title="Chapter 4. Use Cases" /><link rel="prev" href="Use_Cases.html" title="Chapter 4. Use Cases" /><link rel="next" href="Developer_Tips.html" title="Appendix A. Tips for Developers" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="Use_Cases.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="Developer_Tips.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Example_Laptop"></a>4.2. Example â Laptop</h2></div></div></div>
+	 <div class="para">
+		One other very common place where power management and savings can really make a difference are laptops. As laptops by design normally already use drastically less energy than workstations or servers the potential for absolute savings are less than for other machines. When in battery mode, though, any saving can help to get a few more minutes of battery life out of a laptop. Although this section focuses on laptops in battery mode, but you certainly can still use some or all of those tunings while running on AC power as well.
+	</div>
+	 <div class="para">
+		Savings for single components usually make a bigger relative difference on laptops than they do on workstations. For example, a 1Gbit/s network interface running at 100Mbits/s saves around 3â4watts. For a typical server with a total power consumption of around 400watts, this saving is approximately 1%. On a laptop with a total power consumption of around 40watts, the power saving on just this one component amounts to 10% of the total.
+	</div>
+	 <div class="para">
+		Specific power-saving optimizations on a typical laptop include:
+	</div>
+	 <div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+			<div class="para">
+				Configure the system BIOS to disable all hardware that you do not use. For example, parallel or serial ports, card readers, webcams, WiFi, and Bluetooth just to name a few possible candidates.
+			</div>
+
+		</li><li class="listitem">
+			<div class="para">
+				Dim the display in darker environments where you do not need full illumination to read the screen comfortably. Use <span class="guimenu"><strong>System</strong></span>+<span class="guimenu"><strong>Preferences</strong></span> → <span class="guimenuitem"><strong>Power Management</strong></span> on the GNOME desktop, <span class="guimenu"><strong>Kickoff Application Launcher</strong></span>+<span class="guimenu"><strong>Computer</strong></span>+<span class="guimenu"><strong>System Settings</strong></span>+<span class="guimenu"><strong>Advanced</strong></span> → <span class="guimenuitem"><strong>Power Management</strong></span> on the KDE desktop; or <span class="application"><strong>gnome-power-manager</strong></span> or <span class="application"><strong>xbacklight</strong></span> at the command line; or the function keys on your laptop.
+			</div>
+
+		</li><li class="listitem">
+			<div class="para">
+				Use the <code class="systemitem">laptop-battery-powersave</code> profile of <span class="application"><strong>tuned-adm</strong></span> to enable a whole set of power-saving mechanisms. Note that performance and latency for the hard drive and network interface are impacted.
+			</div>
+
+		</li></ul></div>
+	 <div class="para">
+		Additionally (or alternatively) you can perform many small adjustments to various system settings:
+	</div>
+	 <div xmlns:d="http://docbook.org/ns/docbook" class="itemizedlist"><ul><li class="listitem">
+			<div class="para">
+				use the <code class="systemitem">ondemand</code> governor (enabled by default in Red Hat Enterprise Linux 6)
+			</div>
+
+		</li><li class="listitem">
+			<div class="para">
+				enable laptop mode (part of the <code class="systemitem">laptop-battery-powersave</code> profile):
+			</div>
+			
+<pre class="screen"><code class="command">echo 5 /proc/sys/vm/laptop_mode</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				increase flush time to disk (part of the <code class="systemitem">laptop-battery-powersave</code> profile):
+			</div>
+			
+<pre class="screen"><code class="command">echo 1500 /proc/sys/vm/dirty_writeback_centisecs</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				disable nmi watchdog (part of the <code class="systemitem">laptop-battery-powersave</code> profile):
+			</div>
+			
+<pre class="screen"><code class="command">echo 0 /proc/sys/kernel/nmi_watchdog</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				enable AC97 audio power-saving (enabled by default in Red Hat Enterprise Linux 6):
+			</div>
+			
+<pre class="screen"><code class="command">echo Y /sys/module/snd_ac97_codec/parameters/power_save</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				enable multi-core power-saving (part of the <code class="systemitem">laptop-battery-powersave</code> profile):
+			</div>
+			
+<pre class="screen"><code class="command">echo 1 /sys/devices/system/cpu/sched_mc_power_savings</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				enable USB auto-suspend:
+			</div>
+			
+<pre class="screen"><code class="command">for i in /sys/bus/usb/devices/*/power/autosuspend; do echo 1 $i; done</code></pre>
+			 <div class="para">
+				Note that USB auto-suspend does not work correctly with all USB devices.
+			</div>
+
+		</li><li class="listitem">
+			<div class="para">
+				enable minimum power setting for ALPM (part of the <code class="systemitem">laptop-battery-powersave</code> profile):
+			</div>
+			
+<pre class="screen"><code class="command">echo min_power /sys/class/scsi_host/host*/link_power_management_policy</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				mount filesystem using relatime (default in Red Hat Enterprise Linux 6):
+			</div>
+			
+<pre class="screen"><code class="command">mount -o remount,relatime <em class="replaceable"><code>mountpoint</code></em></code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				activate best power saving mode for hard drives (part of the <code class="systemitem">laptop-battery-powersave</code> profile):
+			</div>
+			
+<pre class="screen"><code class="command">hdparm -B 1 -S 200 /dev/sd*</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				disable CD-ROM polling (part of the <code class="systemitem">laptop-battery-powersave</code> profile):
+			</div>
+			
+<pre class="screen"><code class="command">hal-disable-polling --device /dev/scd*</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				reduce screen brightness to <code class="literal">50</code> or less, for example:
+			</div>
+			
+<pre class="screen"><code class="command">xbacklight -set 50</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				activate DPMS for screen idle:
+			</div>
+			
+<pre class="screen"><code class="command">xset +dpms; xset dpms 0 0 300</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				reduce Wi-Fi power levels (part of the <code class="systemitem">laptop-battery-powersave</code> profile):
+			</div>
+			
+<pre class="screen"><code class="command">for i in /sys/bus/pci/devices/*/power_level ; do echo 5 $i ; done</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				deactivate Wi-Fi:
+			</div>
+			
+<pre class="screen"><code class="command">echo 1 /sys/bus/pci/devices/*/rf_kill</code></pre>
+
+		</li><li class="listitem">
+			<div class="para">
+				limit wired network to 100Mbit/s (part of the <code class="systemitem">laptop-battery-powersave</code> profile):
+			</div>
+			
+<pre class="screen"><code class="command">ethtool -s eth0 advertise 0x0F</code></pre>
+
+		</li></ul></div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="Use_Cases.html"><strong>Prev</strong>Chapter 4. Use Cases</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="Developer_Tips.html"><strong>Next</strong>Appendix A. Tips for Developers</a></li></ul></body></html>

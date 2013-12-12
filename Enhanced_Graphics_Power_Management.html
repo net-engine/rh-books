@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">3.9. Enhanced Graphics Power Management</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Core_Infrastructure.html" title="Chapter 3. Core Infrastructure and Mechanics" /><link rel="prev" href="Power_Capping.html" title="3.8. Power Capping" /><link rel="next" href="RFKill.html" title="3.10. RFKill" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="Power_Capping.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="RFKill.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Enhanced_Graphics_Power_Management"></a>3.9. Enhanced Graphics Power Management</h2></div></div></div>
+	 <div class="para">
+		Red Hat Enterprise Linux 6 saves power on graphics and display devices by eliminating several sources of unnecessary consumption.
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">LVDS reclocking</div> 
+			<em class="firstterm">Low-voltage differential signaling</em> (LVDS) is an system for carrying electronic signals over copper wire. One significant application of the system is to transmit pixel information to <em class="firstterm">liquid crystal display</em> (LCD) screens in notebook computers. All displays have a <em class="firstterm">refresh rate</em> â the rate at which they receive fresh data from a graphics controller and redraw the image on the screen. Typically, the screen receives fresh data sixty times per second (a frequency of 60Hz). When a screen and graphics controller are linked by LVDS, the LVDS system uses power on every refresh cycle. When idle, the refresh rate of many LCD screens can be dropped to 30Hz without any noticeable effect (unlike <em class="firstterm">cathode ray tube</em> (CRT) monitors, where a decrease in refresh rate produces a characteristic flicker). The driver for Intel graphics adapters built into the kernel used in Red Hat Enterprise Linux 6 performs this <em class="firstterm">downclocking</em> automatically, and saves around 0.5W when the screen is idle.
+		
+
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">Enabling memory self-refresh</div> 
+			<em class="firstterm">Synchronous dynamic random access memory</em> (SDRAM) â as used for video memory in graphics adapters â is recharged thousands of times per second so that individual memory cells retain the data that is stored in them. Apart from its main function of managing data as it flows in and out of memory, the memory controller is normally responsible for initiating these refresh cycles. However, SDRAM also has a low-power <em class="firstterm">self-refresh</em> mode. In this mode, the memory uses an internal timer to generate its own refresh cycles, which allows the system to shut down the memory controller without endangering data currently held in memory. The kernel used in Red Hat Enterprise Linux 6 can trigger memory self-refresh in Intel graphics adapters when they are idle, which saves around 0.8W.
+		
+
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">GPU clock reduction</div> 
+			Typical graphical processing units (GPUs) contain internal clocks that govern various parts of their internal circuitry. The kernel used in Red Hat Enterprise Linux 6 can reduce the frequency of some of the internal clocks in Intel and ATI GPUs. Reducing the number of cycles that GPU components perform in a given time saves the power that they would have consumed in the cycles that they did not have to perform. The kernel automatically reduces the speed of these clocks when the GPU is idle, and increases it when GPU activity increases. Reducing GPU clock cycles can save up to 5W.
+		
+
+	</div>
+	 <div class="formalpara">
+		<div xmlns:d="http://docbook.org/ns/docbook" class="title">GPU powerdown</div> 
+			The Intel and ATI graphics drivers in Red Hat Enterprise Linux 6 can detect when no monitor is attached to an adapter and therefore shut down the GPU completely. This feature is especially significant for servers which do not have monitors attached to them regularly.
+		
+
+	</div>
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="Power_Capping.html"><strong>Prev</strong>3.8. Power Capping</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="RFKill.html"><strong>Next</strong>3.10. RFKill</a></li></ul></body></html>

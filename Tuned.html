@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">2.5. Tuned and ktune</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Audit_and_Analysis.html" title="Chapter 2. Power management auditing and analysis" /><link rel="prev" href="BLTK.html" title="2.4. Battery Life Tool Kit" /><link rel="next" href="tuned-adm.html" title="2.5.2. Tuned-adm" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="BLTK.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="tuned-adm.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Tuned"></a>2.5. Tuned and ktune</h2></div></div></div>
+	 <div class="para">
+		<span class="application"><strong>Tuned</strong></span> is a daemon that monitors the use of system components and dynamically tunes system settings based on that monitoring information. Dynamic tuning accounts for the way that various system components are used differently throughout the uptime for any given system. For example, the hard drive is used heavily during startup and login, but is barely used later when a user might mainly work with applications like OpenOffice or email clients. Similarly, the CPU and network devices are used differently at different times. <span class="application"><strong>Tuned</strong></span> monitors the activity of these components and reacts to changes in their use.
+	</div>
+	 <div class="para">
+		As a practical example, consider a typical office workstation. Most of the time, the Ethernet network interface will be very inactive. Only a few emails will go in and out every once in a while or some web pages might be loaded. For those kinds of loads, the network interface doesn't have to run at full speed all the time, as it does by default. <span class="application"><strong>Tuned</strong></span> has a monitoring and tuning plugin for network devices that can detect that low activity and then automatically lower the speed of that interface, typically resulting in lower power usage. If activity on the interface increases drastically for a longer period of time, for example because a DVD image is being downloaded or an email with a large attachment is opened, <span class="application"><strong>tuned</strong></span> detects this and sets the interface speed to maximum to offer the best performance while the activity level is so high. This principle is used for the other plugins for CPU and hard disks as well.
+	</div>
+	 <div class="para">
+		Network devices are not configured to behave this way by default because speed changes can take several seconds to take effect and therefore directly and visibly impact the user experience. Similar considerations apply for the CPU and hard drive tuning plugins. When a hard drive has been spun down, it can take several seconds for it to spin up again which results in an observed lack of responsiveness of the system during that period. The latency side effect is smallest for the CPU plugin, but it is still at least measurable, though hardly noticeable by a user.
+	</div>
+	 <div class="para">
+		Alongside of <span class="application"><strong>tuned</strong></span> we now also offer <span class="application"><strong>ktune</strong></span>. <span class="application"><strong>Ktune</strong></span> was introduced in Red Hat Enterprise Linux 5.3 as a framework and service to optimize the performance of a machine for a specific use cases. Since then, <span class="application"><strong>ktune</strong></span> has improved to such a degree that we now use it as the static part of our general tuning framework. It is mainly used in the different predefined profiles described in <a class="xref" href="tuned-adm.html">Section 2.5.2, “Tuned-adm”</a>.
+	</div>
+	 <div class="para">
+		Install the <span class="package">tuned</span> package and its associated <span class="application"><strong>systemtap</strong></span> scripts with the command:
+	</div>
+	
+<pre class="screen"><code class="command">yum install tuned</code></pre>
+	 <div class="para">
+		Installing the <span class="package">tuned</span> package also sets up a sample configuration file at <code class="filename">/etc/tuned.conf</code> and activates the default profile.
+	</div>
+	 <div class="para">
+		Start <span class="application"><strong>tuned</strong></span> by running:
+	</div>
+	
+<pre class="screen"><code class="command">service tuned start</code></pre>
+	 <div class="para">
+		To start <span class="application"><strong>tuned</strong></span> every time the machine boots, run:
+	</div>
+	
+<pre class="screen"><code class="command">chkconfig tuned on</code></pre>
+	 <div class="para">
+		<span class="application"><strong>Tuned</strong></span> itself has additional options that you can use when you run it manually. The available options are:
+	</div>
+	 <div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="option">-d</code>, </span><span class="term"><code class="option">--daemon</code></span></dt><dd>
+				<div class="para">
+					start <span class="application"><strong>tuned</strong></span> as a daemon instead of in the foreground.
+				</div>
+
+			</dd><dt><span class="term"><code class="option">-c</code>, </span><span class="term"><code class="option">--conffile</code></span></dt><dd>
+				<div class="para">
+					use a configuration file with the specified name and path, for example, <code class="literal">--conffile=/etc/tuned2.conf</code>. The default is <code class="filename">/etc/tuned.conf</code>.
+				</div>
+
+			</dd><dt><span class="term"><code class="option">-D</code>, </span><span class="term"><code class="option">--debug</code></span></dt><dd>
+				<div class="para">
+					use the highest level of logging.
+				</div>
+
+			</dd></dl></div>
+	 <div class="section"><div class="titlepage"><div><div><h3 class="title"><a id="The_tuned.conf_file"></a>2.5.1. The <code class="filename">tuned.conf</code> file</h3></div></div></div>
+		 <div class="para">
+			The <code class="filename">tuned.conf</code> file contains configuration settings for <span class="application"><strong>tuned</strong></span>. By default, it is located at <code class="filename">/etc/tuned.conf</code>, but you can specify a different name and location by starting <span class="application"><strong>tuned</strong></span> with the <code class="option">--conffile</code> option.
+		</div>
+		 <div class="para">
+			The config file must always contain a <code class="literal">[main]</code> section that defines the general parameters for <span class="application"><strong>tuned</strong></span>. The file then contains a section for each plugin.
+		</div>
+		 <div class="para">
+			The <code class="literal">[main]</code> section contains the following options:
+		</div>
+		 <div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="option">interval</code></span></dt><dd>
+					<div class="para">
+						the interval at which <span class="application"><strong>tuned</strong></span> should monitor and tune the system, in seconds. The default value is <code class="literal">10</code>.
+					</div>
+
+				</dd><dt><span class="term"><code class="option">verbose</code></span></dt><dd>
+					<div class="para">
+						specifies whether output should be verbose. The default value is <code class="literal">False</code>.
+					</div>
+
+				</dd><dt><span class="term"><code class="option">logging</code></span></dt><dd>
+					<div class="para">
+						specifies the minimum priority of messages to be logged. In descending order, allowable values are: <code class="literal">critical</code>, <code class="literal">error</code>, <code class="literal">warning</code>, <code class="literal">info</code>, and <code class="literal">debug</code>. The default value is <code class="literal">info</code>.
+					</div>
+
+				</dd><dt><span class="term"><code class="option">logging_disable</code></span></dt><dd>
+					<div class="para">
+						specifies the maximum priority of messages to be logged; any messages with this priority or lower will not be logged. In descending order, allowable values are: <code class="literal">critical</code>, <code class="literal">error</code>, <code class="literal">warning</code>, <code class="literal">info</code>, and <code class="literal">debug</code>. The value <code class="literal">notset</code> disables this option.
+					</div>
+
+				</dd></dl></div>
+		 <div class="para">
+			Each plugin has its own section, specified with the name of the plugin in square brackets; for example: <code class="literal">[CPUTuning]</code>. Each plugin can have its own options, but the following apply to all plugins:
+		</div>
+		 <div class="variablelist"><dl class="variablelist"><dt><span class="term"><code class="option">enabled</code></span></dt><dd>
+					<div class="para">
+						specifies whether the plugin is enabled or not. The default value is <code class="literal">True</code>.
+					</div>
+
+				</dd><dt><span class="term"><code class="option">verbose</code></span></dt><dd>
+					<div class="para">
+						specifies whether output should be verbose. If not set for this plugin, the value is inherited from <code class="literal">[main]</code>.
+					</div>
+
+				</dd><dt><span class="term"><code class="option">logging</code></span></dt><dd>
+					<div class="para">
+						specifies the minimum priority of messages to be logged. If not set for this plugin, the value is inherited from <code class="literal">[main]</code>.
+					</div>
+
+				</dd></dl></div>
+		 <div class="para">
+			A sample config file follows:
+		</div>
+		
+<pre class="programlisting">[main]
+interval=10
+pidfile=/var/run/tuned.pid
+logging=info
+logging_disable=notset
+
+# Disk monitoring section
+
+[DiskMonitor]
+enabled=True
+logging=debug
+
+# Disk tuning section
+
+[DiskTuning]
+enabled=True
+hdparm=False
+alpm=False
+logging=debug
+
+# Net monitoring section
+
+[NetMonitor]
+enabled=True
+logging=debug
+
+# Net tuning section
+
+[NetTuning]
+enabled=True
+logging=debug
+
+# CPU monitoring section
+
+[CPUMonitor]
+# Enabled or disable the plugin. Default is True. Any other value
+# disables it.
+enabled=True
+
+# CPU tuning section
+
+[CPUTuning]
+# Enabled or disable the plugin. Default is True. Any other value
+# disables it.
+enabled=True</pre>
+
+	</div>
+	
+	 
+
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="BLTK.html"><strong>Prev</strong>2.4. Battery Life Tool Kit</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="tuned-adm.html"><strong>Next</strong>2.5.2. Tuned-adm</a></li></ul></body></html>
