@@ -4,8 +4,11 @@
 
 The following are based on output from REL Power Management Guide
 
-[HTML Single](http://net-engine.github.io/rh-books/html-single.html)
-[HTML](http://net-engine.github.io/rh-books/html.html)
+* [HTML Single](http://net-engine.github.io/rh-books/html-single.html)
+
+* [HTML](http://net-engine.github.io/rh-books/html.html)
+
+* [HTML](http://net-engine.github.io/rh-books/html-single-2.html)
 
 
 ## Dev Setup
