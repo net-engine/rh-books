@@ -22,12 +22,11 @@ kbd, .keycap {
   margin: 0 .25em;
 }
 
-.para code {
+p code, .para code {
   display: inline-block;
   padding: 0 .25em;
   border-radius: 2px;
   margin: 0 .125em;
-  color: $color-black;
 }
 
 pre {

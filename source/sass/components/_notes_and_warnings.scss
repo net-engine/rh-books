@@ -10,35 +10,50 @@
   }
 }
 
-.admonition {
+.note, .important, .warning {
   margin-bottom: $line-height;
 }
 
-.note, .important, .warning {
-  border-left: $line-height / 3 solid;
-  padding-left: $line-height;
+.admonition {
+  p, .para {
+    margin-bottom: 0;
+  }
+}
+
+.note, .important {
+  padding-left: $line-height * 2.5;
+  background-size: ($line-height * 1.5);
 }
 
 .note {
-  border-color: $color-highlight;
-
-  .admonition_header {
-    color: $color-highlight;
-  }
+  background-image: url('../images/service_pattern_tile_positive.svg');
+  background-repeat: repeat-y;
 }
 
 .important {
-  border-color: $color-unsure;
-
-  .admonition_header {
-    color: $color-unsure;
-  }
+  background-image: url('../images/service_pattern_tile_negative.svg');
+  background-repeat: repeat-y;
 }
 
 .warning {
-  border-color: $color-warning;
+  background-color: $color-black;
+  color: $color-white;
+  padding: ($line-height * 0.667) ($line-height / 2);
+  padding-left: $line-height * 2.5;
+  @include border-radius(0.25em);
+  position: relative;
 
-  .admonition_header {
-    color: $color-warning;
+  &:before {
+    content: "";
+    
+    background-image: url('../images/warning.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    position: absolute;
+    top: $line-height * 0.8;
+    left: $line-height * 0.667;
+    width: $line-height * 1.2;
+    height: $line-height * 1.2;
   }
 }
