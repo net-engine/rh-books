@@ -8,7 +8,7 @@ The following are based on output from REL Power Management Guide
 
 * [HTML](http://net-engine.github.io/rh-books/html.html)
 
-* [HTML](http://net-engine.github.io/rh-books/html-single-2.html)
+* [HTML Single Example 2](http://net-engine.github.io/rh-books/html-single-2.html)
 
 
 ## Dev Setup
