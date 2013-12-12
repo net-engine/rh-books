@@ -11,6 +11,10 @@ p, .para, .formalpara {
   margin-bottom: $line-height;
 }
 
+p:empty, .para:empty {
+  margin-bottom: 0;
+}
+
 %em { font-style: italic; }
 
 em,

@@ -15,7 +15,7 @@
 }
 
 .admonition {
-  p, .para {
+  p:last-child, .para:last-child {
     margin-bottom: 0;
   }
 }

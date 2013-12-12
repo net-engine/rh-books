@@ -39,6 +39,8 @@ pre {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
+p pre, .para pre { margin-top: $line-height; }
+
 // Syntax Highlighting
 
 // .perl_Alert                { color: $color-danger; }
