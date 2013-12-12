@@ -10,7 +10,8 @@
 
 @import 'decorative/borders';
 
-@import 'typography/body',
+@import 'typography/includes',
+        'typography/body',
         'typography/code',
         'typography/headings',
         'typography/icons',

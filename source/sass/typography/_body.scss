@@ -1,10 +1,14 @@
-html {
+%main {
   font-family: $font-family-body;
   color: $color-base-font;
   line-height: $line-height;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+}
+
+#main {
+  @extend %main;
 }
 
 p, .para, .formalpara {

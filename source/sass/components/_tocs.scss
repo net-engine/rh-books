@@ -1,20 +1,34 @@
 .toc {
-  a { text-decoration: none; }
+  a {
+    text-decoration: none;
+    color: $color-grey-darkish !important;
 
-  dt { 
-    font-weight: normal; 
+    &:hover {
+      color: $color-grey !important;
+    }
+  }
+
+  dt {
+    font-weight: normal;
     margin-bottom: 0;
     padding-bottom: 0;
     border-bottom: none;
-    font-family: $font-family-body;
   }
 
-  & > dt { font-weight: $font-weight-medium; }
+  & > dt {
+    border-bottom: .125em solid #eee;
+    padding-bottom: .25em;
+    margin-bottom: 1em;
+    font-weight: 700;
+    font-family: $font-family-headings;
+    text-transform: uppercase;
+  }
+
   & > dd {
     padding-left: $gutter / 2;
 
     & > dl > dd {
-      padding-left: $gutter;      
+      padding-left: $gutter;
     }
   }
 }

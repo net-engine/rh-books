@@ -168,13 +168,13 @@ $select-focus-border-color:               $color-success;
 // Breakpoints
 
 $breakpoint-small:                        32em;
-$breakpoint-medium:                       50em;
-$breakpoint-large:                        75em;
+$breakpoint-medium:                       $breakpoint-small * 2;
+$breakpoint-large:                        $breakpoint-medium * 2;
 
 
 // Layout
 
-$title-height: 2.5em;
+$title-height: 42px;
 
 $gutter:                                  $line-height * 1.5 !default;
 $page-margin:                             $line-height * 2 !default;
@@ -197,3 +197,4 @@ $baseline-grid:                           false;
 // Misc
 
 $radius:                                  .15em;
+
