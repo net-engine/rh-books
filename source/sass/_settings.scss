@@ -141,13 +141,13 @@ $input-foreground-color:                  $color-black;
 $input-background-color:                  $color-white;
 $input-border-color:                      $color-grey-light;
 
-$input-hover-foreground-color:            $color-highlight;
-$input-hover-background-color:            $color-highlight;
-$input-hover-border-color:                $color-highlight;
+$input-hover-foreground-color:            $color-grey-lightest;
+$input-hover-background-color:            $color-grey-lightest;
+$input-hover-border-color:                $color-grey-lightest;
 
 $input-focus-foreground-color:            $color-black;
 $input-focus-background-color:            $color-white;
-$input-focus-border-color:                $color-success;
+$input-focus-border-color:                $color-rh-navy;
 
 
 // Selects
@@ -156,9 +156,9 @@ $select-foreground-color:                 $color-black;
 $select-background-color:                 $color-grey-lighter;
 $select-border-color:                     $color-grey-light;
 
-$select-hover-foreground-color:           $color-highlight;
-$select-hover-background-color:           $color-highlight;
-$select-hover-border-color:               $color-highlight;
+$select-hover-foreground-color:           $color-grey-lightest;
+$select-hover-background-color:           $color-grey-lightest;
+$select-hover-border-color:               $color-grey-lightest;
 
 $select-focus-foreground-color:           $color-success;
 $select-focus-background-color:           $color-success;

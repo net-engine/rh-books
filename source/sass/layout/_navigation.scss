@@ -16,8 +16,8 @@
 
 
 #title {
-  padding-top: ($page-margin / 4);
-  padding-bottom: ($page-margin / 4);
+  padding-top: ($page-margin / 2);
+  padding-bottom: ($page-margin / 2);
   height: $title-height;
   @extend %clearfix;
 
@@ -148,59 +148,149 @@
 
 
 
+// Fixed Nav
 
 $nav-width: 26em;
 
-// Fixed Nav
+#floatingtoc { display: none; }
 
-@media screen and (min-width: $breakpoint-medium) {
+.fixed-nav {
+  position: relative;
+  padding-left: $nav-width;
 
-  #floatingtoc { display: none; }
+  .book > .toc {
+    position: absolute;
+    top: 0; left: 0;
+    width: $nav-width;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: $line-height;
+    background: darken($color-white, 2.5%);
+    @include box-sizing(border-box);
+
+    &.fixed {
+      position: fixed;
+    }
+
+    &.bottom {
+      bottom: 0;
+      top: auto;
+    }
+  }
+
+  @media screen and (max-width: $breakpoint-medium) {
+    .book > .toc {
+
+    }
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+
+  $nav-width: 18em;
 
   .fixed-nav {
     padding-left: $nav-width;
 
-    .book {
-      > .toc {
-        position: absolute;
-        top: 0; left: 0;
-        width: $nav-width;
-        height: 100vh;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        padding: $line-height;
-        background: darken($color-white, 2.5%);
-        @include box-sizing(border-box);
-
-        &.fixed {
-          position: fixed;
-        }
-      }
-    }
+    .book > .toc { width: $nav-width; }
   }
 
 }
 
 
-#main {
-  position: relative;
+// Collapsible Menu
 
-  &.has-fixed {
-    padding-left: $nav-width;
+@media screen and (max-width: 980px) {
 
-    .book {
-      > .toc {
-        position: absolute;
-        top: 0; left: 0;
-        width: $nav-width;
-        height: 100vh;
-        overflow-x: hidden;
-        overflow-y: scroll;
-        padding: $line-height;
-        background: darken($color-white, 2.5%);
-        @include box-sizing(border-box);
-      }
+  $nav-width: 18em;
+
+  .fixed-nav,
+  .fixed-nav .book > .toc,
+  .menu-toggle {
+    @include transition(left 0.2s ease);
+  }
+
+  .fixed-nav {
+    padding-left: 0;
+
+    .book > .toc {
+      left: -#{$nav-width} !important;
     }
 
+    &.offset {
+      left: $nav-width;
+
+      .menu-toggle.fixed { left: $nav-width; }
+      .book > .toc.fixed { left: 0 !important; }
+    }
   }
+
+  // This has to be divisible by two
+  $menu-icon-stroke: 3px;
+  $menu-icon-size: $menu-icon-stroke * 8;
+
+  .menu-toggle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    padding: 0;
+    width: $menu-icon-size * 2;
+    line-height: $menu-icon-size * 2;
+    height: $menu-icon-size * 2;
+    text-align: center;
+    background: darken($color-white, 2.5%);
+
+    &.fixed {
+      position: fixed;
+    }
+
+    &:hover, &:active {
+      background: $color-grey-lightest;
+    }
+
+    > span {
+      display: block;
+      height: $menu-icon-stroke;
+      width: $menu-icon-size;
+      background-color: $color-base-font;
+      text-indent: -9999px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -$menu-icon-size / 2;
+      margin-top: -$menu-icon-stroke / 2;
+      @include border-radius(1px);
+
+      @include transition(all 0.2s ease);
+
+      &:before, &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: $menu-icon-stroke;
+        background-color: $color-base-font;
+        @include transition(all 0.2s ease);
+        @include border-radius($menu-icon-stroke / 2);
+      }
+
+      &:before { top: -($menu-icon-stroke * 2) }
+      &:after { bottom: -($menu-icon-stroke * 2) }
+    }
+  }
+
+  .fixed-nav.offset .menu-toggle > span {
+    @include transform(rotate(45deg));
+
+    &:before {
+      top: 0;
+      @include transform(rotate(90deg));
+    }
+
+    &:after { opacity: 0; }
+  }
+
 }

@@ -14,7 +14,9 @@ module.exports = function(grunt) {
         files: ['source/sass/**/*'],
         tasks: ['compass'],
         options: {
-          livereload: true,
+          livereload: {
+            port: 32145
+          },
           force: true
         }
       }

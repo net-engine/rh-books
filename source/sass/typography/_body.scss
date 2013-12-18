@@ -1,10 +1,15 @@
 %main {
+  font-size: $font-size;
   font-family: $font-family-body;
   color: $color-base-font;
   line-height: $line-height;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+
+  @media only screen and (min-width: 120em)  { font-size: 1.1em !important; }
+  @media only screen and (min-width: 140em)  { font-size: 1.4em !important; }
+  @media only screen and (min-width: 160em)  { font-size: 1.5em !important; }
 }
 
 #main {
