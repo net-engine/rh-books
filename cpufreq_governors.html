@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">3.2. Using CPUfreq Governors</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Core_Infrastructure.html" title="Chapter 3. Core Infrastructure and Mechanics" /><link rel="prev" href="Core_Infrastructure.html" title="Chapter 3. Core Infrastructure and Mechanics" /><link rel="next" href="cpufreq_setup.html" title="3.2.2. CPUfreq Setup" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="Core_Infrastructure.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="cpufreq_setup.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="cpufreq_governors"></a>3.2. Using <code class="command">CPUfreq</code> Governors</h2></div></div></div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">3.2. Using CPUfreq Governors</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Core_Infrastructure.html" title="Chapter 3. Core Infrastructure and Mechanics" /><link rel="prev" href="Core_Infrastructure.html" title="Chapter 3. Core Infrastructure and Mechanics" /><link rel="next" href="cpufreq_setup.html" title="3.2.2. CPUfreq Setup" /></head><body> <div id="main"> <p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="Core_Infrastructure.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="cpufreq_setup.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="cpufreq_governors"></a>3.2. Using <code class="command">CPUfreq</code> Governors</h2></div></div></div>
 	 <a id="idm236077878784" class="indexterm"></a>
 	 <a id="idm236077839120" class="indexterm"></a>
 	 <a id="idm236077837968" class="indexterm"></a>
@@ -28,9 +28,9 @@
 		 <a id="idm236077814400" class="indexterm"></a>
 		 <a id="idm236077812544" class="indexterm"></a>
 		 <a id="idm236077810816" class="indexterm"></a>
-		 
+
 			The Performance governor forces the CPU to use the highest possible clock frequency. This frequency will be statically set, and will not change. As such, this particular governor offers <span class="emphasis"><em>no power saving benefit</em></span>. It is only suitable for hours of heavy workload, and even then only during times wherein the CPU is rarely (or never) idle.
-		
+
 	</div>
 	 <div class="formalpara">
 		<div xmlns:d="http://docbook.org/ns/docbook" class="title">cpufreq_powersave</div>  <a id="idm236077804928" class="indexterm"></a>
@@ -39,9 +39,9 @@
 		  <a id="idm236077800096" class="indexterm"></a>
 		 <a id="idm236077798240" class="indexterm"></a>
 		 <a id="idm236077796544" class="indexterm"></a>
-		 
+
 			By contrast, the Powersave governor forces the CPU to use the lowest possible clock frequency. This frequency will be statically set, and will not change. As such, this particular governor offers maximum power savings, but at the cost of the <span class="emphasis"><em>lowest CPU performance</em></span>.
-		
+
 	</div>
 	 <div class="para">
 		The term "powersave" can sometimes be deceiving, though, since (in principle) a slow CPU on full load consumes more power than a fast CPU that is not loaded. As such, while it may be advisable to set the CPU to use the Powersave governor during times of expected low activity, any unexpected high loads during that time can cause the system to actually consume more power.
@@ -56,14 +56,14 @@
 		  <a id="idm236077784800" class="indexterm"></a>
 		 <a id="idm236077783040" class="indexterm"></a>
 		 <a id="idm236077781280" class="indexterm"></a>
-		 
+
 			The Ondemand governor is a dynamic governor that allows the CPU to achieve maximum clock frequency when system load is high, and also minimum clock frequency when the system is idle. While this allows the system to adjust power consumption accordingly with respect to system load, it does so at the expense of <span class="emphasis"><em>latency between frequency switching</em></span>. As such, latency can offset any performance/power saving benefits offered by the Ondemand governor if the system switches between idle and heavy workloads too often.
-		
+
 	</div>
 	 <div class="para">
 		For most systems, the Ondemand governor can provide the best compromise between heat emission, power consumption, performance, and manageability. When the system is only busy at specific times of the day, the Ondemand governor will automatically switch between maximum and minimum frequency depending on the load without any further intervention.
 	</div>
-	
+
 	<div class="formalpara">
 		<div xmlns:d="http://docbook.org/ns/docbook" class="title">cpufreq_userspace</div> <a id="idm236077774192" class="indexterm"></a>
 		 <a id="idm236077775376" class="indexterm"></a>
@@ -71,9 +71,9 @@
 		  <a id="idm236077769424" class="indexterm"></a>
 		 <a id="idm236077767600" class="indexterm"></a>
 		 <a id="idm236077765808" class="indexterm"></a>
-		 
+
 			The Userspace governor allows userspace programs (or any process running as root) to set the frequency. This governor is normally used in conjunction with the <code class="command">cpuspeed</code> daemon. Of all the governors, Userspace is the most customizable; and depending on how it is configured, it can offer the best balance between performance and consumption for your system.
-		
+
 	</div>
 	 <div class="formalpara">
 		<div xmlns:d="http://docbook.org/ns/docbook" class="title">cpufreq_conservative</div> <a id="idm236077759792" class="indexterm"></a>
@@ -82,9 +82,9 @@
 		  <a id="idm236077754096" class="indexterm"></a>
 		 <a id="idm236077752272" class="indexterm"></a>
 		 <a id="idm236077750480" class="indexterm"></a>
-		 
+
 			Like the Ondemand governor, the Conservative governor also adjusts the clock frequency according to usage (like the Ondemand governor). However, while the Ondemand governor does so in a more aggressive manner (that is from maximum to minimum and back), the Conservative governor switches between frequencies more gradually.
-		
+
 	</div>
 	 <div class="para">
 		This means that the Conservative governor will adjust to a clock frequency that it deems fitting for the load, rather than simply choosing between maximum and minimum. While this can possibly provide significant savings in power consumption, it does so at an ever <span class="emphasis"><em>greater latency</em></span> than the Ondemand governor.
@@ -102,7 +102,7 @@
 		</div>
 	</div></div>
 </div>
-	 
-	 
-	 
-</div><ul class="docnav"><li class="previous"><a accesskey="p" href="Core_Infrastructure.html"><strong>Prev</strong>Chapter 3. Core Infrastructure and Mechanics</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="cpufreq_setup.html"><strong>Next</strong>3.2.2. CPUfreq Setup</a></li></ul></body></html>
+
+
+
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="Core_Infrastructure.html"><strong>Prev</strong>Chapter 3. Core Infrastructure and Mechanics</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="cpufreq_setup.html"><strong>Next</strong>3.2.2. CPUfreq Setup</a></li></ul></div></body></html>

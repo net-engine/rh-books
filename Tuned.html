@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">2.5. Tuned and ktune</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Audit_and_Analysis.html" title="Chapter 2. Power management auditing and analysis" /><link rel="prev" href="BLTK.html" title="2.4. Battery Life Tool Kit" /><link rel="next" href="tuned-adm.html" title="2.5.2. Tuned-adm" /></head><body><p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="BLTK.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="tuned-adm.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Tuned"></a>2.5. Tuned and ktune</h2></div></div></div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title xmlns:d="http://docbook.org/ns/docbook">2.5. Tuned and ktune</title><link rel="stylesheet" type="text/css" href="Common_Content/css/default.css" /><link rel="stylesheet" media="print" href="Common_Content/css/print.css" type="text/css" /><meta xmlns:d="http://docbook.org/ns/docbook" name="generator" content="publican v3.9.9" /><meta xmlns:d="http://docbook.org/ns/docbook" name="package" content="Red_Hat_Enterprise_Linux-Power_Management_Guide-6-en-US-1.0-2" /><link rel="home" href="index.html" title="Power Management Guide" /><link rel="up" href="Audit_and_Analysis.html" title="Chapter 2. Power management auditing and analysis" /><link rel="prev" href="BLTK.html" title="2.4. Battery Life Tool Kit" /><link rel="next" href="tuned-adm.html" title="2.5.2. Tuned-adm" /></head><body> <div id="main"> <p id="title"><a class="left" href="http://www.redhat.com"><img alt="Product Site" src="Common_Content/images//image_left.png" /></a><a class="right" href="http://access.redhat.com/knowledge/docs/"><img alt="Documentation Site" src="Common_Content/images//image_right.png" /></a></p><ul class="docnav top"><li class="previous"><a accesskey="p" href="BLTK.html"><strong>Prev</strong></a></li><li class="home">Power Management Guide</li><li class="next"><a accesskey="n" href="tuned-adm.html"><strong>Next</strong></a></li></ul><div xml:lang="en-US" class="section" lang="en-US"><div class="titlepage"><div><div><h2 class="title"><a id="Tuned"></a>2.5. Tuned and ktune</h2></div></div></div>
 	 <div class="para">
 		<span class="application"><strong>Tuned</strong></span> is a daemon that monitors the use of system components and dynamically tunes system settings based on that monitoring information. Dynamic tuning accounts for the way that various system components are used differently throughout the uptime for any given system. For example, the hard drive is used heavily during startup and login, but is barely used later when a user might mainly work with applications like OpenOffice or email clients. Similarly, the CPU and network devices are used differently at different times. <span class="application"><strong>Tuned</strong></span> monitors the activity of these components and reacts to changes in their use.
 	</div>
@@ -15,7 +15,7 @@
 	 <div class="para">
 		Install the <span class="package">tuned</span> package and its associated <span class="application"><strong>systemtap</strong></span> scripts with the command:
 	</div>
-	
+
 <pre class="screen"><code class="command">yum install tuned</code></pre>
 	 <div class="para">
 		Installing the <span class="package">tuned</span> package also sets up a sample configuration file at <code class="filename">/etc/tuned.conf</code> and activates the default profile.
@@ -23,12 +23,12 @@
 	 <div class="para">
 		Start <span class="application"><strong>tuned</strong></span> by running:
 	</div>
-	
+
 <pre class="screen"><code class="command">service tuned start</code></pre>
 	 <div class="para">
 		To start <span class="application"><strong>tuned</strong></span> every time the machine boots, run:
 	</div>
-	
+
 <pre class="screen"><code class="command">chkconfig tuned on</code></pre>
 	 <div class="para">
 		<span class="application"><strong>Tuned</strong></span> itself has additional options that you can use when you run it manually. The available options are:
@@ -102,7 +102,7 @@
 		 <div class="para">
 			A sample config file follows:
 		</div>
-		
+
 <pre class="programlisting">[main]
 interval=10
 pidfile=/var/run/tuned.pid
@@ -150,7 +150,7 @@ enabled=True
 enabled=True</pre>
 
 	</div>
-	
-	 
 
-</div><ul class="docnav"><li class="previous"><a accesskey="p" href="BLTK.html"><strong>Prev</strong>2.4. Battery Life Tool Kit</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="tuned-adm.html"><strong>Next</strong>2.5.2. Tuned-adm</a></li></ul></body></html>
+
+
+</div><ul class="docnav"><li class="previous"><a accesskey="p" href="BLTK.html"><strong>Prev</strong>2.4. Battery Life Tool Kit</a></li><li class="up"><a accesskey="u" href="#"><strong>Up</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Home</strong></a></li><li class="next"><a accesskey="n" href="tuned-adm.html"><strong>Next</strong>2.5.2. Tuned-adm</a></li></ul></div></body></html>

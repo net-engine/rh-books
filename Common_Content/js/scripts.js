@@ -26,33 +26,73 @@ var ajq = jQuery.noConflict();
 
 
 var fixedNav = function() {
+  var $window = ajq(this)
+  var $main   = ajq('#main');
+  var $toc    = ajq('.book > .toc');
 
-  ajq('#main').addClass('fixed-nav')
+  $main.addClass('fixed-nav');
+  $main.append("<button class='menu-toggle'><span></span></button>")
+  $toc.prepend("<input type='search' id='toc-filter' placeholder='Search contents...'>")
 
   ajq(window).on('scroll', function(e) {
-    var $main = ajq('#main');
-    var $toc = ajq('.book > .toc');
-
     var offset = $main.offset();
-    var scrollTop = ajq(this).scrollTop();
+    var offsetBottom = offset.top + $main.outerHeight()
+    var windowHeight = $window.height();
+    var scrollTop = $window.scrollTop();
+    var scrollBottom = scrollTop + windowHeight
 
-    if (scrollTop > offset.top) {
-      $toc.addClass('fixed').css({
+    if (scrollTop > offset.top && scrollBottom < offsetBottom) {
+      $toc.removeClass('bottom');
+      $toc.addClass('fixed');
+      $toc.css({
         left: offset.left
       });
+      ajq('.menu-toggle').addClass('fixed');
+
+    } else if (scrollBottom > offsetBottom) {
+      $toc.removeClass('fixed');
+      $toc.addClass('bottom');
+      $toc.css({
+        left: offset.left
+      });
+
     } else {
-      $toc.removeClass('fixed').css({
+      $toc.removeClass('fixed');
+      ajq('.menu-toggle').removeClass('fixed');
+      $toc.css({
         left: 0
       });
     }
   });
 
+  ajq(document).on('keyup', '#toc-filter', function(e) {
+    var $this = ajq(this);
+    var $terms = $this.closest('.toc').find('dt');
+    var search = $this.val().toLowerCase();
+
+    if (search.length > 1) {
+      $terms.show();
+      return $terms.each(function(i, term) {
+        var $term, termString;
+        $term = ajq(term);
+        termString = $term.text().toLowerCase();
+        if (!(termString.indexOf(search) >= 0)) return $term.hide();
+      });
+    } else {
+      return $terms.show();
+    }
+  });
+
+  ajq(document).on('click', '.menu-toggle', function(e) {
+    e.preventDefault();
+    $main.toggleClass('offset');
+  });
 }
 
 
 ajq(document).ready(function() {
 
-  if ( ajq('#main').length ) { fixedNav(); }
+  if ( ajq('#main .toc').length && ajq('.chapter').length ) { fixedNav(); }
 
   // ajq('#main').addClass('fixed-nav');
   // ajq(".book>.toc").stick_in_parent({
